@@ -1,268 +1,268 @@
 {
-    "schema":  "qel-file-inventory/1",
-    "purpose":  "Unsigned staging file inventory; not a cryptographic identity or owner signature",
-    "files":  [
-                  {
-                      "path":  ".gitignore",
-                      "bytes":  50
-                  },
-                  {
-                      "path":  "ATTRIBUTION.md",
-                      "bytes":  2089
-                  },
-                  {
-                      "path":  "CITATION.cff",
-                      "bytes":  487
-                  },
-                  {
-                      "path":  "HISTORICAL_SOURCE_NOTES.md",
-                      "bytes":  3310
-                  },
-                  {
-                      "path":  "LICENSE.md",
-                      "bytes":  9715
-                  },
-                  {
-                      "path":  "MAINTENANCE.md",
-                      "bytes":  3222
-                  },
-                  {
-                      "path":  "Open_Bible_Study.cmd",
-                      "bytes":  51
-                  },
-                  {
-                      "path":  "PUBLICATION_STATUS.json",
-                      "bytes":  2520
-                  },
-                  {
-                      "path":  "README.md",
-                      "bytes":  5479
-                  },
-                  {
-                      "path":  "RECOVERY_INVENTORY.json",
-                      "bytes":  6319
-                  },
-                  {
-                      "path":  "REPLAY.md",
-                      "bytes":  6780
-                  },
-                  {
-                      "path":  "REPLAY_RECIPE.md",
-                      "bytes":  9923
-                  },
-                  {
-                      "path":  "Replay_Bible.cmd",
-                      "bytes":  304
-                  },
-                  {
-                      "path":  "SERVICE_MAP.md",
-                      "bytes":  2899
-                  },
-                  {
-                      "path":  "STUDY_CATALOG.json",
-                      "bytes":  16857
-                  },
-                  {
-                      "path":  "STUDY_CATALOG.md",
-                      "bytes":  3558
-                  },
-                  {
-                      "path":  "THIRD_PARTY_NOTICES.md",
-                      "bytes":  2464
-                  },
-                  {
-                      "path":  "governance/GOSPEL_AGENT_CALIBRATION_PROMPT_v1.txt",
-                      "bytes":  1426
-                  },
-                  {
-                      "path":  "governance/MASTER_QPRINT_COMBINED_v1.1.0.md",
-                      "bytes":  23850
-                  },
-                  {
-                      "path":  "governance/QEL_BIBLE_STUDY_CONVERSATION_STARTERS.md",
-                      "bytes":  710
-                  },
-                  {
-                      "path":  "governance/QEL_BIBLE_STUDY_GPT_INSTRUCTIONS.md",
-                      "bytes":  3422
-                  },
-                  {
-                      "path":  "governance/QEL_BIBLE_STUDY_KNOWLEDGE_CHECKLIST.md",
-                      "bytes":  1727
-                  },
-                  {
-                      "path":  "governance/QEL_WORD_CORE_REFERENCE_PROFILE_PATCHED_v1.public-copy.json",
-                      "bytes":  10138
-                  },
-                  {
-                      "path":  "governance/QPRINT_01_CANON_HIERARCHY_v1.md",
-                      "bytes":  2755
-                  },
-                  {
-                      "path":  "governance/QPRINT_08_GOSPEL_AGENT_TRAINING_PACKET_v1.md",
-                      "bytes":  7895
-                  },
-                  {
-                      "path":  "governance/QPRINT_10_BIBLE_STUDY_VERSION_v1.md",
-                      "bytes":  4225
-                  },
-                  {
-                      "path":  "governance/QPRINT_11_WORD_ALIGNMENT_LAYER_v0_2_0.md",
-                      "bytes":  12820
-                  },
-                  {
-                      "path":  "governance/README.md",
-                      "bytes":  2436
-                  },
-                  {
-                      "path":  "original/web/HISTORICAL_README.md",
-                      "bytes":  1640
-                  },
-                  {
-                      "path":  "original/web/index.html",
-                      "bytes":  3736
-                  },
-                  {
-                      "path":  "original/web/scripts/app.js",
-                      "bytes":  17689
-                  },
-                  {
-                      "path":  "original/web/scripts/q6_data.js",
-                      "bytes":  1439143
-                  },
-                  {
-                      "path":  "original/web/styles/style.css",
-                      "bytes":  4207
-                  },
-                  {
-                      "path":  "original/word_core/QEL_FORENSIC_BIBLE_WORD_CORE_AUDIT_002A_VERIFIER.py",
-                      "bytes":  23382
-                  },
-                  {
-                      "path":  "original/word_core/QEL_WORD_CORE_REFERENCE_KAT_V2.json",
-                      "bytes":  1790
-                  },
-                  {
-                      "path":  "original/word_core/RECOVERY_NOTES.md",
-                      "bytes":  1967
-                  },
-                  {
-                      "path":  "original/word_core/RECOVERY_TEST_RESULTS.json",
-                      "bytes":  683
-                  },
-                  {
-                      "path":  "original/word_core/qel_word_core_reference_v2.py",
-                      "bytes":  10577
-                  },
-                  {
-                      "path":  "original/word_core/test_qel_word_core_reference_v2.py",
-                      "bytes":  11138
-                  },
-                  {
-                      "path":  "replay-output/REPLAY_REPORT.md",
-                      "bytes":  1089
-                  },
-                  {
-                      "path":  "replay-output/index.html",
-                      "bytes":  358201
-                  },
-                  {
-                      "path":  "replay-output/results.json",
-                      "bytes":  185150
-                  },
-                  {
-                      "path":  "replay-output/verification.json",
-                      "bytes":  786
-                  },
-                  {
-                      "path":  "replay.py",
-                      "bytes":  25194
-                  },
-                  {
-                      "path":  "studies/Genesis_1_1_Expanded_Study.json",
-                      "bytes":  75917
-                  },
-                  {
-                      "path":  "studies/Genesis_1_1_Expanded_Study.md",
-                      "bytes":  69247
-                  },
-                  {
-                      "path":  "studies/Genesis_1_2_Expanded_Study.json",
-                      "bytes":  77797
-                  },
-                  {
-                      "path":  "studies/Genesis_1_2_Expanded_Study.md",
-                      "bytes":  67518
-                  },
-                  {
-                      "path":  "studies/Genesis_1_3_Expanded_Study.json",
-                      "bytes":  77488
-                  },
-                  {
-                      "path":  "studies/Genesis_1_3_Expanded_Study.md",
-                      "bytes":  67221
-                  },
-                  {
-                      "path":  "studies/Genesis_1_4_Expanded_Study.json",
-                      "bytes":  75117
-                  },
-                  {
-                      "path":  "studies/Genesis_1_4_Expanded_Study.md",
-                      "bytes":  65108
-                  },
-                  {
-                      "path":  "studies/Genesis_1_5_Expanded_Study.json",
-                      "bytes":  75196
-                  },
-                  {
-                      "path":  "studies/Genesis_1_5_Expanded_Study.md",
-                      "bytes":  65150
-                  },
-                  {
-                      "path":  "studies/QEL_Genesis_1_1_Study_20260910.json",
-                      "bytes":  39216
-                  },
-                  {
-                      "path":  "studies/QEL_Genesis_1_1_Study_20260910.md",
-                      "bytes":  32316
-                  },
-                  {
-                      "path":  "test_replay.py",
-                      "bytes":  7023
-                  },
-                  {
-                      "path":  "verify.py",
-                      "bytes":  3051
-                  },
-                  {
-                      "path":  "web/README.md",
-                      "bytes":  3371
-                  },
-                  {
-                      "path":  "web/VALIDATION.json",
-                      "bytes":  692
-                  },
-                  {
-                      "path":  "web/check_ui.cjs",
-                      "bytes":  3838
-                  },
-                  {
-                      "path":  "web/index.html",
-                      "bytes":  4019
-                  },
-                  {
-                      "path":  "web/scripts/app.js",
-                      "bytes":  13442
-                  },
-                  {
-                      "path":  "web/scripts/q6_data.js",
-                      "bytes":  1439143
-                  },
-                  {
-                      "path":  "web/styles/style.css",
-                      "bytes":  4316
-                  }
-              ],
-    "new_cryptographic_fingerprints":  false,
-    "owner_signature":  null
+  "schema": "qel-file-inventory/1",
+  "purpose": "Unsigned staging file inventory; not a cryptographic identity or owner signature",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 50
+    },
+    {
+      "path": "ATTRIBUTION.md",
+      "bytes": 2089
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 487
+    },
+    {
+      "path": "HISTORICAL_SOURCE_NOTES.md",
+      "bytes": 3310
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 9715
+    },
+    {
+      "path": "MAINTENANCE.md",
+      "bytes": 4060
+    },
+    {
+      "path": "Open_Bible_Study.cmd",
+      "bytes": 51
+    },
+    {
+      "path": "PUBLICATION_STATUS.json",
+      "bytes": 4233
+    },
+    {
+      "path": "README.md",
+      "bytes": 5770
+    },
+    {
+      "path": "RECOVERY_INVENTORY.json",
+      "bytes": 6319
+    },
+    {
+      "path": "REPLAY.md",
+      "bytes": 6780
+    },
+    {
+      "path": "REPLAY_RECIPE.md",
+      "bytes": 9923
+    },
+    {
+      "path": "Replay_Bible.cmd",
+      "bytes": 304
+    },
+    {
+      "path": "SERVICE_MAP.md",
+      "bytes": 2899
+    },
+    {
+      "path": "STUDY_CATALOG.json",
+      "bytes": 16857
+    },
+    {
+      "path": "STUDY_CATALOG.md",
+      "bytes": 3558
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2464
+    },
+    {
+      "path": "governance/GOSPEL_AGENT_CALIBRATION_PROMPT_v1.txt",
+      "bytes": 1426
+    },
+    {
+      "path": "governance/MASTER_QPRINT_COMBINED_v1.1.0.md",
+      "bytes": 23850
+    },
+    {
+      "path": "governance/QEL_BIBLE_STUDY_CONVERSATION_STARTERS.md",
+      "bytes": 710
+    },
+    {
+      "path": "governance/QEL_BIBLE_STUDY_GPT_INSTRUCTIONS.md",
+      "bytes": 3422
+    },
+    {
+      "path": "governance/QEL_BIBLE_STUDY_KNOWLEDGE_CHECKLIST.md",
+      "bytes": 1727
+    },
+    {
+      "path": "governance/QEL_WORD_CORE_REFERENCE_PROFILE_PATCHED_v1.public-copy.json",
+      "bytes": 10138
+    },
+    {
+      "path": "governance/QPRINT_01_CANON_HIERARCHY_v1.md",
+      "bytes": 2755
+    },
+    {
+      "path": "governance/QPRINT_08_GOSPEL_AGENT_TRAINING_PACKET_v1.md",
+      "bytes": 7895
+    },
+    {
+      "path": "governance/QPRINT_10_BIBLE_STUDY_VERSION_v1.md",
+      "bytes": 4225
+    },
+    {
+      "path": "governance/QPRINT_11_WORD_ALIGNMENT_LAYER_v0_2_0.md",
+      "bytes": 12820
+    },
+    {
+      "path": "governance/README.md",
+      "bytes": 2436
+    },
+    {
+      "path": "original/web/HISTORICAL_README.md",
+      "bytes": 1640
+    },
+    {
+      "path": "original/web/index.html",
+      "bytes": 3736
+    },
+    {
+      "path": "original/web/scripts/app.js",
+      "bytes": 17689
+    },
+    {
+      "path": "original/web/scripts/q6_data.js",
+      "bytes": 1439143
+    },
+    {
+      "path": "original/web/styles/style.css",
+      "bytes": 4207
+    },
+    {
+      "path": "original/word_core/QEL_FORENSIC_BIBLE_WORD_CORE_AUDIT_002A_VERIFIER.py",
+      "bytes": 23382
+    },
+    {
+      "path": "original/word_core/QEL_WORD_CORE_REFERENCE_KAT_V2.json",
+      "bytes": 1790
+    },
+    {
+      "path": "original/word_core/RECOVERY_NOTES.md",
+      "bytes": 1967
+    },
+    {
+      "path": "original/word_core/RECOVERY_TEST_RESULTS.json",
+      "bytes": 683
+    },
+    {
+      "path": "original/word_core/qel_word_core_reference_v2.py",
+      "bytes": 10577
+    },
+    {
+      "path": "original/word_core/test_qel_word_core_reference_v2.py",
+      "bytes": 11138
+    },
+    {
+      "path": "replay-output/REPLAY_REPORT.md",
+      "bytes": 1089
+    },
+    {
+      "path": "replay-output/index.html",
+      "bytes": 358201
+    },
+    {
+      "path": "replay-output/results.json",
+      "bytes": 185150
+    },
+    {
+      "path": "replay-output/verification.json",
+      "bytes": 786
+    },
+    {
+      "path": "replay.py",
+      "bytes": 25194
+    },
+    {
+      "path": "studies/Genesis_1_1_Expanded_Study.json",
+      "bytes": 75917
+    },
+    {
+      "path": "studies/Genesis_1_1_Expanded_Study.md",
+      "bytes": 69247
+    },
+    {
+      "path": "studies/Genesis_1_2_Expanded_Study.json",
+      "bytes": 77797
+    },
+    {
+      "path": "studies/Genesis_1_2_Expanded_Study.md",
+      "bytes": 67518
+    },
+    {
+      "path": "studies/Genesis_1_3_Expanded_Study.json",
+      "bytes": 77488
+    },
+    {
+      "path": "studies/Genesis_1_3_Expanded_Study.md",
+      "bytes": 67221
+    },
+    {
+      "path": "studies/Genesis_1_4_Expanded_Study.json",
+      "bytes": 75117
+    },
+    {
+      "path": "studies/Genesis_1_4_Expanded_Study.md",
+      "bytes": 65108
+    },
+    {
+      "path": "studies/Genesis_1_5_Expanded_Study.json",
+      "bytes": 75196
+    },
+    {
+      "path": "studies/Genesis_1_5_Expanded_Study.md",
+      "bytes": 65150
+    },
+    {
+      "path": "studies/QEL_Genesis_1_1_Study_20260910.json",
+      "bytes": 39216
+    },
+    {
+      "path": "studies/QEL_Genesis_1_1_Study_20260910.md",
+      "bytes": 32316
+    },
+    {
+      "path": "test_replay.py",
+      "bytes": 7023
+    },
+    {
+      "path": "verify.py",
+      "bytes": 3051
+    },
+    {
+      "path": "web/README.md",
+      "bytes": 3371
+    },
+    {
+      "path": "web/VALIDATION.json",
+      "bytes": 692
+    },
+    {
+      "path": "web/check_ui.cjs",
+      "bytes": 3838
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 4019
+    },
+    {
+      "path": "web/scripts/app.js",
+      "bytes": 13442
+    },
+    {
+      "path": "web/scripts/q6_data.js",
+      "bytes": 1439143
+    },
+    {
+      "path": "web/styles/style.css",
+      "bytes": 4316
+    }
+  ],
+  "new_cryptographic_fingerprints": false,
+  "owner_signature": null
 }
