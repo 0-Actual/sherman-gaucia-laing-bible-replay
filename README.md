@@ -19,7 +19,7 @@ The five expanded Markdown studies total **53,007 whitespace-separated tokens**.
 With Python 3.10 or later, run from this folder:
 
 ```sh
-python3 verify.py
+python verify.py
 ```
 
 On Windows with the Python launcher:
@@ -35,6 +35,12 @@ The verification command runs the study replay, the new adapter tests and 40 sel
 The assembled preparation passed **113 replay comparisons**, **15 adapter tests** and **40 recovered WORD_CORE tests**. These are separate check sets, not a historical total. Inspect [the replay report](replay-output/REPLAY_REPORT.md) and [verification results](replay-output/verification.json). A later run's exit status determines that run's result; existing reports do not make a failed later run pass.
 
 For command options and calculation conventions, read [REPLAY.md](REPLAY.md).
+
+## Build checks and collaboration
+
+[Bible replay checks on GitHub Actions](https://github.com/0-Actual/sherman-gaucia-laing-bible-replay/actions/workflows/replay-checks.yml) runs `python verify.py` on standard GitHub-hosted Ubuntu and Windows machines with Python 3.12 after pushes, on pull requests, and on manual request. These checks use the published files and run on GitHub's machines. Inspect each workflow run for its actual result; this workflow does not merge changes or publish releases.
+
+To report a reproducible problem or propose a fix, read [CONTRIBUTING.md](CONTRIBUTING.md) and use the issue or pull request template. The repository's attribution and noncommercial terms continue to apply.
 
 ## What is preserved and what is new
 

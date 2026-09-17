@@ -3,6 +3,18 @@
   "purpose": "Unsigned staging file inventory; not a cryptographic identity or owner signature",
   "files": [
     {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "bytes": 895
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 758
+    },
+    {
+      "path": ".github/workflows/replay-checks.yml",
+      "bytes": 654
+    },
+    {
       "path": ".gitignore",
       "bytes": 50
     },
@@ -13,6 +25,10 @@
     {
       "path": "CITATION.cff",
       "bytes": 487
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 2595
     },
     {
       "path": "HISTORICAL_SOURCE_NOTES.md",
@@ -36,7 +52,7 @@
     },
     {
       "path": "README.md",
-      "bytes": 5770
+      "bytes": 6476
     },
     {
       "path": "RECOVERY_INVENTORY.json",
