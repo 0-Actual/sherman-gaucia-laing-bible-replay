@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QEL Creation Week — public reading edition</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Q6 · Bible + Mathematics + Matrix Layer</p>
+        <h1>Creation Week Frequency QMAP</h1>
+        <p class="subhead">Sherman G. Laing · Quantum.Earth.Laing. Public reading adaptation of the existing 3 May 2026 Bible Math Merge build. Browse 34 Creation Week verses, their recorded English letter-value calculations and event mappings. These English values are separate from Hebrew gematria.</p>
+      </div>
+      <div class="status-card">
+        <strong>Public reading edition</strong>
+        <span>Classic World English Bible · Genesis 1:1–2:3</span>
+        <span>Historical audio disabled · illustrative images omitted</span>
+        <span>Open locally · no network required</span>
+      </div>
+    </header>
+
+    <section class="grid metrics" id="globalMetrics"></section>
+
+    <section class="app-grid">
+      <aside class="panel side">
+        <div class="panel-head">
+          <h2>QMAP Nodes</h2>
+          <span id="timelineLabel" class="pill">1/8</span>
+        </div>
+        <input id="timeline" type="range" min="0" value="0" step="1">
+        <div class="controls">
+          <button id="prevBtn">Previous</button>
+          <button id="nextBtn">Next</button>
+        </div>
+        <div id="nodeList" class="scroll-list"></div>
+      </aside>
+
+      <section class="panel visual">
+        <canvas id="qmapCanvas"></canvas>
+        <div class="controls audio-controls">
+          <button id="playBtn" disabled title="Historical audio is disabled in this public reading edition">Audio disabled</button>
+          <button id="playWeekBtn" hidden disabled>Play week</button>
+          <button id="stopBtn" hidden disabled>Stop</button>
+          <button id="exportBtn">Export node</button>
+          <label hidden>Speed <input id="speed" type="range" min="0.5" max="2" value="1" step="0.1"></label>
+        </div>
+      </section>
+
+      <section class="panel detail">
+        <div class="panel-head">
+          <div>
+            <h2 id="nodeTitle">Node</h2>
+            <div id="nodeMeta" class="tags"></div>
+          </div>
+        </div>
+        <label class="select-label">Verse
+          <select id="verseSelect"></select>
+        </label>
+        <div class="scripture-card">
+          <h3>Source / WEB text</h3>
+          <pre id="sourceText"></pre>
+        </div>
+        <div class="scripture-card">
+          <h3>Recorded English letter-value lane</h3>
+          <pre id="calcText"></pre>
+        </div>
+        <div class="columns">
+          <div>
+            <h3>Words</h3>
+            <div id="wordList" class="scroll-list short"></div>
+          </div>
+          <div>
+            <h3>Events</h3>
+            <div id="eventList" class="scroll-list short"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="app-grid lower">
+      <section class="panel">
+        <div class="panel-head"><h2>Search</h2></div>
+        <input id="searchInput" placeholder="Search verse text, raw words, instrument family, node name">
+        <div id="searchResults" class="scroll-list"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Recorded instrument mapping</h2></div>
+        <div id="instrumentToggles" class="toggle-grid"></div>
+        <h3>Whole-word instrument research</h3>
+        <div id="instrumentResearch" class="scroll-list short"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-head"><h2>Historical source note</h2></div>
+        <div id="refImages" class="ref-images"></div>
+      </section>
+    </section>
+  </main>
+  <script src="scripts/q6_data.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>

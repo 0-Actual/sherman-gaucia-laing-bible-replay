@@ -1,0 +1,19 @@
+{
+  "checked_at_utc": "2026-09-17T20:25:05.176503+00:00",
+  "source_tests_total": 43,
+  "tests_executed": 40,
+  "failures": 0,
+  "errors": 0,
+  "excluded_tests": [
+    "test_034_surface_hash_matches_legacy_witness",
+    "test_038_genesis_1_2_source_witness",
+    "test_041_genesis_1_7_source_witness"
+  ],
+  "exclusion_reason": "These three historical tests calculate SHA-256. They are retained as historical code and were not run under current no-new-hashes instruction.",
+  "status": "PASS",
+  "original_source_modified": false,
+  "archive_bytes_verified": false,
+  "full_forensic_100_checks_rerun": false,
+  "owner_signature_created": false,
+  "new_fingerprints_created": false
+}

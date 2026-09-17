@@ -1,0 +1,62 @@
+{
+  "created_at": "2026-08-18T12:49:00-04:00",
+  "full_creation_week": {
+    "fresh_full_replay_performed": false,
+    "historical_record_only": {
+      "binary": "11011000000001001",
+      "calculation_letters": 1815,
+      "gadol_total": 205511,
+      "governing_words": 391,
+      "reported_comparisons": 16079,
+      "reported_errors": 0,
+      "standard_total": 110601,
+      "verses": 34
+    }
+  },
+  "genesis_1_1": {
+    "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+    "gadol": 4631,
+    "gadol_word_totals": [
+      913,
+      203,
+      646,
+      401,
+      955,
+      407,
+      1106
+    ],
+    "legacy_sha256_utf8_secondary_witness": "e6eff815ea17a7b0acdefbda37a41b0481ea804b23ea982eab5ed427a5cfe3a2",
+    "letter_count": 28,
+    "ordinal": 298,
+    "pointed_input": "בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים אֵ֥ת הַשָּׁמַ֖יִם וְאֵ֥ת הָאָֽרֶץ׃",
+    "reduced": 82,
+    "standard": 2701,
+    "standard_binary": "101010001101",
+    "standard_word_totals": [
+      913,
+      203,
+      86,
+      401,
+      395,
+      407,
+      296
+    ],
+    "word_count": 7
+  },
+  "greek_transform": {
+    "input": "ἘΝ ἀρχῇ λόγος",
+    "numeric_profile_state": "HELD_PENDING_EXACT_HISTORICAL_PROFILE_BYTES",
+    "output": "εν αρχη λογοσ"
+  },
+  "maqaf": {
+    "join_surface": "עלפני",
+    "raw": "עַל־פְּנֵי",
+    "split_surface": "על פני",
+    "standard_total": 240,
+    "total_invariant": true,
+    "word_count_join": 1,
+    "word_count_split": 2
+  },
+  "schema": "qel.word-core-clean-room-known-answer-vectors/v2",
+  "scope": "Documented WORD_CORE transform and Genesis 1:1 Hebrew arithmetic; clean-room reference, not historical source replacement"
+}

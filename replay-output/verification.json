@@ -1,0 +1,28 @@
+{
+  "integration_authored_date": "2026-09-17",
+  "state": "PASS",
+  "scope": "New study replay and adapter tests, plus 40 recovered WORD_CORE tests",
+  "results": {
+    "replay.py": {
+      "exit_code": 0
+    },
+    "test_replay.py": {
+      "exit_code": 0
+    },
+    "recovered_word_core": {
+      "executed": 40,
+      "passed": 40,
+      "failures": 0,
+      "errors": 0,
+      "excluded_archival_tests": [
+        "test_034_surface_hash_matches_legacy_witness",
+        "test_038_genesis_1_2_source_witness",
+        "test_041_genesis_1_7_source_witness"
+      ],
+      "selection_reason": "Preserve historical witnesses without generating new fingerprints"
+    }
+  },
+  "legacy_forensic_verifier_executed": false,
+  "owner_signature": null,
+  "new_fingerprints_generated": false
+}

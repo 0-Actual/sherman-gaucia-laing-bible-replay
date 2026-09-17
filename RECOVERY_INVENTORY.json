@@ -1,0 +1,194 @@
+{
+  "method": "Complete source text reads; source-compatible terminal newline retained or restored based on reported size. Matching size is not independent byte verification against original archives.",
+  "sources": [
+    {
+      "path": "original/word_core/qel_word_core_reference_v2.py",
+      "source_bytes": 10577,
+      "source_lines": 273,
+      "created_at": "2026-08-18T17:43:56.953414Z",
+      "modified_at": "2026-08-18T17:43:56.953414Z",
+      "read_complete": true,
+      "written_bytes": 10577,
+      "size_matches": true
+    },
+    {
+      "path": "original/word_core/test_qel_word_core_reference_v2.py",
+      "source_bytes": 11138,
+      "source_lines": 228,
+      "created_at": "2026-08-18T17:43:57.976047Z",
+      "modified_at": "2026-08-18T17:43:57.976047Z",
+      "read_complete": true,
+      "written_bytes": 11138,
+      "size_matches": true
+    },
+    {
+      "path": "original/word_core/QEL_WORD_CORE_REFERENCE_KAT_V2.json",
+      "source_bytes": 1790,
+      "source_lines": 62,
+      "created_at": "2026-08-18T17:43:55.888226Z",
+      "modified_at": "2026-08-18T17:43:55.888226Z",
+      "read_complete": true,
+      "written_bytes": 1790,
+      "size_matches": true
+    },
+    {
+      "path": "original/word_core/QEL_FORENSIC_BIBLE_WORD_CORE_AUDIT_002A_VERIFIER.py",
+      "source_bytes": 23382,
+      "source_lines": 387,
+      "created_at": "2026-08-18T17:55:34.495586Z",
+      "modified_at": "2026-08-18T17:55:34.495586Z",
+      "read_complete": true,
+      "written_bytes": 23382,
+      "size_matches": true
+    },
+    {
+      "path": "governance/QPRINT_11_WORD_ALIGNMENT_LAYER_v0_2_0.md",
+      "source_bytes": 12820,
+      "source_lines": 386,
+      "created_at": "2026-03-26T19:35:23.430904Z",
+      "modified_at": "2026-03-26T19:35:23.430989Z",
+      "read_complete": true,
+      "written_bytes": 12820,
+      "size_matches": true
+    },
+    {
+      "path": "governance/QPRINT_01_CANON_HIERARCHY_v1.md",
+      "source_bytes": 2755,
+      "source_lines": 114,
+      "created_at": "2026-04-10T02:14:01.547092Z",
+      "modified_at": "2026-04-10T02:14:01.547122Z",
+      "read_complete": true,
+      "written_bytes": 2755,
+      "size_matches": true
+    },
+    {
+      "path": "governance/QPRINT_08_GOSPEL_AGENT_TRAINING_PACKET_v1.md",
+      "source_bytes": 7895,
+      "source_lines": 199,
+      "created_at": "2026-03-19T15:54:34.727009Z",
+      "modified_at": "2026-03-19T15:54:34.727099Z",
+      "read_complete": true,
+      "written_bytes": 7895,
+      "size_matches": true
+    },
+    {
+      "path": "governance/GOSPEL_AGENT_CALIBRATION_PROMPT_v1.txt",
+      "source_bytes": 1426,
+      "source_lines": 51,
+      "created_at": "2026-03-19T15:54:33.897435Z",
+      "modified_at": "2026-03-19T15:54:33.897480Z",
+      "read_complete": true,
+      "written_bytes": 1426,
+      "size_matches": true
+    },
+    {
+      "path": "original/web/scripts/app.js",
+      "source_bytes": 17689,
+      "source_lines": 117,
+      "created_at": "2026-05-03T15:46:28.449021Z",
+      "modified_at": "2026-05-03T15:46:28.449363Z",
+      "read_complete": true,
+      "written_bytes": 17689,
+      "size_matches": true
+    },
+    {
+      "path": "original/web/index.html",
+      "source_bytes": 3736,
+      "source_lines": 104,
+      "created_at": "2026-05-03T15:51:52.501213Z",
+      "modified_at": "2026-05-03T15:51:52.501577Z",
+      "read_complete": true,
+      "written_bytes": 3736,
+      "size_matches": true
+    },
+    {
+      "path": "original/web/styles/style.css",
+      "source_bytes": 4207,
+      "source_lines": 3,
+      "created_at": "2026-05-03T15:52:10.095920Z",
+      "modified_at": "2026-05-03T15:52:10.096275Z",
+      "read_complete": true,
+      "written_bytes": 4207,
+      "size_matches": true
+    },
+    {
+      "path": "original/web/HISTORICAL_README.md",
+      "source_bytes": 1640,
+      "source_lines": 35,
+      "created_at": "2026-05-03T15:51:46.273404Z",
+      "modified_at": "2026-05-03T15:51:46.273780Z",
+      "read_complete": true,
+      "written_bytes": 1640,
+      "size_matches": true
+    },
+    {
+      "path": "original/web/scripts/q6_data.js",
+      "source_bytes": 1439143,
+      "source_lines": 46105,
+      "created_at": "2026-05-03T15:52:04.759007Z",
+      "modified_at": "2026-05-03T15:52:04.759366Z",
+      "read_complete": true,
+      "written_bytes": 1439143,
+      "size_matches": true
+    },
+    {
+      "path": "governance/QEL_BIBLE_STUDY_CONVERSATION_STARTERS.md",
+      "source_bytes": 710,
+      "source_lines": 10,
+      "created_at": "2026-08-28T17:49:00.266425Z",
+      "modified_at": "2026-08-28T17:49:00.266425Z",
+      "read_complete": true,
+      "written_bytes": 710,
+      "size_matches": true
+    },
+    {
+      "path": "governance/QPRINT_10_BIBLE_STUDY_VERSION_v1.md",
+      "source_bytes": 4225,
+      "source_lines": 158,
+      "created_at": "2026-08-28T17:49:02.057889Z",
+      "modified_at": "2026-08-28T17:49:02.057889Z",
+      "read_complete": true,
+      "written_bytes": 4225,
+      "size_matches": true
+    },
+    {
+      "path": "governance/QEL_BIBLE_STUDY_KNOWLEDGE_CHECKLIST.md",
+      "source_bytes": 1727,
+      "source_lines": 53,
+      "created_at": "2026-08-28T17:48:48.943653Z",
+      "modified_at": "2026-08-28T17:48:48.943653Z",
+      "read_complete": true,
+      "written_bytes": 1727,
+      "size_matches": true
+    },
+    {
+      "path": "governance/MASTER_QPRINT_COMBINED_v1.1.0.md",
+      "source_bytes": 23850,
+      "source_lines": 727,
+      "created_at": "2026-04-10T02:14:00.594123Z",
+      "modified_at": "2026-04-10T02:14:00.594199Z",
+      "read_complete": true,
+      "written_bytes": 23850,
+      "size_matches": true
+    },
+    {
+      "path": "governance/QEL_BIBLE_STUDY_GPT_INSTRUCTIONS.md",
+      "source_bytes": 3422,
+      "source_lines": 109,
+      "created_at": "2026-08-28T17:48:59.356104Z",
+      "modified_at": "2026-08-28T17:48:59.356104Z",
+      "read_complete": true,
+      "written_bytes": 3422,
+      "size_matches": true
+    }
+  ],
+  "excluded_original_archive_files": [
+    "QEL_BIBLE_WORKS_BUILD_V1.zip",
+    "Q6_BIBLE_MATH_MERGE_WEB_BUILD_V1.zip"
+  ],
+  "archive_transfer_failure": "HTTP 502; no deeper cause established",
+  "original_archives_reconstructed": false,
+  "private_profile_recovered_separately": true,
+  "owner_signature_created": false,
+  "new_hashes_created": false
+}

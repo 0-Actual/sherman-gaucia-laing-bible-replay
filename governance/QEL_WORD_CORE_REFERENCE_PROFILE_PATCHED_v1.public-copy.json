@@ -1,0 +1,330 @@
+{
+  "profile_name": "QEL_WORD_CORE_REFERENCE_PROFILE_PATCHED_v1",
+  "profile_version": "1.0.0-draft",
+  "status": "draft",
+  "purpose": "Formalize the missing promotion ladder between frozen evidence layers and corpus-wide WORD_CORE establishment.",
+  "created_on": "2026-03-27",
+  "allow_execution": false,
+  "promotion_state": "profile_promotion_in_progress",
+  "workspace_presence": {
+    "filesystem_root": "[historical workspace path omitted]",
+    "standalone_qprint_11_file_present": false,
+    "standalone_word_core_reference_profile_template_present": false,
+    "basis": "direct filesystem inspection of the historical workspace for standalone governance/profile artifacts"
+  },
+  "canonical_serialization": {
+    "format": "json",
+    "encoding": "utf-8",
+    "sort_keys": true,
+    "separators": [
+      ",",
+      ":"
+    ],
+    "exclude_self_hash_field": "profile_hash_sha256_excluding_self",
+    "rule_name": "canonical_json_utf8_sorted_compact"
+  },
+  "promotion_ladder_file": "qel_word_core_promotion_ladder_v1.json",
+  "inventory": {
+    "hebrew": {
+      "selected_scheme": "standard",
+      "selected_scheme_aliases": {
+        "base": "standard"
+      },
+      "selected_scheme_evidence": {
+        "evidence_type": "dataset-layer",
+        "source_csv_file": "qel_shoresh_xlean_001-1470.csv",
+        "source_csv_sha256": "82b7b9f13ef89dd1533577012fdea7e9786139458e83aafd93b654e18cdae73e",
+        "row_count": 1470,
+        "solve_matrix_rows": 1470,
+        "solve_matrix_cols": 27,
+        "rank": 27,
+        "augmented_rank": 27,
+        "solution_unique": true,
+        "final_mode_inferred_from_data": "standard",
+        "build_manifest_file": "qel_hebrew_dataset_v3/qel_hebrew_build_manifest_v3.json",
+        "build_manifest_sha256": "e55b4debcacfbc615057b61349ce0e84e4de66d878aaf1fd40b6bbf377f22a2c",
+        "release_manifest_file": "qel_hebrew_release_manifest_v3.json",
+        "release_manifest_sha256": "0fdd5686858a30b83e0cfbd59d6279006adf4ca050cbdcb15d1b7398a65e7ce2",
+        "dataset_zip_file": "qel_hebrew_dataset_v3_package.zip",
+        "dataset_zip_sha256": "626729e6e1441bf174b1d9fb37ef73c09a6c0cf61c24d13511c9b96ea1611295"
+      },
+      "scope_guard": {
+        "informs_profile": true,
+        "satisfies_primary_hebrew_corpus_lock": false,
+        "dataset_layer": "Hebrew roots frozen dataset layer",
+        "not_yet": "full Hebrew Bible text corpus",
+        "rule": "dataset-layer evidence may inform the active profile but may not satisfy primary Hebrew corpus establishment"
+      },
+      "primary_text": {
+        "required_family": "WLC/UXLC",
+        "text_release": null,
+        "text_hash_sha256": null,
+        "status": "MISSING_PRIMARY_TEXT_LOCK"
+      },
+      "annotation": {
+        "oshb_enabled": false,
+        "alignment_confirmed_with_primary_text": false,
+        "activation_rule": "enable_only_after_alignment_confirmed_with_primary_text"
+      }
+    },
+    "greek": {
+      "selected_scheme": "isopsephy_27",
+      "canonical_numeric_slots": [
+        {
+          "slot_value": 1,
+          "canonical": "α",
+          "accepted_aliases": [
+            "α"
+          ]
+        },
+        {
+          "slot_value": 2,
+          "canonical": "β",
+          "accepted_aliases": [
+            "β"
+          ]
+        },
+        {
+          "slot_value": 3,
+          "canonical": "γ",
+          "accepted_aliases": [
+            "γ"
+          ]
+        },
+        {
+          "slot_value": 4,
+          "canonical": "δ",
+          "accepted_aliases": [
+            "δ"
+          ]
+        },
+        {
+          "slot_value": 5,
+          "canonical": "ε",
+          "accepted_aliases": [
+            "ε"
+          ]
+        },
+        {
+          "slot_value": 6,
+          "canonical_slot": "6",
+          "accepted_aliases": [
+            "ϝ",
+            "ϛ"
+          ]
+        },
+        {
+          "slot_value": 7,
+          "canonical": "ζ",
+          "accepted_aliases": [
+            "ζ"
+          ]
+        },
+        {
+          "slot_value": 8,
+          "canonical": "η",
+          "accepted_aliases": [
+            "η"
+          ]
+        },
+        {
+          "slot_value": 9,
+          "canonical": "θ",
+          "accepted_aliases": [
+            "θ"
+          ]
+        },
+        {
+          "slot_value": 10,
+          "canonical": "ι",
+          "accepted_aliases": [
+            "ι"
+          ]
+        },
+        {
+          "slot_value": 20,
+          "canonical": "κ",
+          "accepted_aliases": [
+            "κ"
+          ]
+        },
+        {
+          "slot_value": 30,
+          "canonical": "λ",
+          "accepted_aliases": [
+            "λ"
+          ]
+        },
+        {
+          "slot_value": 40,
+          "canonical": "μ",
+          "accepted_aliases": [
+            "μ"
+          ]
+        },
+        {
+          "slot_value": 50,
+          "canonical": "ν",
+          "accepted_aliases": [
+            "ν"
+          ]
+        },
+        {
+          "slot_value": 60,
+          "canonical": "ξ",
+          "accepted_aliases": [
+            "ξ"
+          ]
+        },
+        {
+          "slot_value": 70,
+          "canonical": "ο",
+          "accepted_aliases": [
+            "ο"
+          ]
+        },
+        {
+          "slot_value": 80,
+          "canonical": "π",
+          "accepted_aliases": [
+            "π"
+          ]
+        },
+        {
+          "slot_value": 90,
+          "canonical_slot": "90",
+          "accepted_aliases": [
+            "ϙ",
+            "ϟ"
+          ]
+        },
+        {
+          "slot_value": 100,
+          "canonical": "ρ",
+          "accepted_aliases": [
+            "ρ"
+          ]
+        },
+        {
+          "slot_value": 200,
+          "canonical": "σ",
+          "accepted_aliases": [
+            "σ",
+            "ς"
+          ]
+        },
+        {
+          "slot_value": 300,
+          "canonical": "τ",
+          "accepted_aliases": [
+            "τ"
+          ]
+        },
+        {
+          "slot_value": 400,
+          "canonical": "υ",
+          "accepted_aliases": [
+            "υ"
+          ]
+        },
+        {
+          "slot_value": 500,
+          "canonical": "φ",
+          "accepted_aliases": [
+            "φ"
+          ]
+        },
+        {
+          "slot_value": 600,
+          "canonical": "χ",
+          "accepted_aliases": [
+            "χ"
+          ]
+        },
+        {
+          "slot_value": 700,
+          "canonical": "ψ",
+          "accepted_aliases": [
+            "ψ"
+          ]
+        },
+        {
+          "slot_value": 800,
+          "canonical": "ω",
+          "accepted_aliases": [
+            "ω"
+          ]
+        },
+        {
+          "slot_value": 900,
+          "canonical": "ϡ",
+          "accepted_aliases": [
+            "ϡ"
+          ]
+        }
+      ],
+      "glyph_alias_policy": "accepted_aliases_fold_to_numeric_slot",
+      "extended_27_checksum_constant": 4995,
+      "primary_text": {
+        "required_edition": "SBLGNT",
+        "text_release": null,
+        "text_hash_sha256": null,
+        "status": "MISSING_PRIMARY_TEXT_LOCK"
+      }
+    },
+    "english_web_interim": {
+      "status": "FROZEN_INTERIM_TEXT_CORE",
+      "may_inform_reference_work": true,
+      "satisfies_source_language_word_core": false,
+      "scope_guard": "English WEB text-core may support interim reference work but does not establish source-language WORD_CORE.",
+      "source_bundle_sha256": "67dbc2f1e7ce1d7f0723724d7a275c9dcfe43620d2121f91d81985cb8d874215",
+      "build_manifest_file": "qel_word_text_core_web_v1/qel_word_text_core_web_build_manifest_v1.json",
+      "build_manifest_sha256": "c1cf1e46d88b8c2b8164fea92282798ad62baef41beba14d9187e2117a0b609d",
+      "release_manifest_file": "qel_word_text_core_web_release_manifest_v1.json",
+      "release_manifest_sha256": "2c4f71321c4b3636aba2c2dcb1c27f938015c518eca28659a5e1fe01de40b0ed",
+      "dataset_zip_file": "qel_word_text_core_web_v1_package.zip",
+      "dataset_zip_sha256": "b385c2299313e427cb171f0d77de35c94aff7863aad82b49b87abe70fc09d4a7",
+      "book_count": 66,
+      "verse_count": 31102,
+      "token_count": 761170,
+      "zero_word_refs": [
+        "Luke 17:36",
+        "Acts 8:37",
+        "Acts 15:34",
+        "Acts 24:7",
+        "Romans 16:25",
+        "Romans 16:26",
+        "Romans 16:27"
+      ]
+    }
+  },
+  "transforms": {
+    "implementation_status": "MISSING_CORPUS_WIDE_TRANSFORM_ARTIFACT",
+    "transform_implementation_hash_sha256": null
+  },
+  "validation_gates": {
+    "profile_builder_required": true,
+    "profile_validator_required": true,
+    "live_workspace_validator_pass_required": true,
+    "hebrew_primary_text_lock_required_for_execution": true,
+    "greek_primary_text_lock_required_for_execution": true,
+    "transform_hash_required_for_execution": true,
+    "profile_hash_required_for_execution": true,
+    "dataset_and_governance_chain_linkage_required": true
+  },
+  "execution_barriers": [
+    "primary Hebrew text_release/text_hash_sha256 missing",
+    "primary Greek text_release/text_hash_sha256 missing",
+    "corpus-wide transform_implementation_hash_sha256 missing",
+    "standalone legacy QPRINT 11 file not present in current historical workspace",
+    "standalone legacy WORD_CORE reference profile template not present in current historical workspace"
+  ],
+  "governance_links": {
+    "owner_authorization_yaml": "QPRINT_03_OWNER_AUTHORIZATION_RECORD_v1.yaml",
+    "workspace_lane_manifest_v1": "qel_workspace_lane_manifest_v1.json",
+    "dataset_chain_v2": "qel_master_hash_chain_v2.json",
+    "dataset_chain_v3": "qel_master_hash_chain_v3.json"
+  },
+  "profile_hash_sha256_excluding_self": "a94751cdf05df9857751bbec16374cddf26e26714012912010fea8dc7c000bb7",
+  "public_copy_note": "This is a clearly labeled public copy of the historical 2026-03-27 draft. Generic historical workspace-path references are replaced with neutral descriptions. Existing SHA-256 values remain historical source values; they are not verification of this changed copy. No new hash or signature was created. This profile is not activated by its inclusion."
+}

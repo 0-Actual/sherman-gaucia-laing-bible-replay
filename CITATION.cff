@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite the exact source file, version and study record used."
+title: "Sherman Gaucia Laing — Bible Replay"
+type: software
+version: "0.1.0-prepared"
+authors:
+  - family-names: Laing
+    given-names: Sherman Gaucia
+abstract: "Recovered Bible reference services, expanded Genesis studies and a clearly labeled offline replay integration, with source and contribution boundaries preserved."
+license: "LicenseRef-QEL-Noncommercial-Research-Evaluation-1.0"

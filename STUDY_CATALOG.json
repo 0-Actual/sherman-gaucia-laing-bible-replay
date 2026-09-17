@@ -1,0 +1,311 @@
+{
+  "title": "Expanded Genesis studies: recovered public study catalog",
+  "catalog_prepared_date": "2026-09-17",
+  "catalog_status": "New recovery catalog accompanying existing September 10–12, 2026 study artifacts. It is not a claim of prior public availability.",
+  "count_method": "Python str.split(): count maximal whitespace-separated tokens in complete raw Markdown and in JSON lesson_markdown separately. This includes headings and Markdown tokens and is reproducible rather than a linguistic word count.",
+  "baseline_double": {
+    "baseline_tokens": 5386,
+    "expanded_tokens": 10772,
+    "ratio": 2.0,
+    "applies_to": "GEN-1-1-EXPANDED compared with GEN-1-1-BASELINE",
+    "other_verses": "Later expanded lessons continue the long-study format; no original shorter version of each was recovered, so no separate exact doubling claim is made."
+  },
+  "studies": [
+    {
+      "study_id": "GEN-1-1-BASELINE",
+      "title": "Genesis 1:1 - Hebrew, KJV, New Testament witnesses, and preaching",
+      "kind": "baseline",
+      "markdown_file": "studies/QEL_Genesis_1_1_Study_20260910.md",
+      "json_file": "studies/QEL_Genesis_1_1_Study_20260910.json",
+      "source_artifact_created_at_utc": "2026-09-10T14:51:16.625872Z",
+      "source_artifact_created_at_eastern": "2026-09-10T10:51:16.625872-04:00",
+      "date_meaning": "Creation timestamp of the recovered Markdown study artifact; not the first inception of this study method or a public-release timestamp.",
+      "markdown_bytes": 32316,
+      "json_bytes": 39216,
+      "markdown_whitespace_tokens": 5386,
+      "lesson_whitespace_tokens": 5386,
+      "notes_whitespace_tokens": 0,
+      "historically_recorded_validation": {
+        "whitespace_word_count_total": 5386,
+        "whitespace_word_count_preaching": 5054,
+        "hebrew_trace_recalculated": true,
+        "pointed_consonantal_match": true
+      },
+      "source_text_status": {
+        "hebrew_text_status": "Traditional Hebrew text transcribed for this study; no manuscript image or external edition collated in this turn.",
+        "english_text_status": "Selected KJV passages transcribed for this study and independently reviewed against model textual recall; not collated with an external KJV corpus in this turn.",
+        "historical_packet_status": "New lesson; no claim to reproduce or revise a prior packet.",
+        "web_retrieval_used": false
+      },
+      "public_copy_text_changed": false,
+      "completeness": "Entire Markdown and JSON recovered; source-reported bytes match; no truncation.",
+      "owner": "Sherman G. Laing",
+      "project": "Quantum.Earth.Laing",
+      "assistance": "AI-assisted Scripture study; GAUCIA is the designated conversational assistant role, not a separate historical human author."
+    },
+    {
+      "study_id": "GEN-1-1-EXPANDED",
+      "title": "Genesis 1:1 - Expanded Scripture Study",
+      "kind": "expanded",
+      "markdown_file": "studies/Genesis_1_1_Expanded_Study.md",
+      "json_file": "studies/Genesis_1_1_Expanded_Study.json",
+      "source_artifact_created_at_utc": "2026-09-10T15:22:06.567496Z",
+      "source_artifact_created_at_eastern": "2026-09-10T11:22:06.567496-04:00",
+      "date_meaning": "Creation timestamp of the recovered Markdown study artifact; not the first inception of this study method or a public-release timestamp.",
+      "markdown_bytes": 69247,
+      "json_bytes": 75917,
+      "markdown_whitespace_tokens": 10772,
+      "lesson_whitespace_tokens": 10772,
+      "notes_whitespace_tokens": 0,
+      "historically_recorded_validation": {
+        "whitespace_word_count_total": 10772,
+        "whitespace_word_count_preaching": 10503,
+        "hebrew_trace_recalculated": true,
+        "pointed_consonantal_match": true
+      },
+      "source_text_status": {
+        "hebrew_text_status": "Traditional Hebrew text transcribed for this study; no manuscript image or external edition collated in this turn.",
+        "english_text_status": "Selected KJV passages transcribed for this study and reviewed against model textual recall; not collated with an external KJV corpus in this turn.",
+        "web_retrieval_used": false
+      },
+      "public_copy_text_changed": false,
+      "completeness": "Entire Markdown and JSON recovered; source-reported bytes match; no truncation.",
+      "owner": "Sherman G. Laing",
+      "project": "Quantum.Earth.Laing",
+      "assistance": "AI-assisted Scripture study; GAUCIA is the designated conversational assistant role, not a separate historical human author."
+    },
+    {
+      "study_id": "GEN-1-2-EXPANDED",
+      "title": "Genesis 1:2 - Expanded Scripture Study",
+      "kind": "expanded",
+      "markdown_file": "studies/Genesis_1_2_Expanded_Study.md",
+      "json_file": "studies/Genesis_1_2_Expanded_Study.json",
+      "source_artifact_created_at_utc": "2026-09-10T23:41:11.425871Z",
+      "source_artifact_created_at_eastern": "2026-09-10T19:41:11.425871-04:00",
+      "date_meaning": "Creation timestamp of the recovered Markdown study artifact; not the first inception of this study method or a public-release timestamp.",
+      "markdown_bytes": 67518,
+      "json_bytes": 77797,
+      "markdown_whitespace_tokens": 10709,
+      "lesson_whitespace_tokens": 10709,
+      "notes_whitespace_tokens": 0,
+      "historically_recorded_validation": {
+        "whitespace_word_count_total": 10709,
+        "whitespace_word_count_preaching": 10277,
+        "hebrew_trace_recalculated": true,
+        "pointed_consonantal_match": true
+      },
+      "source_text_status": {
+        "hebrew_text_status": "Traditional Hebrew text transcribed for this study; no manuscript image or external edition collated in this turn.",
+        "english_text_status": "Selected KJV passages transcribed for this study and reviewed against model textual recall; not collated with an external KJV corpus in this turn.",
+        "web_retrieval_used": false
+      },
+      "public_copy_text_changed": false,
+      "completeness": "Entire Markdown and JSON recovered; source-reported bytes match; no truncation.",
+      "owner": "Sherman G. Laing",
+      "project": "Quantum.Earth.Laing",
+      "assistance": "AI-assisted Scripture study; GAUCIA is the designated conversational assistant role, not a separate historical human author."
+    },
+    {
+      "study_id": "GEN-1-3-EXPANDED",
+      "title": "Genesis 1:3 - Expanded Scripture Study",
+      "kind": "expanded",
+      "markdown_file": "studies/Genesis_1_3_Expanded_Study.md",
+      "json_file": "studies/Genesis_1_3_Expanded_Study.json",
+      "source_artifact_created_at_utc": "2026-09-11T04:02:29.372557Z",
+      "source_artifact_created_at_eastern": "2026-09-11T00:02:29.372557-04:00",
+      "date_meaning": "Creation timestamp of the recovered Markdown study artifact; not the first inception of this study method or a public-release timestamp.",
+      "markdown_bytes": 67221,
+      "json_bytes": 77488,
+      "markdown_whitespace_tokens": 10664,
+      "lesson_whitespace_tokens": 10392,
+      "notes_whitespace_tokens": 272,
+      "historically_recorded_validation": {
+        "whitespace_word_count_lesson": 10392,
+        "whitespace_word_count_preaching": 9972,
+        "whitespace_word_count_with_source_notes": 10664,
+        "hebrew_trace_recalculated": true,
+        "pointed_consonantal_match": true
+      },
+      "source_text_status": {
+        "web_retrieval_used": true,
+        "sources": [
+          {
+            "label": "Hebrew text: Genesis 1, Mechon-Mamre",
+            "url": "https://mechon-mamre.org/p/pt/pt0101.htm",
+            "use": "Hebrew letters and vowel points; modern punctuation normalized; cantillation and meteg omitted."
+          },
+          {
+            "label": "KJV: Genesis 1",
+            "url": "https://www.biblegateway.com/passage/?search=Genesis+1&version=KJV",
+            "use": "Genesis quotations and chapter context."
+          },
+          {
+            "label": "John C. Beckman, Hebrew 2 Bible Notes, pp. 1-3",
+            "url": "https://hebrewsyntax.org/rbh/RBH_Bible_Notes.pdf",
+            "use": "Parsing of Genesis 1:3 verbs."
+          },
+          {
+            "label": "Gesenius' Hebrew Grammar, section 109b",
+            "url": "https://en.wikisource.org/wiki/Gesenius%27_Hebrew_Grammar/109._Use_of_the_Jussive",
+            "use": "Jussive creative command in Genesis 1:3."
+          },
+          {
+            "label": "LSJ, light: phos, via Perseus",
+            "url": "https://atlas.perseus.tufts.edu/dictionaries/entry/urn:cite2:scaife-viewer:dictionaries.v1:lsj-n112863/",
+            "use": "Greek dictionary form and meaning."
+          },
+          {
+            "label": "Goodell, Greek numerals, via Dickinson College Commentaries",
+            "url": "https://dcc.dickinson.edu/sites/default/files/numeral_adj_cardinal_ordinal_30_10000.pdf",
+            "use": "Greek letter values phi, omega, and sigma."
+          },
+          {
+            "label": "KJV: John 1",
+            "url": "https://www.biblegateway.com/passage/?search=John+1&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: John 8:12",
+            "url": "https://www.biblegateway.com/passage/?search=John+8:12&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: 2 Corinthians 4",
+            "url": "https://www.biblegateway.com/passage/?search=2+Corinthians+4&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Colossians 1",
+            "url": "https://www.biblegateway.com/passage/?search=Colossians+1&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Ephesians 5",
+            "url": "https://www.biblegateway.com/passage/?search=Ephesians+5&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: 1 John 1",
+            "url": "https://www.biblegateway.com/passage/?search=1+John+1&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Revelation 21",
+            "url": "https://www.biblegateway.com/passage/?search=Revelation+21&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Revelation 22",
+            "url": "https://www.biblegateway.com/passage/?search=Revelation+22&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Psalm 33",
+            "url": "https://www.biblegateway.com/passage/?search=Psalm+33&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Psalm 119",
+            "url": "https://www.biblegateway.com/passage/?search=Psalm+119&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Isaiah 55",
+            "url": "https://www.biblegateway.com/passage/?search=Isaiah+55&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          },
+          {
+            "label": "KJV: Hebrews 11:3",
+            "url": "https://www.biblegateway.com/passage/?search=Hebrews+11:3&version=KJV",
+            "use": "Quoted words and the local context discussed in the lesson."
+          }
+        ],
+        "checked_date_utc": "2026-09-11",
+        "text_status": "Displayed Hebrew letters and vowels checked against Mechon-Mamre; KJV quotations checked against Bible Gateway; no manuscript images collated."
+      },
+      "public_copy_text_changed": false,
+      "completeness": "Entire Markdown and JSON recovered; source-reported bytes match; no truncation.",
+      "owner": "Sherman G. Laing",
+      "project": "Quantum.Earth.Laing",
+      "assistance": "AI-assisted Scripture study; GAUCIA is the designated conversational assistant role, not a separate historical human author."
+    },
+    {
+      "study_id": "GEN-1-4-EXPANDED",
+      "title": "Genesis 1:4 - Expanded Scripture Study",
+      "kind": "expanded",
+      "markdown_file": "studies/Genesis_1_4_Expanded_Study.md",
+      "json_file": "studies/Genesis_1_4_Expanded_Study.json",
+      "source_artifact_created_at_utc": "2026-09-11T18:59:34.198635Z",
+      "source_artifact_created_at_eastern": "2026-09-11T14:59:34.198635-04:00",
+      "date_meaning": "Creation timestamp of the recovered Markdown study artifact; not the first inception of this study method or a public-release timestamp.",
+      "markdown_bytes": 65108,
+      "json_bytes": 75117,
+      "markdown_whitespace_tokens": 10463,
+      "lesson_whitespace_tokens": 10281,
+      "notes_whitespace_tokens": 182,
+      "historically_recorded_validation": {
+        "whitespace_word_count_lesson": 10281,
+        "whitespace_word_count_preaching": 9785,
+        "whitespace_word_count_with_notes": 10463,
+        "hebrew_trace_recalculated": true,
+        "pointed_consonantal_match": true,
+        "independent_internal_review_completed": true
+      },
+      "source_text_status": {
+        "new_web_retrieval_used": false,
+        "prior_conversation_sources_used": [
+          {
+            "label": "Hebrew Genesis 1, previously retrieved",
+            "url": "https://mechon-mamre.org/p/pt/pt0101.htm"
+          },
+          {
+            "label": "KJV Genesis 1, previously retrieved",
+            "url": "https://www.biblegateway.com/passage/?search=Genesis+1&version=KJV"
+          }
+        ],
+        "text_status": "Genesis 1:4 compared with chapter text already in conversation. Other KJV passages transcribed from textual knowledge and internally reviewed; no fresh external corpus or manuscript collation.",
+        "language_review": "Independent internal review of Hebrew grammar, spelling, counting, and selected Greek form."
+      },
+      "public_copy_text_changed": false,
+      "completeness": "Entire Markdown and JSON recovered; source-reported bytes match; no truncation.",
+      "owner": "Sherman G. Laing",
+      "project": "Quantum.Earth.Laing",
+      "assistance": "AI-assisted Scripture study; GAUCIA is the designated conversational assistant role, not a separate historical human author."
+    },
+    {
+      "study_id": "GEN-1-5-EXPANDED",
+      "title": "Genesis 1:5 - Expanded Scripture Study",
+      "kind": "expanded",
+      "markdown_file": "studies/Genesis_1_5_Expanded_Study.md",
+      "json_file": "studies/Genesis_1_5_Expanded_Study.json",
+      "source_artifact_created_at_utc": "2026-09-12T16:41:56.019046Z",
+      "source_artifact_created_at_eastern": "2026-09-12T12:41:56.019046-04:00",
+      "date_meaning": "Creation timestamp of the recovered Markdown study artifact; not the first inception of this study method or a public-release timestamp.",
+      "markdown_bytes": 65150,
+      "json_bytes": 75196,
+      "markdown_whitespace_tokens": 10399,
+      "lesson_whitespace_tokens": 10192,
+      "notes_whitespace_tokens": 207,
+      "historically_recorded_validation": {
+        "whitespace_word_count_lesson": 10192,
+        "whitespace_word_count_preaching": 9638,
+        "whitespace_word_count_with_notes": 10399,
+        "hebrew_trace_recalculated": true,
+        "pointed_consonantal_match": true,
+        "independent_internal_review_completed": true
+      },
+      "source_text_status": {
+        "new_web_retrieval_used": false,
+        "text_status": "Genesis 1:5 compared with chapter text already in conversation. Other KJV passages transcribed from textual knowledge and internally reviewed; no fresh external corpus or manuscript collation.",
+        "language_review": "Independent internal review of Hebrew grammar, spelling, counting, and selected Greek form."
+      },
+      "public_copy_text_changed": false,
+      "completeness": "Entire Markdown and JSON recovered; source-reported bytes match; no truncation.",
+      "owner": "Sherman G. Laing",
+      "project": "Quantum.Earth.Laing",
+      "assistance": "AI-assisted Scripture study; GAUCIA is the designated conversational assistant role, not a separate historical human author."
+    }
+  ],
+  "privacy": "Study-only artifacts. No raw conversation archive, private conversation identifiers, account credentials, source locators, or private research code.",
+  "integrity": "No new cryptographic identity or owner signature generated. Byte-length and source-completeness checks are documented, not represented as cryptographic authentication."
+}

@@ -1,0 +1,7535 @@
+{
+  "schema": "qel-bible-offline-replay/1",
+  "adapter_created": "2026-09-17",
+  "owner": "Sherman G. Laing",
+  "project": "Quantum.Earth.Laing",
+  "status": "PASS",
+  "engine": {
+    "file": "qel_word_core_reference_v2.py",
+    "status": "recovered earlier clean-room WORD_CORE reference v2; not missing historical v1",
+    "source_unchanged_by_adapter": true
+  },
+  "execution": {
+    "network_required": false,
+    "model_inference": false,
+    "new_hashes_or_signatures": false,
+    "new_greek_numeric_profile": true
+  },
+  "identities_note": "Source/transform/profile strings are descriptive labels, not cryptographic identities or owner signatures",
+  "normalization": {
+    "display": "Saved bytes; no display normalization",
+    "hebrew_calculation": "Recovered engine NFD; Hebrew combining marks removed; punctuation removed; whitespace collapsed",
+    "nfc_policy": "Canonically equivalent NFC and NFD input must yield the same consonantal result",
+    "maqaf": "Split for lexical source comparisons; join replayed separately to verify total invariance",
+    "final_letters": "Standard/ordinal/reduced use ordinary base letters; Gadol uses 500,600,700,800,900",
+    "reduced": "Sum of each ordinary letter value's digital root; not digital root of the full verse",
+    "input_guard": "New wrapper rejects foreign letters, numbers, controls, non-Hebrew combining marks, and symbols in Hebrew input"
+  },
+  "baseline": {
+    "passage": "Genesis 1:1",
+    "source_file": "QEL_Genesis_1_1_Study_20260910.json",
+    "state": "PASS",
+    "source_and_display": {
+      "hebrew_pointed": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
+      "kjv": "In the beginning God created the heaven and the earth.",
+      "transliteration": "Bereshit bara Elohim et hashshamayim ve'et ha'aretz.",
+      "new_testament_witnesses": [
+        "John 1:1-3",
+        "John 1:14",
+        "Colossians 1:16-17",
+        "Hebrews 11:3",
+        "Acts 17:24-25",
+        "Revelation 4:11"
+      ]
+    },
+    "calculation": {
+      "hebrew_lanes": {
+        "standard": {
+          "schema": "qel.word-core.reference-result/v2",
+          "identities": {
+            "source_id": "public-study/QEL_Genesis_1_1_Study_20260910.json",
+            "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+            "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+            "language": "hebrew",
+            "scheme": "standard"
+          },
+          "maqaf_mode": "split",
+          "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+          "word_count": 7,
+          "letter_count": 28,
+          "total": 2701,
+          "binary": "101010001101",
+          "hex": "A8D",
+          "octal": "5215",
+          "binary_round_trip": 2701,
+          "rows": [
+            {
+              "token": "בראשית",
+              "letters": [
+                "ב",
+                "ר",
+                "א",
+                "ש",
+                "י",
+                "ת"
+              ],
+              "values": [
+                2,
+                200,
+                1,
+                300,
+                10,
+                400
+              ],
+              "subtotal": 913,
+              "terminal_katan": 4
+            },
+            {
+              "token": "ברא",
+              "letters": [
+                "ב",
+                "ר",
+                "א"
+              ],
+              "values": [
+                2,
+                200,
+                1
+              ],
+              "subtotal": 203,
+              "terminal_katan": 5
+            },
+            {
+              "token": "אלהים",
+              "letters": [
+                "א",
+                "ל",
+                "ה",
+                "י",
+                "ם"
+              ],
+              "values": [
+                1,
+                30,
+                5,
+                10,
+                40
+              ],
+              "subtotal": 86,
+              "terminal_katan": 5
+            },
+            {
+              "token": "את",
+              "letters": [
+                "א",
+                "ת"
+              ],
+              "values": [
+                1,
+                400
+              ],
+              "subtotal": 401,
+              "terminal_katan": 5
+            },
+            {
+              "token": "השמים",
+              "letters": [
+                "ה",
+                "ש",
+                "מ",
+                "י",
+                "ם"
+              ],
+              "values": [
+                5,
+                300,
+                40,
+                10,
+                40
+              ],
+              "subtotal": 395,
+              "terminal_katan": 8
+            },
+            {
+              "token": "ואת",
+              "letters": [
+                "ו",
+                "א",
+                "ת"
+              ],
+              "values": [
+                6,
+                1,
+                400
+              ],
+              "subtotal": 407,
+              "terminal_katan": 2
+            },
+            {
+              "token": "הארץ",
+              "letters": [
+                "ה",
+                "א",
+                "ר",
+                "ץ"
+              ],
+              "values": [
+                5,
+                1,
+                200,
+                90
+              ],
+              "subtotal": 296,
+              "terminal_katan": 8
+            }
+          ]
+        },
+        "gadol": {
+          "schema": "qel.word-core.reference-result/v2",
+          "identities": {
+            "source_id": "public-study/QEL_Genesis_1_1_Study_20260910.json",
+            "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+            "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+            "language": "hebrew",
+            "scheme": "gadol"
+          },
+          "maqaf_mode": "split",
+          "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+          "word_count": 7,
+          "letter_count": 28,
+          "total": 4631,
+          "binary": "1001000010111",
+          "hex": "1217",
+          "octal": "11027",
+          "binary_round_trip": 4631,
+          "rows": [
+            {
+              "token": "בראשית",
+              "letters": [
+                "ב",
+                "ר",
+                "א",
+                "ש",
+                "י",
+                "ת"
+              ],
+              "values": [
+                2,
+                200,
+                1,
+                300,
+                10,
+                400
+              ],
+              "subtotal": 913,
+              "terminal_katan": 4
+            },
+            {
+              "token": "ברא",
+              "letters": [
+                "ב",
+                "ר",
+                "א"
+              ],
+              "values": [
+                2,
+                200,
+                1
+              ],
+              "subtotal": 203,
+              "terminal_katan": 5
+            },
+            {
+              "token": "אלהים",
+              "letters": [
+                "א",
+                "ל",
+                "ה",
+                "י",
+                "ם"
+              ],
+              "values": [
+                1,
+                30,
+                5,
+                10,
+                600
+              ],
+              "subtotal": 646,
+              "terminal_katan": 7
+            },
+            {
+              "token": "את",
+              "letters": [
+                "א",
+                "ת"
+              ],
+              "values": [
+                1,
+                400
+              ],
+              "subtotal": 401,
+              "terminal_katan": 5
+            },
+            {
+              "token": "השמים",
+              "letters": [
+                "ה",
+                "ש",
+                "מ",
+                "י",
+                "ם"
+              ],
+              "values": [
+                5,
+                300,
+                40,
+                10,
+                600
+              ],
+              "subtotal": 955,
+              "terminal_katan": 1
+            },
+            {
+              "token": "ואת",
+              "letters": [
+                "ו",
+                "א",
+                "ת"
+              ],
+              "values": [
+                6,
+                1,
+                400
+              ],
+              "subtotal": 407,
+              "terminal_katan": 2
+            },
+            {
+              "token": "הארץ",
+              "letters": [
+                "ה",
+                "א",
+                "ר",
+                "ץ"
+              ],
+              "values": [
+                5,
+                1,
+                200,
+                900
+              ],
+              "subtotal": 1106,
+              "terminal_katan": 8
+            }
+          ]
+        },
+        "ordinal": {
+          "schema": "qel.word-core.reference-result/v2",
+          "identities": {
+            "source_id": "public-study/QEL_Genesis_1_1_Study_20260910.json",
+            "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+            "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+            "language": "hebrew",
+            "scheme": "ordinal"
+          },
+          "maqaf_mode": "split",
+          "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+          "word_count": 7,
+          "letter_count": 28,
+          "total": 298,
+          "binary": "100101010",
+          "hex": "12A",
+          "octal": "452",
+          "binary_round_trip": 298,
+          "rows": [
+            {
+              "token": "בראשית",
+              "letters": [
+                "ב",
+                "ר",
+                "א",
+                "ש",
+                "י",
+                "ת"
+              ],
+              "values": [
+                2,
+                20,
+                1,
+                21,
+                10,
+                22
+              ],
+              "subtotal": 76,
+              "terminal_katan": 4
+            },
+            {
+              "token": "ברא",
+              "letters": [
+                "ב",
+                "ר",
+                "א"
+              ],
+              "values": [
+                2,
+                20,
+                1
+              ],
+              "subtotal": 23,
+              "terminal_katan": 5
+            },
+            {
+              "token": "אלהים",
+              "letters": [
+                "א",
+                "ל",
+                "ה",
+                "י",
+                "ם"
+              ],
+              "values": [
+                1,
+                12,
+                5,
+                10,
+                13
+              ],
+              "subtotal": 41,
+              "terminal_katan": 5
+            },
+            {
+              "token": "את",
+              "letters": [
+                "א",
+                "ת"
+              ],
+              "values": [
+                1,
+                22
+              ],
+              "subtotal": 23,
+              "terminal_katan": 5
+            },
+            {
+              "token": "השמים",
+              "letters": [
+                "ה",
+                "ש",
+                "מ",
+                "י",
+                "ם"
+              ],
+              "values": [
+                5,
+                21,
+                13,
+                10,
+                13
+              ],
+              "subtotal": 62,
+              "terminal_katan": 8
+            },
+            {
+              "token": "ואת",
+              "letters": [
+                "ו",
+                "א",
+                "ת"
+              ],
+              "values": [
+                6,
+                1,
+                22
+              ],
+              "subtotal": 29,
+              "terminal_katan": 2
+            },
+            {
+              "token": "הארץ",
+              "letters": [
+                "ה",
+                "א",
+                "ר",
+                "ץ"
+              ],
+              "values": [
+                5,
+                1,
+                20,
+                18
+              ],
+              "subtotal": 44,
+              "terminal_katan": 8
+            }
+          ]
+        },
+        "reduced": {
+          "schema": "qel.word-core.reference-result/v2",
+          "identities": {
+            "source_id": "public-study/QEL_Genesis_1_1_Study_20260910.json",
+            "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+            "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+            "language": "hebrew",
+            "scheme": "reduced"
+          },
+          "maqaf_mode": "split",
+          "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+          "word_count": 7,
+          "letter_count": 28,
+          "total": 82,
+          "binary": "1010010",
+          "hex": "52",
+          "octal": "122",
+          "binary_round_trip": 82,
+          "rows": [
+            {
+              "token": "בראשית",
+              "letters": [
+                "ב",
+                "ר",
+                "א",
+                "ש",
+                "י",
+                "ת"
+              ],
+              "values": [
+                2,
+                2,
+                1,
+                3,
+                1,
+                4
+              ],
+              "subtotal": 13,
+              "terminal_katan": 4
+            },
+            {
+              "token": "ברא",
+              "letters": [
+                "ב",
+                "ר",
+                "א"
+              ],
+              "values": [
+                2,
+                2,
+                1
+              ],
+              "subtotal": 5,
+              "terminal_katan": 5
+            },
+            {
+              "token": "אלהים",
+              "letters": [
+                "א",
+                "ל",
+                "ה",
+                "י",
+                "ם"
+              ],
+              "values": [
+                1,
+                3,
+                5,
+                1,
+                4
+              ],
+              "subtotal": 14,
+              "terminal_katan": 5
+            },
+            {
+              "token": "את",
+              "letters": [
+                "א",
+                "ת"
+              ],
+              "values": [
+                1,
+                4
+              ],
+              "subtotal": 5,
+              "terminal_katan": 5
+            },
+            {
+              "token": "השמים",
+              "letters": [
+                "ה",
+                "ש",
+                "מ",
+                "י",
+                "ם"
+              ],
+              "values": [
+                5,
+                3,
+                4,
+                1,
+                4
+              ],
+              "subtotal": 17,
+              "terminal_katan": 8
+            },
+            {
+              "token": "ואת",
+              "letters": [
+                "ו",
+                "א",
+                "ת"
+              ],
+              "values": [
+                6,
+                1,
+                4
+              ],
+              "subtotal": 11,
+              "terminal_katan": 2
+            },
+            {
+              "token": "הארץ",
+              "letters": [
+                "ה",
+                "א",
+                "ר",
+                "ץ"
+              ],
+              "values": [
+                5,
+                1,
+                2,
+                9
+              ],
+              "subtotal": 17,
+              "terminal_katan": 8
+            }
+          ]
+        }
+      },
+      "maqaf_join_word_count": 7,
+      "declared_clause_grouping": null,
+      "selected_greek": {
+        "implementation": "new-20260917-selected-word-reference",
+        "frozen_historical_numeric_profile_recovered": false,
+        "historical_profile_note": "A historical draft Greek map is preserved separately; its allow_execution is false and its primary-text identity is unset. This new selected-word profile does not activate that draft.",
+        "input": "λόγος",
+        "calculation_surface": "λογοσ",
+        "trace": [
+          {
+            "letter": "λ",
+            "value": 30
+          },
+          {
+            "letter": "ο",
+            "value": 70
+          },
+          {
+            "letter": "γ",
+            "value": 3
+          },
+          {
+            "letter": "ο",
+            "value": 70
+          },
+          {
+            "letter": "σ",
+            "value": 200
+          }
+        ],
+        "total": 373
+      }
+    },
+    "interpretation": {
+      "replayed_verbatim": true,
+      "authority": "Saved exposition; arithmetic does not verify theology or divine revelation",
+      "model_generation_replayed": false
+    },
+    "word_counts": {
+      "method": "Python str.split() on saved Unicode text; count tokens; punctuation is not stripped",
+      "lesson_words": 5386,
+      "source_declared_lesson_words": 5386,
+      "markdown_words_including_any_notes": 5386,
+      "historical_preaching_count_not_recomputed": 5054,
+      "historical_preaching_count_note": "Source has no explicit machine-readable preaching boundary",
+      "baseline_genesis_1_1_lesson_words": 5386,
+      "ratio_to_genesis_1_1_baseline": 1.0,
+      "equals_twice_genesis_1_1_baseline": false,
+      "baseline_scope": "The recovered Genesis 1:1 baseline only; no separate prior baseline is claimed for other verses"
+    },
+    "checks": [
+      {
+        "check": "pointed_to_consonantal_surface",
+        "passed": true,
+        "actual": "בראשית ברא אלהים את השמים ואת הארץ",
+        "expected": "בראשית ברא אלהים את השמים ואת הארץ"
+      },
+      {
+        "check": "standard_total",
+        "passed": true,
+        "actual": 2701,
+        "expected": 2701
+      },
+      {
+        "check": "letter_count",
+        "passed": true,
+        "actual": 28,
+        "expected": 28
+      },
+      {
+        "check": "lexical_word_count",
+        "passed": true,
+        "actual": 7,
+        "expected": 7
+      },
+      {
+        "check": "word_spelling_trace",
+        "passed": true,
+        "actual": [
+          "בראשית",
+          "ברא",
+          "אלהים",
+          "את",
+          "השמים",
+          "ואת",
+          "הארץ"
+        ],
+        "expected": [
+          "בראשית",
+          "ברא",
+          "אלהים",
+          "את",
+          "השמים",
+          "ואת",
+          "הארץ"
+        ]
+      },
+      {
+        "check": "word_total_trace",
+        "passed": true,
+        "actual": [
+          913,
+          203,
+          86,
+          401,
+          395,
+          407,
+          296
+        ],
+        "expected": [
+          913,
+          203,
+          86,
+          401,
+          395,
+          407,
+          296
+        ]
+      },
+      {
+        "check": "letter_value_trace",
+        "passed": true,
+        "actual": [
+          [
+            2,
+            200,
+            1,
+            300,
+            10,
+            400
+          ],
+          [
+            2,
+            200,
+            1
+          ],
+          [
+            1,
+            30,
+            5,
+            10,
+            40
+          ],
+          [
+            1,
+            400
+          ],
+          [
+            5,
+            300,
+            40,
+            10,
+            40
+          ],
+          [
+            6,
+            1,
+            400
+          ],
+          [
+            5,
+            1,
+            200,
+            90
+          ]
+        ],
+        "expected": [
+          [
+            2,
+            200,
+            1,
+            300,
+            10,
+            400
+          ],
+          [
+            2,
+            200,
+            1
+          ],
+          [
+            1,
+            30,
+            5,
+            10,
+            40
+          ],
+          [
+            1,
+            400
+          ],
+          [
+            5,
+            300,
+            40,
+            10,
+            40
+          ],
+          [
+            6,
+            1,
+            400
+          ],
+          [
+            5,
+            1,
+            200,
+            90
+          ]
+        ]
+      },
+      {
+        "check": "letter_spelling_trace",
+        "passed": true,
+        "actual": [
+          [
+            "ב",
+            "ר",
+            "א",
+            "ש",
+            "י",
+            "ת"
+          ],
+          [
+            "ב",
+            "ר",
+            "א"
+          ],
+          [
+            "א",
+            "ל",
+            "ה",
+            "י",
+            "ם"
+          ],
+          [
+            "א",
+            "ת"
+          ],
+          [
+            "ה",
+            "ש",
+            "מ",
+            "י",
+            "ם"
+          ],
+          [
+            "ו",
+            "א",
+            "ת"
+          ],
+          [
+            "ה",
+            "א",
+            "ר",
+            "ץ"
+          ]
+        ],
+        "expected": [
+          [
+            "ב",
+            "ר",
+            "א",
+            "ש",
+            "י",
+            "ת"
+          ],
+          [
+            "ב",
+            "ר",
+            "א"
+          ],
+          [
+            "א",
+            "ל",
+            "ה",
+            "י",
+            "ם"
+          ],
+          [
+            "א",
+            "ת"
+          ],
+          [
+            "ה",
+            "ש",
+            "מ",
+            "י",
+            "ם"
+          ],
+          [
+            "ו",
+            "א",
+            "ת"
+          ],
+          [
+            "ה",
+            "א",
+            "ר",
+            "ץ"
+          ]
+        ]
+      },
+      {
+        "check": "NFC_and_NFD_equivalence",
+        "passed": true,
+        "actual": "בראשית ברא אלהים את השמים ואת הארץ",
+        "expected": "בראשית ברא אלהים את השמים ואת הארץ"
+      },
+      {
+        "check": "maqaf_preserves_all_four_totals",
+        "passed": true,
+        "actual": [
+          2701,
+          4631,
+          298,
+          82
+        ],
+        "expected": [
+          2701,
+          4631,
+          298,
+          82
+        ]
+      },
+      {
+        "check": "declared_factor_product",
+        "passed": true,
+        "actual": 2701,
+        "expected": 2701
+      },
+      {
+        "check": "selected_greek_total",
+        "passed": true,
+        "actual": 373,
+        "expected": 373
+      },
+      {
+        "check": "selected_greek_letter_values",
+        "passed": true,
+        "actual": [
+          30,
+          70,
+          3,
+          70,
+          200
+        ],
+        "expected": [
+          30,
+          70,
+          3,
+          70,
+          200
+        ]
+      },
+      {
+        "check": "selected_greek_letter_spellings",
+        "passed": true,
+        "actual": [
+          "λ",
+          "ο",
+          "γ",
+          "ο",
+          "σ"
+        ],
+        "expected": [
+          "λ",
+          "ο",
+          "γ",
+          "ο",
+          "σ"
+        ]
+      },
+      {
+        "check": "saved_lesson_word_count",
+        "passed": true,
+        "actual": 5386,
+        "expected": 5386
+      },
+      {
+        "check": "saved_markdown_word_count",
+        "passed": true,
+        "actual": 5386,
+        "expected": 5386
+      },
+      {
+        "check": "saved_markdown_preserves_lesson",
+        "passed": true,
+        "actual": true,
+        "expected": true
+      }
+    ]
+  },
+  "studies": [
+    {
+      "passage": "Genesis 1:1",
+      "source_file": "Genesis_1_1_Expanded_Study.json",
+      "state": "PASS",
+      "source_and_display": {
+        "hebrew_pointed": "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
+        "kjv": "In the beginning God created the heaven and the earth.",
+        "transliteration": "Bereshit bara Elohim et hashshamayim ve'et ha'aretz.",
+        "new_testament_witnesses": [
+          "John 1:1-3",
+          "John 1:14",
+          "Colossians 1:16-17",
+          "Hebrews 11:3",
+          "Acts 17:24-25",
+          "Revelation 4:11",
+          "2 Corinthians 4:6",
+          "Ephesians 2:10"
+        ]
+      },
+      "calculation": {
+        "hebrew_lanes": {
+          "standard": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_1_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "standard"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+            "word_count": 7,
+            "letter_count": 28,
+            "total": 2701,
+            "binary": "101010001101",
+            "hex": "A8D",
+            "octal": "5215",
+            "binary_round_trip": 2701,
+            "rows": [
+              {
+                "token": "בראשית",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א",
+                  "ש",
+                  "י",
+                  "ת"
+                ],
+                "values": [
+                  2,
+                  200,
+                  1,
+                  300,
+                  10,
+                  400
+                ],
+                "subtotal": 913,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ברא",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  2,
+                  200,
+                  1
+                ],
+                "subtotal": 203,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  40
+                ],
+                "subtotal": 86,
+                "terminal_katan": 5
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  400
+                ],
+                "subtotal": 401,
+                "terminal_katan": 5
+              },
+              {
+                "token": "השמים",
+                "letters": [
+                  "ה",
+                  "ש",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  300,
+                  40,
+                  10,
+                  40
+                ],
+                "subtotal": 395,
+                "terminal_katan": 8
+              },
+              {
+                "token": "ואת",
+                "letters": [
+                  "ו",
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  6,
+                  1,
+                  400
+                ],
+                "subtotal": 407,
+                "terminal_katan": 2
+              },
+              {
+                "token": "הארץ",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  5,
+                  1,
+                  200,
+                  90
+                ],
+                "subtotal": 296,
+                "terminal_katan": 8
+              }
+            ]
+          },
+          "gadol": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_1_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "gadol"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+            "word_count": 7,
+            "letter_count": 28,
+            "total": 4631,
+            "binary": "1001000010111",
+            "hex": "1217",
+            "octal": "11027",
+            "binary_round_trip": 4631,
+            "rows": [
+              {
+                "token": "בראשית",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א",
+                  "ש",
+                  "י",
+                  "ת"
+                ],
+                "values": [
+                  2,
+                  200,
+                  1,
+                  300,
+                  10,
+                  400
+                ],
+                "subtotal": 913,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ברא",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  2,
+                  200,
+                  1
+                ],
+                "subtotal": 203,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  600
+                ],
+                "subtotal": 646,
+                "terminal_katan": 7
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  400
+                ],
+                "subtotal": 401,
+                "terminal_katan": 5
+              },
+              {
+                "token": "השמים",
+                "letters": [
+                  "ה",
+                  "ש",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  300,
+                  40,
+                  10,
+                  600
+                ],
+                "subtotal": 955,
+                "terminal_katan": 1
+              },
+              {
+                "token": "ואת",
+                "letters": [
+                  "ו",
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  6,
+                  1,
+                  400
+                ],
+                "subtotal": 407,
+                "terminal_katan": 2
+              },
+              {
+                "token": "הארץ",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  5,
+                  1,
+                  200,
+                  900
+                ],
+                "subtotal": 1106,
+                "terminal_katan": 8
+              }
+            ]
+          },
+          "ordinal": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_1_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "ordinal"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+            "word_count": 7,
+            "letter_count": 28,
+            "total": 298,
+            "binary": "100101010",
+            "hex": "12A",
+            "octal": "452",
+            "binary_round_trip": 298,
+            "rows": [
+              {
+                "token": "בראשית",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א",
+                  "ש",
+                  "י",
+                  "ת"
+                ],
+                "values": [
+                  2,
+                  20,
+                  1,
+                  21,
+                  10,
+                  22
+                ],
+                "subtotal": 76,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ברא",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  2,
+                  20,
+                  1
+                ],
+                "subtotal": 23,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  12,
+                  5,
+                  10,
+                  13
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  22
+                ],
+                "subtotal": 23,
+                "terminal_katan": 5
+              },
+              {
+                "token": "השמים",
+                "letters": [
+                  "ה",
+                  "ש",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  21,
+                  13,
+                  10,
+                  13
+                ],
+                "subtotal": 62,
+                "terminal_katan": 8
+              },
+              {
+                "token": "ואת",
+                "letters": [
+                  "ו",
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  6,
+                  1,
+                  22
+                ],
+                "subtotal": 29,
+                "terminal_katan": 2
+              },
+              {
+                "token": "הארץ",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  5,
+                  1,
+                  20,
+                  18
+                ],
+                "subtotal": 44,
+                "terminal_katan": 8
+              }
+            ]
+          },
+          "reduced": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_1_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "reduced"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "בראשית ברא אלהים את השמים ואת הארץ",
+            "word_count": 7,
+            "letter_count": 28,
+            "total": 82,
+            "binary": "1010010",
+            "hex": "52",
+            "octal": "122",
+            "binary_round_trip": 82,
+            "rows": [
+              {
+                "token": "בראשית",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א",
+                  "ש",
+                  "י",
+                  "ת"
+                ],
+                "values": [
+                  2,
+                  2,
+                  1,
+                  3,
+                  1,
+                  4
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ברא",
+                "letters": [
+                  "ב",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  2,
+                  2,
+                  1
+                ],
+                "subtotal": 5,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  3,
+                  5,
+                  1,
+                  4
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  4
+                ],
+                "subtotal": 5,
+                "terminal_katan": 5
+              },
+              {
+                "token": "השמים",
+                "letters": [
+                  "ה",
+                  "ש",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  3,
+                  4,
+                  1,
+                  4
+                ],
+                "subtotal": 17,
+                "terminal_katan": 8
+              },
+              {
+                "token": "ואת",
+                "letters": [
+                  "ו",
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  6,
+                  1,
+                  4
+                ],
+                "subtotal": 11,
+                "terminal_katan": 2
+              },
+              {
+                "token": "הארץ",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  5,
+                  1,
+                  2,
+                  9
+                ],
+                "subtotal": 17,
+                "terminal_katan": 8
+              }
+            ]
+          }
+        },
+        "maqaf_join_word_count": 7,
+        "declared_clause_grouping": null,
+        "selected_greek": {
+          "implementation": "new-20260917-selected-word-reference",
+          "frozen_historical_numeric_profile_recovered": false,
+          "historical_profile_note": "A historical draft Greek map is preserved separately; its allow_execution is false and its primary-text identity is unset. This new selected-word profile does not activate that draft.",
+          "input": "λόγος",
+          "calculation_surface": "λογοσ",
+          "trace": [
+            {
+              "letter": "λ",
+              "value": 30
+            },
+            {
+              "letter": "ο",
+              "value": 70
+            },
+            {
+              "letter": "γ",
+              "value": 3
+            },
+            {
+              "letter": "ο",
+              "value": 70
+            },
+            {
+              "letter": "σ",
+              "value": 200
+            }
+          ],
+          "total": 373
+        }
+      },
+      "interpretation": {
+        "replayed_verbatim": true,
+        "authority": "Saved exposition; arithmetic does not verify theology or divine revelation",
+        "model_generation_replayed": false
+      },
+      "word_counts": {
+        "method": "Python str.split() on saved Unicode text; count tokens; punctuation is not stripped",
+        "lesson_words": 10772,
+        "source_declared_lesson_words": 10772,
+        "markdown_words_including_any_notes": 10772,
+        "historical_preaching_count_not_recomputed": 10503,
+        "historical_preaching_count_note": "Source has no explicit machine-readable preaching boundary",
+        "baseline_genesis_1_1_lesson_words": 5386,
+        "ratio_to_genesis_1_1_baseline": 2.0,
+        "equals_twice_genesis_1_1_baseline": true,
+        "baseline_scope": "The recovered Genesis 1:1 baseline only; no separate prior baseline is claimed for other verses"
+      },
+      "checks": [
+        {
+          "check": "pointed_to_consonantal_surface",
+          "passed": true,
+          "actual": "בראשית ברא אלהים את השמים ואת הארץ",
+          "expected": "בראשית ברא אלהים את השמים ואת הארץ"
+        },
+        {
+          "check": "standard_total",
+          "passed": true,
+          "actual": 2701,
+          "expected": 2701
+        },
+        {
+          "check": "letter_count",
+          "passed": true,
+          "actual": 28,
+          "expected": 28
+        },
+        {
+          "check": "lexical_word_count",
+          "passed": true,
+          "actual": 7,
+          "expected": 7
+        },
+        {
+          "check": "word_spelling_trace",
+          "passed": true,
+          "actual": [
+            "בראשית",
+            "ברא",
+            "אלהים",
+            "את",
+            "השמים",
+            "ואת",
+            "הארץ"
+          ],
+          "expected": [
+            "בראשית",
+            "ברא",
+            "אלהים",
+            "את",
+            "השמים",
+            "ואת",
+            "הארץ"
+          ]
+        },
+        {
+          "check": "word_total_trace",
+          "passed": true,
+          "actual": [
+            913,
+            203,
+            86,
+            401,
+            395,
+            407,
+            296
+          ],
+          "expected": [
+            913,
+            203,
+            86,
+            401,
+            395,
+            407,
+            296
+          ]
+        },
+        {
+          "check": "letter_value_trace",
+          "passed": true,
+          "actual": [
+            [
+              2,
+              200,
+              1,
+              300,
+              10,
+              400
+            ],
+            [
+              2,
+              200,
+              1
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              1,
+              400
+            ],
+            [
+              5,
+              300,
+              40,
+              10,
+              40
+            ],
+            [
+              6,
+              1,
+              400
+            ],
+            [
+              5,
+              1,
+              200,
+              90
+            ]
+          ],
+          "expected": [
+            [
+              2,
+              200,
+              1,
+              300,
+              10,
+              400
+            ],
+            [
+              2,
+              200,
+              1
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              1,
+              400
+            ],
+            [
+              5,
+              300,
+              40,
+              10,
+              40
+            ],
+            [
+              6,
+              1,
+              400
+            ],
+            [
+              5,
+              1,
+              200,
+              90
+            ]
+          ]
+        },
+        {
+          "check": "letter_spelling_trace",
+          "passed": true,
+          "actual": [
+            [
+              "ב",
+              "ר",
+              "א",
+              "ש",
+              "י",
+              "ת"
+            ],
+            [
+              "ב",
+              "ר",
+              "א"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "א",
+              "ת"
+            ],
+            [
+              "ה",
+              "ש",
+              "מ",
+              "י",
+              "ם"
+            ],
+            [
+              "ו",
+              "א",
+              "ת"
+            ],
+            [
+              "ה",
+              "א",
+              "ר",
+              "ץ"
+            ]
+          ],
+          "expected": [
+            [
+              "ב",
+              "ר",
+              "א",
+              "ש",
+              "י",
+              "ת"
+            ],
+            [
+              "ב",
+              "ר",
+              "א"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "א",
+              "ת"
+            ],
+            [
+              "ה",
+              "ש",
+              "מ",
+              "י",
+              "ם"
+            ],
+            [
+              "ו",
+              "א",
+              "ת"
+            ],
+            [
+              "ה",
+              "א",
+              "ר",
+              "ץ"
+            ]
+          ]
+        },
+        {
+          "check": "NFC_and_NFD_equivalence",
+          "passed": true,
+          "actual": "בראשית ברא אלהים את השמים ואת הארץ",
+          "expected": "בראשית ברא אלהים את השמים ואת הארץ"
+        },
+        {
+          "check": "maqaf_preserves_all_four_totals",
+          "passed": true,
+          "actual": [
+            2701,
+            4631,
+            298,
+            82
+          ],
+          "expected": [
+            2701,
+            4631,
+            298,
+            82
+          ]
+        },
+        {
+          "check": "declared_factor_product",
+          "passed": true,
+          "actual": 2701,
+          "expected": 2701
+        },
+        {
+          "check": "selected_greek_total",
+          "passed": true,
+          "actual": 373,
+          "expected": 373
+        },
+        {
+          "check": "selected_greek_letter_values",
+          "passed": true,
+          "actual": [
+            30,
+            70,
+            3,
+            70,
+            200
+          ],
+          "expected": [
+            30,
+            70,
+            3,
+            70,
+            200
+          ]
+        },
+        {
+          "check": "selected_greek_letter_spellings",
+          "passed": true,
+          "actual": [
+            "λ",
+            "ο",
+            "γ",
+            "ο",
+            "σ"
+          ],
+          "expected": [
+            "λ",
+            "ο",
+            "γ",
+            "ο",
+            "σ"
+          ]
+        },
+        {
+          "check": "saved_lesson_word_count",
+          "passed": true,
+          "actual": 10772,
+          "expected": 10772
+        },
+        {
+          "check": "saved_markdown_word_count",
+          "passed": true,
+          "actual": 10772,
+          "expected": 10772
+        },
+        {
+          "check": "saved_markdown_preserves_lesson",
+          "passed": true,
+          "actual": true,
+          "expected": true
+        }
+      ]
+    },
+    {
+      "passage": "Genesis 1:2",
+      "source_file": "Genesis_1_2_Expanded_Study.json",
+      "state": "PASS",
+      "source_and_display": {
+        "hebrew_pointed": "וְהָאָרֶץ הָיְתָה תֹהוּ וָבֹהוּ וְחֹשֶׁךְ עַל־פְּנֵי תְהוֹם וְרוּחַ אֱלֹהִים מְרַחֶפֶת עַל־פְּנֵי הַמָּיִם׃",
+        "kjv": "And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.",
+        "transliteration": "Veha'aretz hayetah tohu vavohu vechoshekh al-penei tehom; veruach Elohim merachefet al-penei hammayim.",
+        "new_testament_witnesses": [
+          "John 1:1-5",
+          "John 1:14",
+          "Hebrews 11:3",
+          "2 Corinthians 3:17-18",
+          "2 Corinthians 4:5-6",
+          "Titus 3:5-6",
+          "Romans 8:11"
+        ]
+      },
+      "calculation": {
+        "hebrew_lanes": {
+          "standard": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_2_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "standard"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים",
+            "word_count": 14,
+            "letter_count": 52,
+            "total": 3546,
+            "binary": "110111011010",
+            "hex": "DDA",
+            "octal": "6732",
+            "binary_round_trip": 3546,
+            "rows": [
+              {
+                "token": "והארץ",
+                "letters": [
+                  "ו",
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  6,
+                  5,
+                  1,
+                  200,
+                  90
+                ],
+                "subtotal": 302,
+                "terminal_katan": 5
+              },
+              {
+                "token": "היתה",
+                "letters": [
+                  "ה",
+                  "י",
+                  "ת",
+                  "ה"
+                ],
+                "values": [
+                  5,
+                  10,
+                  400,
+                  5
+                ],
+                "subtotal": 420,
+                "terminal_katan": 6
+              },
+              {
+                "token": "תהו",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  400,
+                  5,
+                  6
+                ],
+                "subtotal": 411,
+                "terminal_katan": 6
+              },
+              {
+                "token": "ובהו",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  6,
+                  2,
+                  5,
+                  6
+                ],
+                "subtotal": 19,
+                "terminal_katan": 1
+              },
+              {
+                "token": "וחשך",
+                "letters": [
+                  "ו",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  8,
+                  300,
+                  20
+                ],
+                "subtotal": 334,
+                "terminal_katan": 1
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  70,
+                  30
+                ],
+                "subtotal": 100,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  80,
+                  50,
+                  10
+                ],
+                "subtotal": 140,
+                "terminal_katan": 5
+              },
+              {
+                "token": "תהום",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  400,
+                  5,
+                  6,
+                  40
+                ],
+                "subtotal": 451,
+                "terminal_katan": 1
+              },
+              {
+                "token": "ורוח",
+                "letters": [
+                  "ו",
+                  "ר",
+                  "ו",
+                  "ח"
+                ],
+                "values": [
+                  6,
+                  200,
+                  6,
+                  8
+                ],
+                "subtotal": 220,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  40
+                ],
+                "subtotal": 86,
+                "terminal_katan": 5
+              },
+              {
+                "token": "מרחפת",
+                "letters": [
+                  "מ",
+                  "ר",
+                  "ח",
+                  "פ",
+                  "ת"
+                ],
+                "values": [
+                  40,
+                  200,
+                  8,
+                  80,
+                  400
+                ],
+                "subtotal": 728,
+                "terminal_katan": 8
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  70,
+                  30
+                ],
+                "subtotal": 100,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  80,
+                  50,
+                  10
+                ],
+                "subtotal": 140,
+                "terminal_katan": 5
+              },
+              {
+                "token": "המים",
+                "letters": [
+                  "ה",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  40,
+                  10,
+                  40
+                ],
+                "subtotal": 95,
+                "terminal_katan": 5
+              }
+            ]
+          },
+          "gadol": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_2_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "gadol"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים",
+            "word_count": 14,
+            "letter_count": 52,
+            "total": 6516,
+            "binary": "1100101110100",
+            "hex": "1974",
+            "octal": "14564",
+            "binary_round_trip": 6516,
+            "rows": [
+              {
+                "token": "והארץ",
+                "letters": [
+                  "ו",
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  6,
+                  5,
+                  1,
+                  200,
+                  900
+                ],
+                "subtotal": 1112,
+                "terminal_katan": 5
+              },
+              {
+                "token": "היתה",
+                "letters": [
+                  "ה",
+                  "י",
+                  "ת",
+                  "ה"
+                ],
+                "values": [
+                  5,
+                  10,
+                  400,
+                  5
+                ],
+                "subtotal": 420,
+                "terminal_katan": 6
+              },
+              {
+                "token": "תהו",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  400,
+                  5,
+                  6
+                ],
+                "subtotal": 411,
+                "terminal_katan": 6
+              },
+              {
+                "token": "ובהו",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  6,
+                  2,
+                  5,
+                  6
+                ],
+                "subtotal": 19,
+                "terminal_katan": 1
+              },
+              {
+                "token": "וחשך",
+                "letters": [
+                  "ו",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  8,
+                  300,
+                  500
+                ],
+                "subtotal": 814,
+                "terminal_katan": 4
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  70,
+                  30
+                ],
+                "subtotal": 100,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  80,
+                  50,
+                  10
+                ],
+                "subtotal": 140,
+                "terminal_katan": 5
+              },
+              {
+                "token": "תהום",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  400,
+                  5,
+                  6,
+                  600
+                ],
+                "subtotal": 1011,
+                "terminal_katan": 3
+              },
+              {
+                "token": "ורוח",
+                "letters": [
+                  "ו",
+                  "ר",
+                  "ו",
+                  "ח"
+                ],
+                "values": [
+                  6,
+                  200,
+                  6,
+                  8
+                ],
+                "subtotal": 220,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  600
+                ],
+                "subtotal": 646,
+                "terminal_katan": 7
+              },
+              {
+                "token": "מרחפת",
+                "letters": [
+                  "מ",
+                  "ר",
+                  "ח",
+                  "פ",
+                  "ת"
+                ],
+                "values": [
+                  40,
+                  200,
+                  8,
+                  80,
+                  400
+                ],
+                "subtotal": 728,
+                "terminal_katan": 8
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  70,
+                  30
+                ],
+                "subtotal": 100,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  80,
+                  50,
+                  10
+                ],
+                "subtotal": 140,
+                "terminal_katan": 5
+              },
+              {
+                "token": "המים",
+                "letters": [
+                  "ה",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  40,
+                  10,
+                  600
+                ],
+                "subtotal": 655,
+                "terminal_katan": 7
+              }
+            ]
+          },
+          "ordinal": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_2_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "ordinal"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים",
+            "word_count": 14,
+            "letter_count": 52,
+            "total": 576,
+            "binary": "1001000000",
+            "hex": "240",
+            "octal": "1100",
+            "binary_round_trip": 576,
+            "rows": [
+              {
+                "token": "והארץ",
+                "letters": [
+                  "ו",
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  6,
+                  5,
+                  1,
+                  20,
+                  18
+                ],
+                "subtotal": 50,
+                "terminal_katan": 5
+              },
+              {
+                "token": "היתה",
+                "letters": [
+                  "ה",
+                  "י",
+                  "ת",
+                  "ה"
+                ],
+                "values": [
+                  5,
+                  10,
+                  22,
+                  5
+                ],
+                "subtotal": 42,
+                "terminal_katan": 6
+              },
+              {
+                "token": "תהו",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  22,
+                  5,
+                  6
+                ],
+                "subtotal": 33,
+                "terminal_katan": 6
+              },
+              {
+                "token": "ובהו",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  6,
+                  2,
+                  5,
+                  6
+                ],
+                "subtotal": 19,
+                "terminal_katan": 1
+              },
+              {
+                "token": "וחשך",
+                "letters": [
+                  "ו",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  8,
+                  21,
+                  11
+                ],
+                "subtotal": 46,
+                "terminal_katan": 1
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  16,
+                  12
+                ],
+                "subtotal": 28,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  17,
+                  14,
+                  10
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "תהום",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  22,
+                  5,
+                  6,
+                  13
+                ],
+                "subtotal": 46,
+                "terminal_katan": 1
+              },
+              {
+                "token": "ורוח",
+                "letters": [
+                  "ו",
+                  "ר",
+                  "ו",
+                  "ח"
+                ],
+                "values": [
+                  6,
+                  20,
+                  6,
+                  8
+                ],
+                "subtotal": 40,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  12,
+                  5,
+                  10,
+                  13
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "מרחפת",
+                "letters": [
+                  "מ",
+                  "ר",
+                  "ח",
+                  "פ",
+                  "ת"
+                ],
+                "values": [
+                  13,
+                  20,
+                  8,
+                  17,
+                  22
+                ],
+                "subtotal": 80,
+                "terminal_katan": 8
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  16,
+                  12
+                ],
+                "subtotal": 28,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  17,
+                  14,
+                  10
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "המים",
+                "letters": [
+                  "ה",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  13,
+                  10,
+                  13
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              }
+            ]
+          },
+          "reduced": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_2_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "reduced"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים",
+            "word_count": 14,
+            "letter_count": 52,
+            "total": 234,
+            "binary": "11101010",
+            "hex": "EA",
+            "octal": "352",
+            "binary_round_trip": 234,
+            "rows": [
+              {
+                "token": "והארץ",
+                "letters": [
+                  "ו",
+                  "ה",
+                  "א",
+                  "ר",
+                  "ץ"
+                ],
+                "values": [
+                  6,
+                  5,
+                  1,
+                  2,
+                  9
+                ],
+                "subtotal": 23,
+                "terminal_katan": 5
+              },
+              {
+                "token": "היתה",
+                "letters": [
+                  "ה",
+                  "י",
+                  "ת",
+                  "ה"
+                ],
+                "values": [
+                  5,
+                  1,
+                  4,
+                  5
+                ],
+                "subtotal": 15,
+                "terminal_katan": 6
+              },
+              {
+                "token": "תהו",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  4,
+                  5,
+                  6
+                ],
+                "subtotal": 15,
+                "terminal_katan": 6
+              },
+              {
+                "token": "ובהו",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "ה",
+                  "ו"
+                ],
+                "values": [
+                  6,
+                  2,
+                  5,
+                  6
+                ],
+                "subtotal": 19,
+                "terminal_katan": 1
+              },
+              {
+                "token": "וחשך",
+                "letters": [
+                  "ו",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  8,
+                  3,
+                  2
+                ],
+                "subtotal": 19,
+                "terminal_katan": 1
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  7,
+                  3
+                ],
+                "subtotal": 10,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  8,
+                  5,
+                  1
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "תהום",
+                "letters": [
+                  "ת",
+                  "ה",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  4,
+                  5,
+                  6,
+                  4
+                ],
+                "subtotal": 19,
+                "terminal_katan": 1
+              },
+              {
+                "token": "ורוח",
+                "letters": [
+                  "ו",
+                  "ר",
+                  "ו",
+                  "ח"
+                ],
+                "values": [
+                  6,
+                  2,
+                  6,
+                  8
+                ],
+                "subtotal": 22,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  3,
+                  5,
+                  1,
+                  4
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "מרחפת",
+                "letters": [
+                  "מ",
+                  "ר",
+                  "ח",
+                  "פ",
+                  "ת"
+                ],
+                "values": [
+                  4,
+                  2,
+                  8,
+                  8,
+                  4
+                ],
+                "subtotal": 26,
+                "terminal_katan": 8
+              },
+              {
+                "token": "על",
+                "letters": [
+                  "ע",
+                  "ל"
+                ],
+                "values": [
+                  7,
+                  3
+                ],
+                "subtotal": 10,
+                "terminal_katan": 1
+              },
+              {
+                "token": "פני",
+                "letters": [
+                  "פ",
+                  "נ",
+                  "י"
+                ],
+                "values": [
+                  8,
+                  5,
+                  1
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "המים",
+                "letters": [
+                  "ה",
+                  "מ",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  5,
+                  4,
+                  1,
+                  4
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              }
+            ]
+          }
+        },
+        "maqaf_join_word_count": 12,
+        "declared_clause_grouping": {
+          "lexical_word_group_lengths": [
+            4,
+            4,
+            6
+          ],
+          "subtotals": [
+            1152,
+            1025,
+            1369
+          ],
+          "boundary_source": "Arithmetic paragraph in the saved study"
+        },
+        "selected_greek": {
+          "implementation": "new-20260917-selected-word-reference",
+          "frozen_historical_numeric_profile_recovered": false,
+          "historical_profile_note": "A historical draft Greek map is preserved separately; its allow_execution is false and its primary-text identity is unset. This new selected-word profile does not activate that draft.",
+          "input": "πνεῦμα",
+          "calculation_surface": "πνευμα",
+          "trace": [
+            {
+              "letter": "π",
+              "value": 80
+            },
+            {
+              "letter": "ν",
+              "value": 50
+            },
+            {
+              "letter": "ε",
+              "value": 5
+            },
+            {
+              "letter": "υ",
+              "value": 400
+            },
+            {
+              "letter": "μ",
+              "value": 40
+            },
+            {
+              "letter": "α",
+              "value": 1
+            }
+          ],
+          "total": 576
+        }
+      },
+      "interpretation": {
+        "replayed_verbatim": true,
+        "authority": "Saved exposition; arithmetic does not verify theology or divine revelation",
+        "model_generation_replayed": false
+      },
+      "word_counts": {
+        "method": "Python str.split() on saved Unicode text; count tokens; punctuation is not stripped",
+        "lesson_words": 10709,
+        "source_declared_lesson_words": 10709,
+        "markdown_words_including_any_notes": 10709,
+        "historical_preaching_count_not_recomputed": 10277,
+        "historical_preaching_count_note": "Source has no explicit machine-readable preaching boundary",
+        "baseline_genesis_1_1_lesson_words": 5386,
+        "ratio_to_genesis_1_1_baseline": 1.988303008,
+        "equals_twice_genesis_1_1_baseline": false,
+        "baseline_scope": "The recovered Genesis 1:1 baseline only; no separate prior baseline is claimed for other verses"
+      },
+      "checks": [
+        {
+          "check": "pointed_to_consonantal_surface",
+          "passed": true,
+          "actual": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים",
+          "expected": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים"
+        },
+        {
+          "check": "standard_total",
+          "passed": true,
+          "actual": 3546,
+          "expected": 3546
+        },
+        {
+          "check": "letter_count",
+          "passed": true,
+          "actual": 52,
+          "expected": 52
+        },
+        {
+          "check": "lexical_word_count",
+          "passed": true,
+          "actual": 14,
+          "expected": 14
+        },
+        {
+          "check": "word_spelling_trace",
+          "passed": true,
+          "actual": [
+            "והארץ",
+            "היתה",
+            "תהו",
+            "ובהו",
+            "וחשך",
+            "על",
+            "פני",
+            "תהום",
+            "ורוח",
+            "אלהים",
+            "מרחפת",
+            "על",
+            "פני",
+            "המים"
+          ],
+          "expected": [
+            "והארץ",
+            "היתה",
+            "תהו",
+            "ובהו",
+            "וחשך",
+            "על",
+            "פני",
+            "תהום",
+            "ורוח",
+            "אלהים",
+            "מרחפת",
+            "על",
+            "פני",
+            "המים"
+          ]
+        },
+        {
+          "check": "word_total_trace",
+          "passed": true,
+          "actual": [
+            302,
+            420,
+            411,
+            19,
+            334,
+            100,
+            140,
+            451,
+            220,
+            86,
+            728,
+            100,
+            140,
+            95
+          ],
+          "expected": [
+            302,
+            420,
+            411,
+            19,
+            334,
+            100,
+            140,
+            451,
+            220,
+            86,
+            728,
+            100,
+            140,
+            95
+          ]
+        },
+        {
+          "check": "letter_value_trace",
+          "passed": true,
+          "actual": [
+            [
+              6,
+              5,
+              1,
+              200,
+              90
+            ],
+            [
+              5,
+              10,
+              400,
+              5
+            ],
+            [
+              400,
+              5,
+              6
+            ],
+            [
+              6,
+              2,
+              5,
+              6
+            ],
+            [
+              6,
+              8,
+              300,
+              20
+            ],
+            [
+              70,
+              30
+            ],
+            [
+              80,
+              50,
+              10
+            ],
+            [
+              400,
+              5,
+              6,
+              40
+            ],
+            [
+              6,
+              200,
+              6,
+              8
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              40,
+              200,
+              8,
+              80,
+              400
+            ],
+            [
+              70,
+              30
+            ],
+            [
+              80,
+              50,
+              10
+            ],
+            [
+              5,
+              40,
+              10,
+              40
+            ]
+          ],
+          "expected": [
+            [
+              6,
+              5,
+              1,
+              200,
+              90
+            ],
+            [
+              5,
+              10,
+              400,
+              5
+            ],
+            [
+              400,
+              5,
+              6
+            ],
+            [
+              6,
+              2,
+              5,
+              6
+            ],
+            [
+              6,
+              8,
+              300,
+              20
+            ],
+            [
+              70,
+              30
+            ],
+            [
+              80,
+              50,
+              10
+            ],
+            [
+              400,
+              5,
+              6,
+              40
+            ],
+            [
+              6,
+              200,
+              6,
+              8
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              40,
+              200,
+              8,
+              80,
+              400
+            ],
+            [
+              70,
+              30
+            ],
+            [
+              80,
+              50,
+              10
+            ],
+            [
+              5,
+              40,
+              10,
+              40
+            ]
+          ]
+        },
+        {
+          "check": "letter_spelling_trace",
+          "passed": true,
+          "actual": [
+            [
+              "ו",
+              "ה",
+              "א",
+              "ר",
+              "ץ"
+            ],
+            [
+              "ה",
+              "י",
+              "ת",
+              "ה"
+            ],
+            [
+              "ת",
+              "ה",
+              "ו"
+            ],
+            [
+              "ו",
+              "ב",
+              "ה",
+              "ו"
+            ],
+            [
+              "ו",
+              "ח",
+              "ש",
+              "ך"
+            ],
+            [
+              "ע",
+              "ל"
+            ],
+            [
+              "פ",
+              "נ",
+              "י"
+            ],
+            [
+              "ת",
+              "ה",
+              "ו",
+              "ם"
+            ],
+            [
+              "ו",
+              "ר",
+              "ו",
+              "ח"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "מ",
+              "ר",
+              "ח",
+              "פ",
+              "ת"
+            ],
+            [
+              "ע",
+              "ל"
+            ],
+            [
+              "פ",
+              "נ",
+              "י"
+            ],
+            [
+              "ה",
+              "מ",
+              "י",
+              "ם"
+            ]
+          ],
+          "expected": [
+            [
+              "ו",
+              "ה",
+              "א",
+              "ר",
+              "ץ"
+            ],
+            [
+              "ה",
+              "י",
+              "ת",
+              "ה"
+            ],
+            [
+              "ת",
+              "ה",
+              "ו"
+            ],
+            [
+              "ו",
+              "ב",
+              "ה",
+              "ו"
+            ],
+            [
+              "ו",
+              "ח",
+              "ש",
+              "ך"
+            ],
+            [
+              "ע",
+              "ל"
+            ],
+            [
+              "פ",
+              "נ",
+              "י"
+            ],
+            [
+              "ת",
+              "ה",
+              "ו",
+              "ם"
+            ],
+            [
+              "ו",
+              "ר",
+              "ו",
+              "ח"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "מ",
+              "ר",
+              "ח",
+              "פ",
+              "ת"
+            ],
+            [
+              "ע",
+              "ל"
+            ],
+            [
+              "פ",
+              "נ",
+              "י"
+            ],
+            [
+              "ה",
+              "מ",
+              "י",
+              "ם"
+            ]
+          ]
+        },
+        {
+          "check": "NFC_and_NFD_equivalence",
+          "passed": true,
+          "actual": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים",
+          "expected": "והארץ היתה תהו ובהו וחשך על פני תהום ורוח אלהים מרחפת על פני המים"
+        },
+        {
+          "check": "maqaf_preserves_all_four_totals",
+          "passed": true,
+          "actual": [
+            3546,
+            6516,
+            576,
+            234
+          ],
+          "expected": [
+            3546,
+            6516,
+            576,
+            234
+          ]
+        },
+        {
+          "check": "pointed_whitespace_units",
+          "passed": true,
+          "actual": 12,
+          "expected": 12
+        },
+        {
+          "check": "clause_subtotals",
+          "passed": true,
+          "actual": [
+            1152,
+            1025,
+            1369
+          ],
+          "expected": [
+            1152,
+            1025,
+            1369
+          ]
+        },
+        {
+          "check": "clause_partition_covers_verse",
+          "passed": true,
+          "actual": 14,
+          "expected": 14
+        },
+        {
+          "check": "selected_greek_total",
+          "passed": true,
+          "actual": 576,
+          "expected": 576
+        },
+        {
+          "check": "selected_greek_letter_values",
+          "passed": true,
+          "actual": [
+            80,
+            50,
+            5,
+            400,
+            40,
+            1
+          ],
+          "expected": [
+            80,
+            50,
+            5,
+            400,
+            40,
+            1
+          ]
+        },
+        {
+          "check": "selected_greek_letter_spellings",
+          "passed": true,
+          "actual": [
+            "π",
+            "ν",
+            "ε",
+            "υ",
+            "μ",
+            "α"
+          ],
+          "expected": [
+            "π",
+            "ν",
+            "ε",
+            "υ",
+            "μ",
+            "α"
+          ]
+        },
+        {
+          "check": "saved_lesson_word_count",
+          "passed": true,
+          "actual": 10709,
+          "expected": 10709
+        },
+        {
+          "check": "saved_markdown_word_count",
+          "passed": true,
+          "actual": 10709,
+          "expected": 10709
+        },
+        {
+          "check": "saved_markdown_preserves_lesson",
+          "passed": true,
+          "actual": true,
+          "expected": true
+        }
+      ]
+    },
+    {
+      "passage": "Genesis 1:3",
+      "source_file": "Genesis_1_3_Expanded_Study.json",
+      "state": "PASS",
+      "source_and_display": {
+        "hebrew_pointed": "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי־אוֹר׃",
+        "kjv": "And God said, Let there be light: and there was light.",
+        "transliteration": "Vayyomer Elohim, yehi or; vayhi or.",
+        "new_testament_witnesses": [
+          "John 1:1-14",
+          "John 8:12",
+          "2 Corinthians 4:3-18",
+          "Colossians 1:12-17",
+          "Ephesians 5:8-14",
+          "1 John 1:5-9",
+          "Revelation 21:23-25",
+          "Revelation 22:3-5",
+          "Hebrews 11:3"
+        ]
+      },
+      "calculation": {
+        "hebrew_lanes": {
+          "standard": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_3_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "standard"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויאמר אלהים יהי אור ויהי אור",
+            "word_count": 6,
+            "letter_count": 23,
+            "total": 813,
+            "binary": "1100101101",
+            "hex": "32D",
+            "octal": "1455",
+            "binary_round_trip": 813,
+            "rows": [
+              {
+                "token": "ויאמר",
+                "letters": [
+                  "ו",
+                  "י",
+                  "א",
+                  "מ",
+                  "ר"
+                ],
+                "values": [
+                  6,
+                  10,
+                  1,
+                  40,
+                  200
+                ],
+                "subtotal": 257,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  40
+                ],
+                "subtotal": 86,
+                "terminal_katan": 5
+              },
+              {
+                "token": "יהי",
+                "letters": [
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 25,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 207,
+                "terminal_katan": 9
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 207,
+                "terminal_katan": 9
+              }
+            ]
+          },
+          "gadol": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_3_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "gadol"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויאמר אלהים יהי אור ויהי אור",
+            "word_count": 6,
+            "letter_count": 23,
+            "total": 1373,
+            "binary": "10101011101",
+            "hex": "55D",
+            "octal": "2535",
+            "binary_round_trip": 1373,
+            "rows": [
+              {
+                "token": "ויאמר",
+                "letters": [
+                  "ו",
+                  "י",
+                  "א",
+                  "מ",
+                  "ר"
+                ],
+                "values": [
+                  6,
+                  10,
+                  1,
+                  40,
+                  200
+                ],
+                "subtotal": 257,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  600
+                ],
+                "subtotal": 646,
+                "terminal_katan": 7
+              },
+              {
+                "token": "יהי",
+                "letters": [
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 25,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 207,
+                "terminal_katan": 9
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 207,
+                "terminal_katan": 9
+              }
+            ]
+          },
+          "ordinal": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_3_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "ordinal"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויאמר אלהים יהי אור ויהי אור",
+            "word_count": 6,
+            "letter_count": 23,
+            "total": 201,
+            "binary": "11001001",
+            "hex": "C9",
+            "octal": "311",
+            "binary_round_trip": 201,
+            "rows": [
+              {
+                "token": "ויאמר",
+                "letters": [
+                  "ו",
+                  "י",
+                  "א",
+                  "מ",
+                  "ר"
+                ],
+                "values": [
+                  6,
+                  10,
+                  1,
+                  13,
+                  20
+                ],
+                "subtotal": 50,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  12,
+                  5,
+                  10,
+                  13
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "יהי",
+                "letters": [
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 25,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  20
+                ],
+                "subtotal": 27,
+                "terminal_katan": 9
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  20
+                ],
+                "subtotal": 27,
+                "terminal_katan": 9
+              }
+            ]
+          },
+          "reduced": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_3_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "reduced"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויאמר אלהים יהי אור ויהי אור",
+            "word_count": 6,
+            "letter_count": 23,
+            "total": 66,
+            "binary": "1000010",
+            "hex": "42",
+            "octal": "102",
+            "binary_round_trip": 66,
+            "rows": [
+              {
+                "token": "ויאמר",
+                "letters": [
+                  "ו",
+                  "י",
+                  "א",
+                  "מ",
+                  "ר"
+                ],
+                "values": [
+                  6,
+                  1,
+                  1,
+                  4,
+                  2
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  3,
+                  5,
+                  1,
+                  4
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "יהי",
+                "letters": [
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  1,
+                  5,
+                  1
+                ],
+                "subtotal": 7,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  2
+                ],
+                "subtotal": 9,
+                "terminal_katan": 9
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  1,
+                  5,
+                  1
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אור",
+                "letters": [
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  1,
+                  6,
+                  2
+                ],
+                "subtotal": 9,
+                "terminal_katan": 9
+              }
+            ]
+          }
+        },
+        "maqaf_join_word_count": 5,
+        "declared_clause_grouping": {
+          "lexical_word_group_lengths": [
+            2,
+            2,
+            2
+          ],
+          "subtotals": [
+            343,
+            232,
+            238
+          ],
+          "boundary_source": "Arithmetic paragraph in the saved study"
+        },
+        "selected_greek": {
+          "implementation": "new-20260917-selected-word-reference",
+          "frozen_historical_numeric_profile_recovered": false,
+          "historical_profile_note": "A historical draft Greek map is preserved separately; its allow_execution is false and its primary-text identity is unset. This new selected-word profile does not activate that draft.",
+          "input": "φῶς",
+          "calculation_surface": "φωσ",
+          "trace": [
+            {
+              "letter": "φ",
+              "value": 500
+            },
+            {
+              "letter": "ω",
+              "value": 800
+            },
+            {
+              "letter": "σ",
+              "value": 200
+            }
+          ],
+          "total": 1500
+        }
+      },
+      "interpretation": {
+        "replayed_verbatim": true,
+        "authority": "Saved exposition; arithmetic does not verify theology or divine revelation",
+        "model_generation_replayed": false
+      },
+      "word_counts": {
+        "method": "Python str.split() on saved Unicode text; count tokens; punctuation is not stripped",
+        "lesson_words": 10392,
+        "source_declared_lesson_words": 10392,
+        "markdown_words_including_any_notes": 10664,
+        "historical_preaching_count_not_recomputed": 9972,
+        "historical_preaching_count_note": "Source has no explicit machine-readable preaching boundary",
+        "baseline_genesis_1_1_lesson_words": 5386,
+        "ratio_to_genesis_1_1_baseline": 1.929446714,
+        "equals_twice_genesis_1_1_baseline": false,
+        "baseline_scope": "The recovered Genesis 1:1 baseline only; no separate prior baseline is claimed for other verses"
+      },
+      "checks": [
+        {
+          "check": "pointed_to_consonantal_surface",
+          "passed": true,
+          "actual": "ויאמר אלהים יהי אור ויהי אור",
+          "expected": "ויאמר אלהים יהי אור ויהי אור"
+        },
+        {
+          "check": "standard_total",
+          "passed": true,
+          "actual": 813,
+          "expected": 813
+        },
+        {
+          "check": "letter_count",
+          "passed": true,
+          "actual": 23,
+          "expected": 23
+        },
+        {
+          "check": "lexical_word_count",
+          "passed": true,
+          "actual": 6,
+          "expected": 6
+        },
+        {
+          "check": "word_spelling_trace",
+          "passed": true,
+          "actual": [
+            "ויאמר",
+            "אלהים",
+            "יהי",
+            "אור",
+            "ויהי",
+            "אור"
+          ],
+          "expected": [
+            "ויאמר",
+            "אלהים",
+            "יהי",
+            "אור",
+            "ויהי",
+            "אור"
+          ]
+        },
+        {
+          "check": "word_total_trace",
+          "passed": true,
+          "actual": [
+            257,
+            86,
+            25,
+            207,
+            31,
+            207
+          ],
+          "expected": [
+            257,
+            86,
+            25,
+            207,
+            31,
+            207
+          ]
+        },
+        {
+          "check": "letter_value_trace",
+          "passed": true,
+          "actual": [
+            [
+              6,
+              10,
+              1,
+              40,
+              200
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              10,
+              5,
+              10
+            ],
+            [
+              1,
+              6,
+              200
+            ],
+            [
+              6,
+              10,
+              5,
+              10
+            ],
+            [
+              1,
+              6,
+              200
+            ]
+          ],
+          "expected": [
+            [
+              6,
+              10,
+              1,
+              40,
+              200
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              10,
+              5,
+              10
+            ],
+            [
+              1,
+              6,
+              200
+            ],
+            [
+              6,
+              10,
+              5,
+              10
+            ],
+            [
+              1,
+              6,
+              200
+            ]
+          ]
+        },
+        {
+          "check": "letter_spelling_trace",
+          "passed": true,
+          "actual": [
+            [
+              "ו",
+              "י",
+              "א",
+              "מ",
+              "ר"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "ו",
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "א",
+              "ו",
+              "ר"
+            ]
+          ],
+          "expected": [
+            [
+              "ו",
+              "י",
+              "א",
+              "מ",
+              "ר"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "ו",
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "א",
+              "ו",
+              "ר"
+            ]
+          ]
+        },
+        {
+          "check": "NFC_and_NFD_equivalence",
+          "passed": true,
+          "actual": "ויאמר אלהים יהי אור ויהי אור",
+          "expected": "ויאמר אלהים יהי אור ויהי אור"
+        },
+        {
+          "check": "maqaf_preserves_all_four_totals",
+          "passed": true,
+          "actual": [
+            813,
+            1373,
+            201,
+            66
+          ],
+          "expected": [
+            813,
+            1373,
+            201,
+            66
+          ]
+        },
+        {
+          "check": "pointed_whitespace_units",
+          "passed": true,
+          "actual": 5,
+          "expected": 5
+        },
+        {
+          "check": "clause_subtotals",
+          "passed": true,
+          "actual": [
+            343,
+            232,
+            238
+          ],
+          "expected": [
+            343,
+            232,
+            238
+          ]
+        },
+        {
+          "check": "clause_partition_covers_verse",
+          "passed": true,
+          "actual": 6,
+          "expected": 6
+        },
+        {
+          "check": "selected_greek_total",
+          "passed": true,
+          "actual": 1500,
+          "expected": 1500
+        },
+        {
+          "check": "selected_greek_letter_values",
+          "passed": true,
+          "actual": [
+            500,
+            800,
+            200
+          ],
+          "expected": [
+            500,
+            800,
+            200
+          ]
+        },
+        {
+          "check": "selected_greek_letter_spellings",
+          "passed": true,
+          "actual": [
+            "φ",
+            "ω",
+            "σ"
+          ],
+          "expected": [
+            "φ",
+            "ω",
+            "σ"
+          ]
+        },
+        {
+          "check": "saved_lesson_word_count",
+          "passed": true,
+          "actual": 10392,
+          "expected": 10392
+        },
+        {
+          "check": "saved_markdown_word_count",
+          "passed": true,
+          "actual": 10664,
+          "expected": 10664
+        },
+        {
+          "check": "saved_markdown_preserves_lesson",
+          "passed": true,
+          "actual": true,
+          "expected": true
+        }
+      ]
+    },
+    {
+      "passage": "Genesis 1:4",
+      "source_file": "Genesis_1_4_Expanded_Study.json",
+      "state": "PASS",
+      "source_and_display": {
+        "hebrew_pointed": "וַיַּרְא אֱלֹהִים אֶת־הָאוֹר כִּי־טוֹב וַיַּבְדֵּל אֱלֹהִים בֵּין הָאוֹר וּבֵין הַחֹשֶׁךְ׃",
+        "kjv": "And God saw the light, that it was good: and God divided the light from the darkness.",
+        "transliteration": "Vayyar Elohim et-ha'or ki-tov; vayyavdel Elohim bein ha'or uvein hachoshekh.",
+        "new_testament_witnesses": [
+          "1 Timothy 4:1-5",
+          "James 1:13-18",
+          "Romans 1:20-25",
+          "1 John 1:5-9",
+          "Ephesians 5:8-11",
+          "John 3:19-21",
+          "Matthew 5:14-16"
+        ]
+      },
+      "calculation": {
+        "hebrew_lanes": {
+          "standard": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_4_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "standard"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך",
+            "word_count": 12,
+            "letter_count": 45,
+            "total": 1776,
+            "binary": "11011110000",
+            "hex": "6F0",
+            "octal": "3360",
+            "binary_round_trip": 1776,
+            "rows": [
+              {
+                "token": "וירא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  10,
+                  200,
+                  1
+                ],
+                "subtotal": 217,
+                "terminal_katan": 1
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  40
+                ],
+                "subtotal": 86,
+                "terminal_katan": 5
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  400
+                ],
+                "subtotal": 401,
+                "terminal_katan": 5
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 212,
+                "terminal_katan": 5
+              },
+              {
+                "token": "כי",
+                "letters": [
+                  "כ",
+                  "י"
+                ],
+                "values": [
+                  20,
+                  10
+                ],
+                "subtotal": 30,
+                "terminal_katan": 3
+              },
+              {
+                "token": "טוב",
+                "letters": [
+                  "ט",
+                  "ו",
+                  "ב"
+                ],
+                "values": [
+                  9,
+                  6,
+                  2
+                ],
+                "subtotal": 17,
+                "terminal_katan": 8
+              },
+              {
+                "token": "ויבדל",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ב",
+                  "ד",
+                  "ל"
+                ],
+                "values": [
+                  6,
+                  10,
+                  2,
+                  4,
+                  30
+                ],
+                "subtotal": 52,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  40
+                ],
+                "subtotal": 86,
+                "terminal_katan": 5
+              },
+              {
+                "token": "בין",
+                "letters": [
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  2,
+                  10,
+                  50
+                ],
+                "subtotal": 62,
+                "terminal_katan": 8
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 212,
+                "terminal_katan": 5
+              },
+              {
+                "token": "ובין",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  6,
+                  2,
+                  10,
+                  50
+                ],
+                "subtotal": 68,
+                "terminal_katan": 5
+              },
+              {
+                "token": "החשך",
+                "letters": [
+                  "ה",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  5,
+                  8,
+                  300,
+                  20
+                ],
+                "subtotal": 333,
+                "terminal_katan": 9
+              }
+            ]
+          },
+          "gadol": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_4_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "gadol"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך",
+            "word_count": 12,
+            "letter_count": 45,
+            "total": 4676,
+            "binary": "1001001000100",
+            "hex": "1244",
+            "octal": "11104",
+            "binary_round_trip": 4676,
+            "rows": [
+              {
+                "token": "וירא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  10,
+                  200,
+                  1
+                ],
+                "subtotal": 217,
+                "terminal_katan": 1
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  600
+                ],
+                "subtotal": 646,
+                "terminal_katan": 7
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  400
+                ],
+                "subtotal": 401,
+                "terminal_katan": 5
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 212,
+                "terminal_katan": 5
+              },
+              {
+                "token": "כי",
+                "letters": [
+                  "כ",
+                  "י"
+                ],
+                "values": [
+                  20,
+                  10
+                ],
+                "subtotal": 30,
+                "terminal_katan": 3
+              },
+              {
+                "token": "טוב",
+                "letters": [
+                  "ט",
+                  "ו",
+                  "ב"
+                ],
+                "values": [
+                  9,
+                  6,
+                  2
+                ],
+                "subtotal": 17,
+                "terminal_katan": 8
+              },
+              {
+                "token": "ויבדל",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ב",
+                  "ד",
+                  "ל"
+                ],
+                "values": [
+                  6,
+                  10,
+                  2,
+                  4,
+                  30
+                ],
+                "subtotal": 52,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  600
+                ],
+                "subtotal": 646,
+                "terminal_katan": 7
+              },
+              {
+                "token": "בין",
+                "letters": [
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  2,
+                  10,
+                  700
+                ],
+                "subtotal": 712,
+                "terminal_katan": 1
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 212,
+                "terminal_katan": 5
+              },
+              {
+                "token": "ובין",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  6,
+                  2,
+                  10,
+                  700
+                ],
+                "subtotal": 718,
+                "terminal_katan": 7
+              },
+              {
+                "token": "החשך",
+                "letters": [
+                  "ה",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  5,
+                  8,
+                  300,
+                  500
+                ],
+                "subtotal": 813,
+                "terminal_katan": 3
+              }
+            ]
+          },
+          "ordinal": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_4_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "ordinal"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך",
+            "word_count": 12,
+            "letter_count": 45,
+            "total": 381,
+            "binary": "101111101",
+            "hex": "17D",
+            "octal": "575",
+            "binary_round_trip": 381,
+            "rows": [
+              {
+                "token": "וירא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  10,
+                  20,
+                  1
+                ],
+                "subtotal": 37,
+                "terminal_katan": 1
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  12,
+                  5,
+                  10,
+                  13
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  22
+                ],
+                "subtotal": 23,
+                "terminal_katan": 5
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  20
+                ],
+                "subtotal": 32,
+                "terminal_katan": 5
+              },
+              {
+                "token": "כי",
+                "letters": [
+                  "כ",
+                  "י"
+                ],
+                "values": [
+                  11,
+                  10
+                ],
+                "subtotal": 21,
+                "terminal_katan": 3
+              },
+              {
+                "token": "טוב",
+                "letters": [
+                  "ט",
+                  "ו",
+                  "ב"
+                ],
+                "values": [
+                  9,
+                  6,
+                  2
+                ],
+                "subtotal": 17,
+                "terminal_katan": 8
+              },
+              {
+                "token": "ויבדל",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ב",
+                  "ד",
+                  "ל"
+                ],
+                "values": [
+                  6,
+                  10,
+                  2,
+                  4,
+                  12
+                ],
+                "subtotal": 34,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  12,
+                  5,
+                  10,
+                  13
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "בין",
+                "letters": [
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  2,
+                  10,
+                  14
+                ],
+                "subtotal": 26,
+                "terminal_katan": 8
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  20
+                ],
+                "subtotal": 32,
+                "terminal_katan": 5
+              },
+              {
+                "token": "ובין",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  6,
+                  2,
+                  10,
+                  14
+                ],
+                "subtotal": 32,
+                "terminal_katan": 5
+              },
+              {
+                "token": "החשך",
+                "letters": [
+                  "ה",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  5,
+                  8,
+                  21,
+                  11
+                ],
+                "subtotal": 45,
+                "terminal_katan": 9
+              }
+            ]
+          },
+          "reduced": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_4_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "reduced"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך",
+            "word_count": 12,
+            "letter_count": 45,
+            "total": 147,
+            "binary": "10010011",
+            "hex": "93",
+            "octal": "223",
+            "binary_round_trip": 147,
+            "rows": [
+              {
+                "token": "וירא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  1,
+                  2,
+                  1
+                ],
+                "subtotal": 10,
+                "terminal_katan": 1
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  3,
+                  5,
+                  1,
+                  4
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "את",
+                "letters": [
+                  "א",
+                  "ת"
+                ],
+                "values": [
+                  1,
+                  4
+                ],
+                "subtotal": 5,
+                "terminal_katan": 5
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  2
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "כי",
+                "letters": [
+                  "כ",
+                  "י"
+                ],
+                "values": [
+                  2,
+                  1
+                ],
+                "subtotal": 3,
+                "terminal_katan": 3
+              },
+              {
+                "token": "טוב",
+                "letters": [
+                  "ט",
+                  "ו",
+                  "ב"
+                ],
+                "values": [
+                  9,
+                  6,
+                  2
+                ],
+                "subtotal": 17,
+                "terminal_katan": 8
+              },
+              {
+                "token": "ויבדל",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ב",
+                  "ד",
+                  "ל"
+                ],
+                "values": [
+                  6,
+                  1,
+                  2,
+                  4,
+                  3
+                ],
+                "subtotal": 16,
+                "terminal_katan": 7
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  3,
+                  5,
+                  1,
+                  4
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "בין",
+                "letters": [
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  2,
+                  1,
+                  5
+                ],
+                "subtotal": 8,
+                "terminal_katan": 8
+              },
+              {
+                "token": "האור",
+                "letters": [
+                  "ה",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  5,
+                  1,
+                  6,
+                  2
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "ובין",
+                "letters": [
+                  "ו",
+                  "ב",
+                  "י",
+                  "ן"
+                ],
+                "values": [
+                  6,
+                  2,
+                  1,
+                  5
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "החשך",
+                "letters": [
+                  "ה",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  5,
+                  8,
+                  3,
+                  2
+                ],
+                "subtotal": 18,
+                "terminal_katan": 9
+              }
+            ]
+          }
+        },
+        "maqaf_join_word_count": 10,
+        "declared_clause_grouping": {
+          "lexical_word_group_lengths": [
+            6,
+            6
+          ],
+          "subtotals": [
+            963,
+            813
+          ],
+          "boundary_source": "Arithmetic paragraph in the saved study"
+        },
+        "selected_greek": {
+          "implementation": "new-20260917-selected-word-reference",
+          "frozen_historical_numeric_profile_recovered": false,
+          "historical_profile_note": "A historical draft Greek map is preserved separately; its allow_execution is false and its primary-text identity is unset. This new selected-word profile does not activate that draft.",
+          "input": "καλόν",
+          "calculation_surface": "καλον",
+          "trace": [
+            {
+              "letter": "κ",
+              "value": 20
+            },
+            {
+              "letter": "α",
+              "value": 1
+            },
+            {
+              "letter": "λ",
+              "value": 30
+            },
+            {
+              "letter": "ο",
+              "value": 70
+            },
+            {
+              "letter": "ν",
+              "value": 50
+            }
+          ],
+          "total": 171,
+          "dictionary_form_replay": {
+            "implementation": "new-20260917-selected-word-reference",
+            "frozen_historical_numeric_profile_recovered": false,
+            "historical_profile_note": "A historical draft Greek map is preserved separately; its allow_execution is false and its primary-text identity is unset. This new selected-word profile does not activate that draft.",
+            "input": "καλός",
+            "calculation_surface": "καλοσ",
+            "trace": [
+              {
+                "letter": "κ",
+                "value": 20
+              },
+              {
+                "letter": "α",
+                "value": 1
+              },
+              {
+                "letter": "λ",
+                "value": 30
+              },
+              {
+                "letter": "ο",
+                "value": 70
+              },
+              {
+                "letter": "σ",
+                "value": 200
+              }
+            ],
+            "total": 321
+          }
+        }
+      },
+      "interpretation": {
+        "replayed_verbatim": true,
+        "authority": "Saved exposition; arithmetic does not verify theology or divine revelation",
+        "model_generation_replayed": false
+      },
+      "word_counts": {
+        "method": "Python str.split() on saved Unicode text; count tokens; punctuation is not stripped",
+        "lesson_words": 10281,
+        "source_declared_lesson_words": 10281,
+        "markdown_words_including_any_notes": 10463,
+        "historical_preaching_count_not_recomputed": 9785,
+        "historical_preaching_count_note": "Source has no explicit machine-readable preaching boundary",
+        "baseline_genesis_1_1_lesson_words": 5386,
+        "ratio_to_genesis_1_1_baseline": 1.908837727,
+        "equals_twice_genesis_1_1_baseline": false,
+        "baseline_scope": "The recovered Genesis 1:1 baseline only; no separate prior baseline is claimed for other verses"
+      },
+      "checks": [
+        {
+          "check": "pointed_to_consonantal_surface",
+          "passed": true,
+          "actual": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך",
+          "expected": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך"
+        },
+        {
+          "check": "standard_total",
+          "passed": true,
+          "actual": 1776,
+          "expected": 1776
+        },
+        {
+          "check": "letter_count",
+          "passed": true,
+          "actual": 45,
+          "expected": 45
+        },
+        {
+          "check": "lexical_word_count",
+          "passed": true,
+          "actual": 12,
+          "expected": 12
+        },
+        {
+          "check": "word_spelling_trace",
+          "passed": true,
+          "actual": [
+            "וירא",
+            "אלהים",
+            "את",
+            "האור",
+            "כי",
+            "טוב",
+            "ויבדל",
+            "אלהים",
+            "בין",
+            "האור",
+            "ובין",
+            "החשך"
+          ],
+          "expected": [
+            "וירא",
+            "אלהים",
+            "את",
+            "האור",
+            "כי",
+            "טוב",
+            "ויבדל",
+            "אלהים",
+            "בין",
+            "האור",
+            "ובין",
+            "החשך"
+          ]
+        },
+        {
+          "check": "word_total_trace",
+          "passed": true,
+          "actual": [
+            217,
+            86,
+            401,
+            212,
+            30,
+            17,
+            52,
+            86,
+            62,
+            212,
+            68,
+            333
+          ],
+          "expected": [
+            217,
+            86,
+            401,
+            212,
+            30,
+            17,
+            52,
+            86,
+            62,
+            212,
+            68,
+            333
+          ]
+        },
+        {
+          "check": "letter_value_trace",
+          "passed": true,
+          "actual": [
+            [
+              6,
+              10,
+              200,
+              1
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              1,
+              400
+            ],
+            [
+              5,
+              1,
+              6,
+              200
+            ],
+            [
+              20,
+              10
+            ],
+            [
+              9,
+              6,
+              2
+            ],
+            [
+              6,
+              10,
+              2,
+              4,
+              30
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              2,
+              10,
+              50
+            ],
+            [
+              5,
+              1,
+              6,
+              200
+            ],
+            [
+              6,
+              2,
+              10,
+              50
+            ],
+            [
+              5,
+              8,
+              300,
+              20
+            ]
+          ],
+          "expected": [
+            [
+              6,
+              10,
+              200,
+              1
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              1,
+              400
+            ],
+            [
+              5,
+              1,
+              6,
+              200
+            ],
+            [
+              20,
+              10
+            ],
+            [
+              9,
+              6,
+              2
+            ],
+            [
+              6,
+              10,
+              2,
+              4,
+              30
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              2,
+              10,
+              50
+            ],
+            [
+              5,
+              1,
+              6,
+              200
+            ],
+            [
+              6,
+              2,
+              10,
+              50
+            ],
+            [
+              5,
+              8,
+              300,
+              20
+            ]
+          ]
+        },
+        {
+          "check": "letter_spelling_trace",
+          "passed": true,
+          "actual": [
+            [
+              "ו",
+              "י",
+              "ר",
+              "א"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "א",
+              "ת"
+            ],
+            [
+              "ה",
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "כ",
+              "י"
+            ],
+            [
+              "ט",
+              "ו",
+              "ב"
+            ],
+            [
+              "ו",
+              "י",
+              "ב",
+              "ד",
+              "ל"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "ב",
+              "י",
+              "ן"
+            ],
+            [
+              "ה",
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "ו",
+              "ב",
+              "י",
+              "ן"
+            ],
+            [
+              "ה",
+              "ח",
+              "ש",
+              "ך"
+            ]
+          ],
+          "expected": [
+            [
+              "ו",
+              "י",
+              "ר",
+              "א"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "א",
+              "ת"
+            ],
+            [
+              "ה",
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "כ",
+              "י"
+            ],
+            [
+              "ט",
+              "ו",
+              "ב"
+            ],
+            [
+              "ו",
+              "י",
+              "ב",
+              "ד",
+              "ל"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "ב",
+              "י",
+              "ן"
+            ],
+            [
+              "ה",
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "ו",
+              "ב",
+              "י",
+              "ן"
+            ],
+            [
+              "ה",
+              "ח",
+              "ש",
+              "ך"
+            ]
+          ]
+        },
+        {
+          "check": "NFC_and_NFD_equivalence",
+          "passed": true,
+          "actual": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך",
+          "expected": "וירא אלהים את האור כי טוב ויבדל אלהים בין האור ובין החשך"
+        },
+        {
+          "check": "maqaf_preserves_all_four_totals",
+          "passed": true,
+          "actual": [
+            1776,
+            4676,
+            381,
+            147
+          ],
+          "expected": [
+            1776,
+            4676,
+            381,
+            147
+          ]
+        },
+        {
+          "check": "pointed_whitespace_units",
+          "passed": true,
+          "actual": 10,
+          "expected": 10
+        },
+        {
+          "check": "clause_subtotals",
+          "passed": true,
+          "actual": [
+            963,
+            813
+          ],
+          "expected": [
+            963,
+            813
+          ]
+        },
+        {
+          "check": "clause_partition_covers_verse",
+          "passed": true,
+          "actual": 12,
+          "expected": 12
+        },
+        {
+          "check": "prior_verse_reference_total",
+          "passed": true,
+          "actual": 813,
+          "expected": 813
+        },
+        {
+          "check": "current_second_clause_total",
+          "passed": true,
+          "actual": 813,
+          "expected": 813
+        },
+        {
+          "check": "selected_greek_total",
+          "passed": true,
+          "actual": 171,
+          "expected": 171
+        },
+        {
+          "check": "selected_greek_letter_values",
+          "passed": true,
+          "actual": [
+            20,
+            1,
+            30,
+            70,
+            50
+          ],
+          "expected": [
+            20,
+            1,
+            30,
+            70,
+            50
+          ]
+        },
+        {
+          "check": "selected_greek_letter_spellings",
+          "passed": true,
+          "actual": [
+            "κ",
+            "α",
+            "λ",
+            "ο",
+            "ν"
+          ],
+          "expected": [
+            "κ",
+            "α",
+            "λ",
+            "ο",
+            "ν"
+          ]
+        },
+        {
+          "check": "selected_greek_dictionary_form",
+          "passed": true,
+          "actual": 321,
+          "expected": 321
+        },
+        {
+          "check": "saved_lesson_word_count",
+          "passed": true,
+          "actual": 10281,
+          "expected": 10281
+        },
+        {
+          "check": "saved_markdown_word_count",
+          "passed": true,
+          "actual": 10463,
+          "expected": 10463
+        },
+        {
+          "check": "saved_markdown_preserves_lesson",
+          "passed": true,
+          "actual": true,
+          "expected": true
+        }
+      ]
+    },
+    {
+      "passage": "Genesis 1:5",
+      "source_file": "Genesis_1_5_Expanded_Study.json",
+      "state": "PASS",
+      "source_and_display": {
+        "hebrew_pointed": "וַיִּקְרָא אֱלֹהִים לָאוֹר יוֹם וְלַחֹשֶׁךְ קָרָא לָיְלָה וַיְהִי־עֶרֶב וַיְהִי־בֹקֶר יוֹם אֶחָד׃",
+        "kjv": "And God called the light Day, and the darkness he called Night. And the evening and the morning were the first day.",
+        "transliteration": "Vayyiqra Elohim la'or yom, velachoshekh qara laylah; vayhi erev vayhi voqer, yom echad.",
+        "new_testament_witnesses": [
+          "John 1:3",
+          "John 9:1-41, especially 4-5",
+          "John 11:1-44, especially 9-10",
+          "1 Thessalonians 5:1-11",
+          "Romans 13:8-14, especially 11-14",
+          "Ephesians 5:8-17, especially 15-17"
+        ]
+      },
+      "calculation": {
+        "hebrew_lanes": {
+          "standard": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_5_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "standard"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד",
+            "word_count": 13,
+            "letter_count": 49,
+            "total": 2141,
+            "binary": "100001011101",
+            "hex": "85D",
+            "octal": "4135",
+            "binary_round_trip": 2141,
+            "rows": [
+              {
+                "token": "ויקרא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  10,
+                  100,
+                  200,
+                  1
+                ],
+                "subtotal": 317,
+                "terminal_katan": 2
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  40
+                ],
+                "subtotal": 86,
+                "terminal_katan": 5
+              },
+              {
+                "token": "לאור",
+                "letters": [
+                  "ל",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  30,
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 237,
+                "terminal_katan": 3
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  10,
+                  6,
+                  40
+                ],
+                "subtotal": 56,
+                "terminal_katan": 2
+              },
+              {
+                "token": "ולחשך",
+                "letters": [
+                  "ו",
+                  "ל",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  30,
+                  8,
+                  300,
+                  20
+                ],
+                "subtotal": 364,
+                "terminal_katan": 4
+              },
+              {
+                "token": "קרא",
+                "letters": [
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  100,
+                  200,
+                  1
+                ],
+                "subtotal": 301,
+                "terminal_katan": 4
+              },
+              {
+                "token": "לילה",
+                "letters": [
+                  "ל",
+                  "י",
+                  "ל",
+                  "ה"
+                ],
+                "values": [
+                  30,
+                  10,
+                  30,
+                  5
+                ],
+                "subtotal": 75,
+                "terminal_katan": 3
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ערב",
+                "letters": [
+                  "ע",
+                  "ר",
+                  "ב"
+                ],
+                "values": [
+                  70,
+                  200,
+                  2
+                ],
+                "subtotal": 272,
+                "terminal_katan": 2
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "בקר",
+                "letters": [
+                  "ב",
+                  "ק",
+                  "ר"
+                ],
+                "values": [
+                  2,
+                  100,
+                  200
+                ],
+                "subtotal": 302,
+                "terminal_katan": 5
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  10,
+                  6,
+                  40
+                ],
+                "subtotal": 56,
+                "terminal_katan": 2
+              },
+              {
+                "token": "אחד",
+                "letters": [
+                  "א",
+                  "ח",
+                  "ד"
+                ],
+                "values": [
+                  1,
+                  8,
+                  4
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              }
+            ]
+          },
+          "gadol": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_5_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "gadol"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד",
+            "word_count": 13,
+            "letter_count": 49,
+            "total": 4301,
+            "binary": "1000011001101",
+            "hex": "10CD",
+            "octal": "10315",
+            "binary_round_trip": 4301,
+            "rows": [
+              {
+                "token": "ויקרא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  10,
+                  100,
+                  200,
+                  1
+                ],
+                "subtotal": 317,
+                "terminal_katan": 2
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  30,
+                  5,
+                  10,
+                  600
+                ],
+                "subtotal": 646,
+                "terminal_katan": 7
+              },
+              {
+                "token": "לאור",
+                "letters": [
+                  "ל",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  30,
+                  1,
+                  6,
+                  200
+                ],
+                "subtotal": 237,
+                "terminal_katan": 3
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  10,
+                  6,
+                  600
+                ],
+                "subtotal": 616,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ולחשך",
+                "letters": [
+                  "ו",
+                  "ל",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  30,
+                  8,
+                  300,
+                  500
+                ],
+                "subtotal": 844,
+                "terminal_katan": 7
+              },
+              {
+                "token": "קרא",
+                "letters": [
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  100,
+                  200,
+                  1
+                ],
+                "subtotal": 301,
+                "terminal_katan": 4
+              },
+              {
+                "token": "לילה",
+                "letters": [
+                  "ל",
+                  "י",
+                  "ל",
+                  "ה"
+                ],
+                "values": [
+                  30,
+                  10,
+                  30,
+                  5
+                ],
+                "subtotal": 75,
+                "terminal_katan": 3
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ערב",
+                "letters": [
+                  "ע",
+                  "ר",
+                  "ב"
+                ],
+                "values": [
+                  70,
+                  200,
+                  2
+                ],
+                "subtotal": 272,
+                "terminal_katan": 2
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "בקר",
+                "letters": [
+                  "ב",
+                  "ק",
+                  "ר"
+                ],
+                "values": [
+                  2,
+                  100,
+                  200
+                ],
+                "subtotal": 302,
+                "terminal_katan": 5
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  10,
+                  6,
+                  600
+                ],
+                "subtotal": 616,
+                "terminal_katan": 4
+              },
+              {
+                "token": "אחד",
+                "letters": [
+                  "א",
+                  "ח",
+                  "ד"
+                ],
+                "values": [
+                  1,
+                  8,
+                  4
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              }
+            ]
+          },
+          "ordinal": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_5_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "ordinal"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד",
+            "word_count": 13,
+            "letter_count": 49,
+            "total": 485,
+            "binary": "111100101",
+            "hex": "1E5",
+            "octal": "745",
+            "binary_round_trip": 485,
+            "rows": [
+              {
+                "token": "ויקרא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  10,
+                  19,
+                  20,
+                  1
+                ],
+                "subtotal": 56,
+                "terminal_katan": 2
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  12,
+                  5,
+                  10,
+                  13
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "לאור",
+                "letters": [
+                  "ל",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  12,
+                  1,
+                  6,
+                  20
+                ],
+                "subtotal": 39,
+                "terminal_katan": 3
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  10,
+                  6,
+                  13
+                ],
+                "subtotal": 29,
+                "terminal_katan": 2
+              },
+              {
+                "token": "ולחשך",
+                "letters": [
+                  "ו",
+                  "ל",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  12,
+                  8,
+                  21,
+                  11
+                ],
+                "subtotal": 58,
+                "terminal_katan": 4
+              },
+              {
+                "token": "קרא",
+                "letters": [
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  19,
+                  20,
+                  1
+                ],
+                "subtotal": 40,
+                "terminal_katan": 4
+              },
+              {
+                "token": "לילה",
+                "letters": [
+                  "ל",
+                  "י",
+                  "ל",
+                  "ה"
+                ],
+                "values": [
+                  12,
+                  10,
+                  12,
+                  5
+                ],
+                "subtotal": 39,
+                "terminal_katan": 3
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ערב",
+                "letters": [
+                  "ע",
+                  "ר",
+                  "ב"
+                ],
+                "values": [
+                  16,
+                  20,
+                  2
+                ],
+                "subtotal": 38,
+                "terminal_katan": 2
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  10,
+                  5,
+                  10
+                ],
+                "subtotal": 31,
+                "terminal_katan": 4
+              },
+              {
+                "token": "בקר",
+                "letters": [
+                  "ב",
+                  "ק",
+                  "ר"
+                ],
+                "values": [
+                  2,
+                  19,
+                  20
+                ],
+                "subtotal": 41,
+                "terminal_katan": 5
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  10,
+                  6,
+                  13
+                ],
+                "subtotal": 29,
+                "terminal_katan": 2
+              },
+              {
+                "token": "אחד",
+                "letters": [
+                  "א",
+                  "ח",
+                  "ד"
+                ],
+                "values": [
+                  1,
+                  8,
+                  4
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              }
+            ]
+          },
+          "reduced": {
+            "schema": "qel.word-core.reference-result/v2",
+            "identities": {
+              "source_id": "public-study/Genesis_1_5_Expanded_Study.json",
+              "transform_id": "recovered-WORD_CORE-reference-v2/NFD/maqaf-split",
+              "profile_id": "recovered-WORD_CORE-reference-v2/four-Hebrew-schemes",
+              "language": "hebrew",
+              "scheme": "reduced"
+            },
+            "maqaf_mode": "split",
+            "calculation_surface": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד",
+            "word_count": 13,
+            "letter_count": 49,
+            "total": 152,
+            "binary": "10011000",
+            "hex": "98",
+            "octal": "230",
+            "binary_round_trip": 152,
+            "rows": [
+              {
+                "token": "ויקרא",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  6,
+                  1,
+                  1,
+                  2,
+                  1
+                ],
+                "subtotal": 11,
+                "terminal_katan": 2
+              },
+              {
+                "token": "אלהים",
+                "letters": [
+                  "א",
+                  "ל",
+                  "ה",
+                  "י",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  3,
+                  5,
+                  1,
+                  4
+                ],
+                "subtotal": 14,
+                "terminal_katan": 5
+              },
+              {
+                "token": "לאור",
+                "letters": [
+                  "ל",
+                  "א",
+                  "ו",
+                  "ר"
+                ],
+                "values": [
+                  3,
+                  1,
+                  6,
+                  2
+                ],
+                "subtotal": 12,
+                "terminal_katan": 3
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  6,
+                  4
+                ],
+                "subtotal": 11,
+                "terminal_katan": 2
+              },
+              {
+                "token": "ולחשך",
+                "letters": [
+                  "ו",
+                  "ל",
+                  "ח",
+                  "ש",
+                  "ך"
+                ],
+                "values": [
+                  6,
+                  3,
+                  8,
+                  3,
+                  2
+                ],
+                "subtotal": 22,
+                "terminal_katan": 4
+              },
+              {
+                "token": "קרא",
+                "letters": [
+                  "ק",
+                  "ר",
+                  "א"
+                ],
+                "values": [
+                  1,
+                  2,
+                  1
+                ],
+                "subtotal": 4,
+                "terminal_katan": 4
+              },
+              {
+                "token": "לילה",
+                "letters": [
+                  "ל",
+                  "י",
+                  "ל",
+                  "ה"
+                ],
+                "values": [
+                  3,
+                  1,
+                  3,
+                  5
+                ],
+                "subtotal": 12,
+                "terminal_katan": 3
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  1,
+                  5,
+                  1
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              },
+              {
+                "token": "ערב",
+                "letters": [
+                  "ע",
+                  "ר",
+                  "ב"
+                ],
+                "values": [
+                  7,
+                  2,
+                  2
+                ],
+                "subtotal": 11,
+                "terminal_katan": 2
+              },
+              {
+                "token": "ויהי",
+                "letters": [
+                  "ו",
+                  "י",
+                  "ה",
+                  "י"
+                ],
+                "values": [
+                  6,
+                  1,
+                  5,
+                  1
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              },
+              {
+                "token": "בקר",
+                "letters": [
+                  "ב",
+                  "ק",
+                  "ר"
+                ],
+                "values": [
+                  2,
+                  1,
+                  2
+                ],
+                "subtotal": 5,
+                "terminal_katan": 5
+              },
+              {
+                "token": "יום",
+                "letters": [
+                  "י",
+                  "ו",
+                  "ם"
+                ],
+                "values": [
+                  1,
+                  6,
+                  4
+                ],
+                "subtotal": 11,
+                "terminal_katan": 2
+              },
+              {
+                "token": "אחד",
+                "letters": [
+                  "א",
+                  "ח",
+                  "ד"
+                ],
+                "values": [
+                  1,
+                  8,
+                  4
+                ],
+                "subtotal": 13,
+                "terminal_katan": 4
+              }
+            ]
+          }
+        },
+        "maqaf_join_word_count": 11,
+        "declared_clause_grouping": {
+          "lexical_word_group_lengths": [
+            7,
+            6
+          ],
+          "subtotals": [
+            1436,
+            705
+          ],
+          "boundary_source": "Arithmetic paragraph in the saved study"
+        },
+        "selected_greek": {
+          "implementation": "new-20260917-selected-word-reference",
+          "frozen_historical_numeric_profile_recovered": false,
+          "historical_profile_note": "A historical draft Greek map is preserved separately; its allow_execution is false and its primary-text identity is unset. This new selected-word profile does not activate that draft.",
+          "input": "ἡμέρα",
+          "calculation_surface": "ημερα",
+          "trace": [
+            {
+              "letter": "η",
+              "value": 8
+            },
+            {
+              "letter": "μ",
+              "value": 40
+            },
+            {
+              "letter": "ε",
+              "value": 5
+            },
+            {
+              "letter": "ρ",
+              "value": 100
+            },
+            {
+              "letter": "α",
+              "value": 1
+            }
+          ],
+          "total": 154
+        }
+      },
+      "interpretation": {
+        "replayed_verbatim": true,
+        "authority": "Saved exposition; arithmetic does not verify theology or divine revelation",
+        "model_generation_replayed": false
+      },
+      "word_counts": {
+        "method": "Python str.split() on saved Unicode text; count tokens; punctuation is not stripped",
+        "lesson_words": 10192,
+        "source_declared_lesson_words": 10192,
+        "markdown_words_including_any_notes": 10399,
+        "historical_preaching_count_not_recomputed": 9638,
+        "historical_preaching_count_note": "Source has no explicit machine-readable preaching boundary",
+        "baseline_genesis_1_1_lesson_words": 5386,
+        "ratio_to_genesis_1_1_baseline": 1.892313405,
+        "equals_twice_genesis_1_1_baseline": false,
+        "baseline_scope": "The recovered Genesis 1:1 baseline only; no separate prior baseline is claimed for other verses"
+      },
+      "checks": [
+        {
+          "check": "pointed_to_consonantal_surface",
+          "passed": true,
+          "actual": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד",
+          "expected": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד"
+        },
+        {
+          "check": "standard_total",
+          "passed": true,
+          "actual": 2141,
+          "expected": 2141
+        },
+        {
+          "check": "letter_count",
+          "passed": true,
+          "actual": 49,
+          "expected": 49
+        },
+        {
+          "check": "lexical_word_count",
+          "passed": true,
+          "actual": 13,
+          "expected": 13
+        },
+        {
+          "check": "word_spelling_trace",
+          "passed": true,
+          "actual": [
+            "ויקרא",
+            "אלהים",
+            "לאור",
+            "יום",
+            "ולחשך",
+            "קרא",
+            "לילה",
+            "ויהי",
+            "ערב",
+            "ויהי",
+            "בקר",
+            "יום",
+            "אחד"
+          ],
+          "expected": [
+            "ויקרא",
+            "אלהים",
+            "לאור",
+            "יום",
+            "ולחשך",
+            "קרא",
+            "לילה",
+            "ויהי",
+            "ערב",
+            "ויהי",
+            "בקר",
+            "יום",
+            "אחד"
+          ]
+        },
+        {
+          "check": "word_total_trace",
+          "passed": true,
+          "actual": [
+            317,
+            86,
+            237,
+            56,
+            364,
+            301,
+            75,
+            31,
+            272,
+            31,
+            302,
+            56,
+            13
+          ],
+          "expected": [
+            317,
+            86,
+            237,
+            56,
+            364,
+            301,
+            75,
+            31,
+            272,
+            31,
+            302,
+            56,
+            13
+          ]
+        },
+        {
+          "check": "letter_value_trace",
+          "passed": true,
+          "actual": [
+            [
+              6,
+              10,
+              100,
+              200,
+              1
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              30,
+              1,
+              6,
+              200
+            ],
+            [
+              10,
+              6,
+              40
+            ],
+            [
+              6,
+              30,
+              8,
+              300,
+              20
+            ],
+            [
+              100,
+              200,
+              1
+            ],
+            [
+              30,
+              10,
+              30,
+              5
+            ],
+            [
+              6,
+              10,
+              5,
+              10
+            ],
+            [
+              70,
+              200,
+              2
+            ],
+            [
+              6,
+              10,
+              5,
+              10
+            ],
+            [
+              2,
+              100,
+              200
+            ],
+            [
+              10,
+              6,
+              40
+            ],
+            [
+              1,
+              8,
+              4
+            ]
+          ],
+          "expected": [
+            [
+              6,
+              10,
+              100,
+              200,
+              1
+            ],
+            [
+              1,
+              30,
+              5,
+              10,
+              40
+            ],
+            [
+              30,
+              1,
+              6,
+              200
+            ],
+            [
+              10,
+              6,
+              40
+            ],
+            [
+              6,
+              30,
+              8,
+              300,
+              20
+            ],
+            [
+              100,
+              200,
+              1
+            ],
+            [
+              30,
+              10,
+              30,
+              5
+            ],
+            [
+              6,
+              10,
+              5,
+              10
+            ],
+            [
+              70,
+              200,
+              2
+            ],
+            [
+              6,
+              10,
+              5,
+              10
+            ],
+            [
+              2,
+              100,
+              200
+            ],
+            [
+              10,
+              6,
+              40
+            ],
+            [
+              1,
+              8,
+              4
+            ]
+          ]
+        },
+        {
+          "check": "letter_spelling_trace",
+          "passed": true,
+          "actual": [
+            [
+              "ו",
+              "י",
+              "ק",
+              "ר",
+              "א"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "ל",
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "י",
+              "ו",
+              "ם"
+            ],
+            [
+              "ו",
+              "ל",
+              "ח",
+              "ש",
+              "ך"
+            ],
+            [
+              "ק",
+              "ר",
+              "א"
+            ],
+            [
+              "ל",
+              "י",
+              "ל",
+              "ה"
+            ],
+            [
+              "ו",
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "ע",
+              "ר",
+              "ב"
+            ],
+            [
+              "ו",
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "ב",
+              "ק",
+              "ר"
+            ],
+            [
+              "י",
+              "ו",
+              "ם"
+            ],
+            [
+              "א",
+              "ח",
+              "ד"
+            ]
+          ],
+          "expected": [
+            [
+              "ו",
+              "י",
+              "ק",
+              "ר",
+              "א"
+            ],
+            [
+              "א",
+              "ל",
+              "ה",
+              "י",
+              "ם"
+            ],
+            [
+              "ל",
+              "א",
+              "ו",
+              "ר"
+            ],
+            [
+              "י",
+              "ו",
+              "ם"
+            ],
+            [
+              "ו",
+              "ל",
+              "ח",
+              "ש",
+              "ך"
+            ],
+            [
+              "ק",
+              "ר",
+              "א"
+            ],
+            [
+              "ל",
+              "י",
+              "ל",
+              "ה"
+            ],
+            [
+              "ו",
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "ע",
+              "ר",
+              "ב"
+            ],
+            [
+              "ו",
+              "י",
+              "ה",
+              "י"
+            ],
+            [
+              "ב",
+              "ק",
+              "ר"
+            ],
+            [
+              "י",
+              "ו",
+              "ם"
+            ],
+            [
+              "א",
+              "ח",
+              "ד"
+            ]
+          ]
+        },
+        {
+          "check": "NFC_and_NFD_equivalence",
+          "passed": true,
+          "actual": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד",
+          "expected": "ויקרא אלהים לאור יום ולחשך קרא לילה ויהי ערב ויהי בקר יום אחד"
+        },
+        {
+          "check": "maqaf_preserves_all_four_totals",
+          "passed": true,
+          "actual": [
+            2141,
+            4301,
+            485,
+            152
+          ],
+          "expected": [
+            2141,
+            4301,
+            485,
+            152
+          ]
+        },
+        {
+          "check": "pointed_whitespace_units",
+          "passed": true,
+          "actual": 11,
+          "expected": 11
+        },
+        {
+          "check": "clause_subtotals",
+          "passed": true,
+          "actual": [
+            1436,
+            705
+          ],
+          "expected": [
+            1436,
+            705
+          ]
+        },
+        {
+          "check": "clause_partition_covers_verse",
+          "passed": true,
+          "actual": 13,
+          "expected": 13
+        },
+        {
+          "check": "selected_greek_total",
+          "passed": true,
+          "actual": 154,
+          "expected": 154
+        },
+        {
+          "check": "selected_greek_letter_values",
+          "passed": true,
+          "actual": [
+            8,
+            40,
+            5,
+            100,
+            1
+          ],
+          "expected": [
+            8,
+            40,
+            5,
+            100,
+            1
+          ]
+        },
+        {
+          "check": "selected_greek_letter_spellings",
+          "passed": true,
+          "actual": [
+            "η",
+            "μ",
+            "ε",
+            "ρ",
+            "α"
+          ],
+          "expected": [
+            "η",
+            "μ",
+            "ε",
+            "ρ",
+            "α"
+          ]
+        },
+        {
+          "check": "saved_lesson_word_count",
+          "passed": true,
+          "actual": 10192,
+          "expected": 10192
+        },
+        {
+          "check": "saved_markdown_word_count",
+          "passed": true,
+          "actual": 10399,
+          "expected": 10399
+        },
+        {
+          "check": "saved_markdown_preserves_lesson",
+          "passed": true,
+          "actual": true,
+          "expected": true
+        }
+      ]
+    }
+  ]
+}

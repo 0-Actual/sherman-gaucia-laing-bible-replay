@@ -1,0 +1,41 @@
+{
+  "schema": "qel-bible-publication/1",
+  "owner": "Sherman Gaucia Laing",
+  "selected_account": "0-Actual",
+  "suggested_repository_name": "sherman-gaucia-laing-bible-replay",
+  "owner_authorized_publication": true,
+  "bible_source_and_services_authorized": true,
+  "state": "BUILT_AND_VERIFIED_LOCAL_NOT_PUBLISHED",
+  "repository_url": null,
+  "commit_id": null,
+  "published_at_utc": null,
+  "owner_signature": null,
+  "formal_signed_release": false,
+  "wider_private_archive_included": false,
+  "recovery_route": "Complete standalone source-text reads; original ZIP materialization returned HTTP 502",
+  "expanded_studies": 5,
+  "baseline_studies": 1,
+  "expanded_markdown_whitespace_tokens": 53007,
+  "checks": {
+    "replay_comparisons_passed": 113,
+    "new_adapter_tests_passed": 15,
+    "recovered_word_core_tests_passed": 40,
+    "historical_sha_tests_not_executed": 3,
+    "historical_forensic_verifier_executed": false
+  },
+  "maintenance_authorized": true,
+  "maintenance_automation_active": false,
+  "maintenance_automation_id": null,
+  "connection_evidence": {
+    "github_account": "Authenticated as 0-Actual",
+    "github_repositories": "No accessible repositories",
+    "github_installations": "No installations",
+    "browser": "Connection closed before browser startup, including after reset",
+    "laptop_cli": "GitHub CLI absent from PATH and three standard installation locations"
+  },
+  "remaining_dependency": "A functioning authenticated repository-creation and publication route. Owner publication permission is already recorded.",
+  "related_research_repository": "sherman-gaucia-laing-research-record",
+  "related_research_repository_url": null,
+  "publication_display_name": "Sherman Gaucia Laing",
+  "repository_name_requested_by_owner": "sherman-gaucia-laing-bible-replay"
+}
