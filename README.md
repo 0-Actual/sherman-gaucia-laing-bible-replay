@@ -3,7 +3,7 @@
 **Sherman Gaucia Laing / Quantum.Earth.Laing**  
 Recovered Bible study services and clearly labeled new replay integration. Prepared September 17, 2026 with ChatGPT/GAUCIA and Codex assistance.
 
-This repository contains the complete expanded Genesis 1:1–1:5 studies, the earlier Genesis 1:1 baseline, recovered WORD_CORE reference code and tests, Bible governance and agent instructions, a recovered web-source subset, and an offline replay process. It is prepared locally; the actual GitHub URL and publication time remain unset in [PUBLICATION_STATUS.json](PUBLICATION_STATUS.json).
+This repository contains the complete expanded Genesis 1:1–1:5 studies, the earlier Genesis 1:1 baseline, recovered WORD_CORE reference code and tests, Bible governance and agent instructions, a recovered web-source subset, and an offline replay process. The public repository and actual publication verification time are recorded in [PUBLICATION_STATUS.json](PUBLICATION_STATUS.json).
 
 ## Read and explore
 
@@ -56,6 +56,6 @@ Three historical SHA-dependent tests and the old forensic verifier are preserved
 
 The selected Bible source and services are included under Sherman's current public-release direction. **Commercial use of covered material requires his prior explicit written authorization.** Read [LICENSE.md](LICENSE.md), [ATTRIBUTION.md](ATTRIBUTION.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The WEB Scripture text remains public domain and is not restricted by QEL's license. KJV study quotations retain their own source label.
 
-The wider private QEL development archive and raw private conversations remain outside this release. The companion `sherman-gaucia-laing-research-record` repository contains the 175-entry chronology, evidence account and Sherman's statement about conducting most of his research with “Improve for all” shared data enabled. Its actual public URL will be recorded after successful publication.
+The wider private QEL development archive and raw private conversations remain outside this release. The companion `sherman-gaucia-laing-research-record` repository contains the 175-entry chronology, evidence account and Sherman's statement about conducting most of his research with “Improve for all” shared data enabled. Read the [public research record](https://github.com/0-Actual/sherman-gaucia-laing-research-record).
 
-Routine maintenance and responses are delegated within [MAINTENANCE.md](MAINTENANCE.md). Commercial permissions remain Sherman's decision. No live monitoring, public deployment or signed release is claimed before it is verified.
+Routine maintenance and responses are delegated within [MAINTENANCE.md](MAINTENANCE.md). Commercial permissions remain Sherman's decision. Repository publication is verified in [PUBLICATION_STATUS.json](PUBLICATION_STATUS.json). Continuous monitoring is not active; no signed release is claimed.
