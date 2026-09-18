@@ -40,7 +40,11 @@
     },
     {
       "path": "MAINTENANCE.md",
-      "bytes": 4060
+      "bytes": 4157
+    },
+    {
+      "path": "MAINTENANCE_LOG.md",
+      "bytes": 1835
     },
     {
       "path": "Open_Bible_Study.cmd",
@@ -48,11 +52,11 @@
     },
     {
       "path": "PUBLICATION_STATUS.json",
-      "bytes": 4233
+      "bytes": 4326
     },
     {
       "path": "README.md",
-      "bytes": 6476
+      "bytes": 6573
     },
     {
       "path": "RECOVERY_INVENTORY.json",
