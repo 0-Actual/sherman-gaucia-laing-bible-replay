@@ -174,7 +174,7 @@ class ReplayFailureTests(unittest.TestCase):
         self.assertEqual(results["status"], "ERROR")
         self.assertFalse((self.output / "index.html").exists())
         self.assertFalse((self.output / "REPLAY_REPORT.md").exists())
-        self.assertNotEqual(json.loads((self.output / "verification.json").read_text())["state"], "PASS")
+        self.assertNotEqual(json.loads((self.output / "verification.json").read_text(encoding="utf-8"))["state"], "PASS")
 
     def test_missing_greek_cannot_publish_fresh_pass(self):
         self.mutate(lambda d: d["text_and_calculations"].pop("selected_greek_witness"))
@@ -293,7 +293,7 @@ class ReplayFailureTests(unittest.TestCase):
         self.run_replay()
         replay.atomic_json(self.output / "verification.json", {"state": "PASS"})
         self.run_replay()
-        self.assertEqual(json.loads((self.output / "verification.json").read_text())["state"], "NOT_RUN")
+        self.assertEqual(json.loads((self.output / "verification.json").read_text(encoding="utf-8"))["state"], "NOT_RUN")
 
     def test_output_must_not_overlap_source(self):
         before = self.study.read_bytes()
@@ -316,7 +316,7 @@ class ReplayFailureTests(unittest.TestCase):
         self.mutate(lambda d: d["text_and_calculations"].update(total=2702))
         failed = subprocess.run(command, capture_output=True, text=True, env=environment)
         self.assertEqual(failed.returncode, 1, failed.stderr)
-        self.assertEqual(json.loads((self.output / "results.json").read_text())["status"], "FAIL")
+        self.assertEqual(json.loads((self.output / "results.json").read_text(encoding="utf-8"))["status"], "FAIL")
         self.study.write_text("[]", encoding="utf-8")
         malformed = subprocess.run(command, capture_output=True, text=True, env=environment)
         self.assertEqual(malformed.returncode, 2, malformed.stderr)
@@ -336,7 +336,7 @@ class VerificationFailureTests(unittest.TestCase):
     def test_replay_failure_replaces_old_verification_pass(self):
         with mock.patch.object(verify, "ROOT", self.root), mock.patch.object(verify.subprocess, "run", return_value=subprocess.CompletedProcess([], 2)):
             code = verify.main()
-        current = json.loads(self.destination.read_text())
+        current = json.loads(self.destination.read_text(encoding="utf-8"))
         self.assertEqual((code, current["state"], current["failed_step"]), (1, "FAIL", "replay.py"))
         self.assertNotIn("stale", current)
 
@@ -349,7 +349,7 @@ class VerificationFailureTests(unittest.TestCase):
             return subprocess.CompletedProcess(command, 1)
         with mock.patch.object(verify, "ROOT", self.root), mock.patch.object(verify.subprocess, "run", side_effect=process):
             code = verify.main()
-        current = json.loads(self.destination.read_text())
+        current = json.loads(self.destination.read_text(encoding="utf-8"))
         self.assertEqual((code, current["state"], current["failed_step"]), (1, "FAIL", "test_replay.py"))
         self.assertEqual(current["replay_attempt_id"], "fixture")
 
@@ -373,7 +373,7 @@ class VerificationFailureTests(unittest.TestCase):
     def test_launch_error_records_error_not_old_pass(self):
         with mock.patch.object(verify, "ROOT", self.root), mock.patch.object(verify.subprocess, "run", side_effect=OSError("launch fixture")):
             code = verify.main()
-        current = json.loads(self.destination.read_text())
+        current = json.loads(self.destination.read_text(encoding="utf-8"))
         self.assertEqual((code, current["state"]), (2, "ERROR"))
         self.assertIn("launch fixture", current["error"])
 
