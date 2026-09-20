@@ -11,6 +11,12 @@ import html
 import importlib.util
 import json
 import math
+import os
+import shutil
+import tempfile
+from contextlib import contextmanager
+from datetime import datetime, timezone
+import uuid
 from pathlib import Path
 import re
 import sys
@@ -34,6 +40,140 @@ GREEK_VALUES = {
 class ReplayError(ValueError):
     pass
 
+
+
+def require(value, kind, location: str):
+    """Validate JSON types explicitly; bool is never an integer count/value."""
+    if type(value) is not kind:
+        raise ReplayError(f"{location}: expected {kind.__name__}")
+    if kind in (str, list, dict) and not value:
+        raise ReplayError(f"{location}: must not be empty")
+    if kind is int and value < 0:
+        raise ReplayError(f"{location}: must be nonnegative")
+    return value
+
+
+def validate_document(document, filename: str) -> dict:
+    require(document, dict, filename)
+    require(document.get("lesson_markdown"), str, filename + ".lesson_markdown")
+    if ("text_and_calculations" in document) == ("word_core" in document):
+        raise ReplayError(f"{filename}: exactly one calculation record is required")
+    calc = document.get("text_and_calculations", document.get("word_core"))
+    require(calc, dict, filename + ".calculations")
+    for key in ("passage", "hebrew_pointed", "hebrew_consonantal", "kjv"):
+        require(calc.get(key), str, filename + "." + key)
+    passage = calc["passage"]
+    if passage not in {f"Genesis 1:{verse}" for verse in range(1, 6)}:
+        raise ReplayError(f"{filename}: unsupported passage {passage!r}")
+    for key in ("total", "consonantal_letter_count"):
+        require(calc.get(key), int, filename + "." + key)
+    require(calc.get("lexical_word_count", calc.get("word_count")), int, filename + ".word_count")
+    words = require(calc.get("words"), list, filename + ".words")
+    for index, row in enumerate(words):
+        where = f"{filename}.words[{index}]"
+        require(row, dict, where)
+        require(row.get("hebrew"), str, where + ".hebrew")
+        require(row.get("value"), int, where + ".value")
+        for i, letter in enumerate(require(row.get("letter_values"), list, where + ".letter_values")):
+            require(letter, dict, f"{where}.letter_values[{i}]")
+            require(letter.get("letter"), str, where + ".letter")
+            require(letter.get("value"), int, where + ".letter_value")
+    # Every saved study, including the baseline, declares a Greek witness.
+    greek = require(calc.get("selected_greek_witness"), dict, filename + ".selected_greek_witness")
+    require(greek.get("word"), str, filename + ".greek.word")
+    require(greek.get("total"), int, filename + ".greek.total")
+    for index, row in enumerate(require(greek.get("trace"), list, filename + ".greek.trace")):
+        require(row, dict, f"{filename}.greek.trace[{index}]")
+        require(row.get("letter"), str, filename + ".greek.letter")
+        require(row.get("value"), int, filename + ".greek.value")
+    if passage == "Genesis 1:1":
+        factors = require(calc.get("arithmetic_factorization"), list, filename + ".arithmetic_factorization")
+        for item in factors:
+            require(item, int, filename + ".factor")
+    else:
+        require(calc.get("pointed_whitespace_unit_count"), int, filename + ".pointed_whitespace_unit_count")
+        clauses = require(calc.get("clause_subtotals"), list, filename + ".clause_subtotals")
+        for item in clauses:
+            require(item, int, filename + ".clause_subtotal")
+        if len(clauses) != len(CLAUSE_WORD_LENGTHS[passage]):
+            raise ReplayError(f"{filename}: wrong number of clause subtotals")
+    if passage == "Genesis 1:4" or "prior_verse_comparison" in calc:
+        prior = require(calc.get("prior_verse_comparison"), dict, filename + ".prior_verse_comparison")
+        if passage != "Genesis 1:4":
+            raise ReplayError(f"{filename}: prior comparison is only defined for Genesis 1:4")
+        for key in ("prior_total", "current_second_clause_total"):
+            require(prior.get(key), int, filename + "." + key)
+    if passage == "Genesis 1:4" or "dictionary_form" in greek or "dictionary_form_total" in greek:
+        require(greek.get("dictionary_form"), str, filename + ".greek.dictionary_form")
+        require(greek.get("dictionary_form_total"), int, filename + ".greek.dictionary_form_total")
+    validation = require(document.get("validation"), dict, filename + ".validation")
+    require(validation.get("whitespace_word_count_lesson", validation.get("whitespace_word_count_total")),
+            int, filename + ".validation.lesson_word_count")
+    require(validation.get("whitespace_word_count_with_source_notes", validation.get("whitespace_word_count_with_notes",
+            validation.get("whitespace_word_count_total"))), int, filename + ".validation.markdown_word_count")
+    exposition = require(document.get("exposition", document.get("word_aux")), dict, filename + ".exposition")
+    require(calc.get("transliteration", exposition.get("transliteration")), str, filename + ".transliteration")
+    witnesses = require(exposition.get("new_testament_witnesses"), list, filename + ".new_testament_witnesses")
+    for witness in witnesses:
+        require(witness, str, filename + ".new_testament_witness")
+    return calc
+
+
+def _unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ReplayError(f"Duplicate JSON field: {key}")
+        result[key] = value
+    return result
+
+
+def read_document(path: Path, expected_passage: str) -> dict:
+    def reject_constant(value):
+        raise ReplayError(f"{path.name}: invalid JSON numeric constant {value}")
+    document = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=_unique_object,
+                          parse_constant=reject_constant)
+    calc = validate_document(document, path.name)
+    if calc["passage"] != expected_passage:
+        raise ReplayError(f"{path.name}: expected passage {expected_passage}")
+    return document
+
+
+def atomic_json(path: Path, document: dict) -> None:
+    """Replace one record only after its complete bytes have been written."""
+    temporary = path.with_name("." + path.name + "." + uuid.uuid4().hex + ".tmp")
+    try:
+        with temporary.open("x", encoding="utf-8", newline="\n") as handle:
+            handle.write(json.dumps(document, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+@contextmanager
+def output_lock(output: Path):
+    """Cooperating writers only; a crash leaves the lock for explicit recovery."""
+    output.parent.mkdir(parents=True, exist_ok=True)
+    path = output.parent / ("." + output.name + ".replay.lock")
+    try:
+        descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except FileExistsError as error:
+        raise ReplayError(f"Replay output is locked; inspect the existing run before recovery: {path}") from error
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps({"pid": os.getpid(), "output": str(output)}) + "\n")
+        yield
+    finally:
+        path.unlink(missing_ok=True)
+
+
+def _status(run_id: str, state: str, status: str, **extra) -> dict:
+    return {"schema": "qel-bible-replay-run/1", "attempt_id": run_id,
+            "attempt_id_note": "Random local correlation label; not a fingerprint or signature",
+            "state": state, "status": status, "checked_at_utc": datetime.now(timezone.utc).isoformat(),
+            "owner_signature": None, **extra}
 
 def load_engine(path: Path):
     spec = importlib.util.spec_from_file_location("qel_recovered_word_core_v2", path)
@@ -82,6 +222,8 @@ def greek_selected_word(raw: str, engine) -> dict:
         if folded not in GREEK_VALUES:
             raise ReplayError(f"Character outside the declared selected-word Greek profile: {char!r}")
     surface = engine.transform_greek(raw)
+    if not surface:
+        raise ReplayError("Greek word has no letters after normalization")
     trace = [{"letter": char, "value": GREEK_VALUES[char]} for char in surface]
     return {
         "implementation": "new-20260917-selected-word-reference",
@@ -118,9 +260,8 @@ def count_report(document: dict, markdown: str, baseline: int | None) -> dict:
 
 
 def study_replay(document: dict, markdown: str, filename: str, engine, baseline: int | None) -> dict:
-    calc = document.get("text_and_calculations", document.get("word_core"))
-    if not isinstance(calc, dict):
-        raise ReplayError(f"Missing calculation record in {filename}")
+    calc = validate_document(document, filename)
+    require(markdown, str, filename + ".markdown")
     source_id = "public-study/" + filename
     lanes = hebrew_lanes(calc["hebrew_pointed"], source_id, engine)
     standard = lanes["standard"]
@@ -212,6 +353,13 @@ def inline_markdown(text: str) -> str:
     return re.sub(r"\*\*(.+?)\*\*", r'<strong>\1</strong>', escaped)
 
 
+def render_saved_verse(kjv: str, markdown: str) -> str:
+    """Reuse source emphasis only from one exactly matching verse quotation."""
+    matches = [line[2:].strip() for line in markdown.splitlines()
+               if line.startswith("> ") and line[2:].strip().replace("**", "") == kjv]
+    return inline_markdown(matches[0]) if len(matches) == 1 else html.escape(kjv)
+
+
 def render_markdown(markdown: str) -> str:
     """Small local presentation layer; original .md remains authoritative."""
     parts: list[str] = []
@@ -260,6 +408,25 @@ def render_markdown(markdown: str) -> str:
 def render_index(results: dict, documents: list[tuple[dict, str]]) -> str:
     sections = []
     navigation = []
+    failed_comparisons = []
+    for label, record in [("Baseline", results["baseline"]),
+                          *[("Expanded study", row) for row in results["studies"]]]:
+        for check in record["checks"]:
+            if not check["passed"]:
+                observed = html.escape(json.dumps(check["actual"], ensure_ascii=False))
+                expected = html.escape(json.dumps(check["expected"], ensure_ascii=False))
+                failed_comparisons.append(
+                    f'<li><b>{label} · {html.escape(record["passage"])}</b> — '
+                    f'{html.escape(check["check"].replace("_", " "))}: '
+                    f'calculated {observed}; saved expected {expected}.</li>')
+    failure_summary = ('<p>Failed source comparisons:</p><ul>' + "".join(failed_comparisons) + '</ul>'
+                       if failed_comparisons else '<p>No failed source comparisons.</p>')
+    status_html = (
+        '<div class="replay-status" role="status" aria-labelledby="replay-status-heading">'
+        '<h2 id="replay-status-heading">Replay verification</h2>'
+        f'<p>Overall replay status: <strong>{html.escape(results["status"])}</strong>.</p>'
+        f'<p>Required Genesis 1:1 baseline status: <strong>{html.escape(results["baseline"]["state"])}</strong>.</p>'
+        + failure_summary + '</div>')
     for index, (result, (_, markdown)) in enumerate(zip(results["studies"], documents), 1):
         passage = html.escape(result["passage"])
         navigation.append(f'<a href="#study-{index}">{passage}</a>')
@@ -276,7 +443,7 @@ def render_index(results: dict, documents: list[tuple[dict, str]]) -> str:
         sections.append(f'''<section id="study-{index}"><div class="eyebrow">Saved study · arithmetic replay {result["state"]}</div>
 <h2>{passage}</h2><p class="hebrew" lang="he" dir="rtl">{html.escape(display["hebrew_pointed"])}</p>
 <p class="transliteration">{html.escape(display["transliteration"] or "")}</p>
-<blockquote>{html.escape(display["kjv"])}</blockquote><p class="caption">King James Version · saved source text</p>
+<blockquote>{render_saved_verse(display["kjv"], markdown)}</blockquote><p class="caption">King James Version · saved source text</p>
 <div class="metrics"><span><b>{wc["lesson_words"]:,}</b> lesson words</span><span><b>{totals["standard"]["word_count"]}</b> Hebrew lexical words</span><span><b>{totals["standard"]["letter_count"]}</b> consonants</span></div>
 <details><summary>Inspect arithmetic, word counts, and checks</summary><table><tr><th>Hebrew convention</th><th>Total</th></tr>{rows}</table>
 <p>Maqaf split for lexical words; join gives {result["calculation"]["maqaf_join_word_count"]} units. All four totals remain unchanged.</p>
@@ -289,7 +456,8 @@ def render_index(results: dict, documents: list[tuple[dict, str]]) -> str:
 <title>QEL · The Genesis Studies</title><style>
 :root{color-scheme:light;--ink:#202d3a;--paper:#f7f3e9;--accent:#7b2e26;--line:#d6cfc0}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.65 Georgia,serif}header,main,footer{max-width:1000px;margin:auto;padding:32px 24px}header{padding-top:64px}h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.05;font-weight:normal;margin:20px 0}h2{font-size:2rem;line-height:1.2}h3{font-size:1.45rem}.eyebrow,.caption,summary,nav,.metrics{font-family:system-ui,sans-serif}.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.75rem;color:var(--accent)}.lead{max-width:780px;font-size:1.2rem}nav{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}a{color:var(--accent)}nav a{padding:8px 14px;border:1px solid var(--line);border-radius:3px;text-decoration:none}section{border-top:2px solid var(--line);padding:36px 0 48px;scroll-margin-top:20px}.hebrew{font-size:1.8rem;line-height:1.9}.transliteration{font-style:italic}blockquote{border-left:3px solid var(--accent);margin:20px 0;padding:12px 22px;font-size:1.15rem}.caption{font-size:.8rem;color:#59616b}.metrics{display:flex;flex-wrap:wrap;gap:24px;font-size:.9rem}.metrics b{display:block;font-size:1.5rem}details{margin:22px 0;padding:16px;background:#fffcf5;border:1px solid var(--line);border-radius:4px}summary{cursor:pointer;font-size:1rem;color:var(--accent);font-weight:600}details[open] summary{margin-bottom:24px}.lesson p{max-width:78ch}.table{overflow:auto}table{border-collapse:collapse;width:100%;font-size:.92rem;margin:20px 0}th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line)}th{font-family:system-ui,sans-serif;font-size:.8rem}strong{color:#9d2922}.item{margin:5px 0}footer{border-top:1px solid var(--line);font-size:.9rem}@media print{details{border:0;padding:0}nav{display:none}body{background:white}}
-</style></head><body><header><div class="eyebrow">Quantum.Earth.Laing · Sherman G. Laing</div><h1>The Genesis Studies</h1>
+.replay-status{border:2px solid var(--accent);padding:16px 22px;margin:24px 0;font-family:system-ui,sans-serif;font-size:1rem}.replay-status h2{font-size:1.2rem;margin:0}.replay-status p{margin:10px 0}.replay-status li{overflow-wrap:anywhere}
+</style></head><body><header><div class="eyebrow">Quantum.Earth.Laing · Sherman G. Laing</div><h1>The Genesis Studies</h1>''' + status_html + '''
 <p class="lead">Five expanded studies, preserved in full. Read the KJV, Hebrew, transliteration, gematria, New Testament witnesses, and exposition together.</p>
 <p>This file works offline. Calculations and word counts were replayed from the included sources. Saved exposition is presented verbatim; original AI inference was not rerun.</p>
 <nav>''' + "".join(navigation) + '''</nav></header><main>''' + "".join(sections) + '''</main><footer>
@@ -298,19 +466,19 @@ def render_index(results: dict, documents: list[tuple[dict, str]]) -> str:
 </footer></body></html>'''
 
 
-def replay(studies: Path, engine_path: Path, output: Path) -> dict:
+def _build_replay(studies: Path, engine_path: Path, output: Path) -> dict:
     engine = load_engine(engine_path)
     baseline_path = studies / "QEL_Genesis_1_1_Study_20260910.json"
     if not baseline_path.is_file():
         raise ReplayError("Required recovered Genesis 1:1 baseline is missing")
-    baseline_doc = json.loads(baseline_path.read_text(encoding="utf-8"))
+    baseline_doc = read_document(baseline_path, "Genesis 1:1")
     baseline_markdown = baseline_path.with_suffix(".md").read_text(encoding="utf-8")
     baseline_count = len(baseline_doc["lesson_markdown"].split())
     baseline_result = study_replay(baseline_doc, baseline_markdown, baseline_path.name, engine, baseline_count)
     records, documents = [], []
     for verse in range(1, 6):
         path = studies / f"Genesis_1_{verse}_Expanded_Study.json"
-        document = json.loads(path.read_text(encoding="utf-8"))
+        document = read_document(path, f"Genesis 1:{verse}")
         markdown = path.with_suffix(".md").read_text(encoding="utf-8")
         records.append(study_replay(document, markdown, path.name, engine, baseline_count))
         documents.append((document, markdown))
@@ -332,9 +500,10 @@ def replay(studies: Path, engine_path: Path, output: Path) -> dict:
                           "input_guard": "New wrapper rejects foreign letters, numbers, controls, non-Hebrew combining marks, and symbols in Hebrew input"},
         "baseline": baseline_result, "studies": records,
     }
-    output.mkdir(parents=True, exist_ok=True)
-    (output / "results.json").write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (output / "index.html").write_text(render_index(results, documents), encoding="utf-8")
+    comparisons = sum(len(row["checks"]) for row in [baseline_result, *records])
+    if comparisons != 113:
+        raise ReplayError(f"Replay profile requires 113 source comparisons; received {comparisons}")
+    rendered_index = render_index(results, documents)
     lines = ["# Offline replay report", "", f"Overall state: **{results['status']}**.", "",
              "This new adapter replays saved study text, Hebrew arithmetic, selected Greek words and word counts. It does not rerun historical AI inference or create a signature.", "",
              "| Study | Lesson words | Standard | Gadol | Ordinal | Reduced | Greek | State |",
@@ -346,9 +515,72 @@ def replay(studies: Path, engine_path: Path, output: Path) -> dict:
     lines += ["", f"Recovered Genesis 1:1 baseline: {baseline_count:,} lesson words. Genesis 1:1 expanded: {records[0]['word_counts']['lesson_words']:,}; exact ratio {records[0]['word_counts']['ratio_to_genesis_1_1_baseline']}.",
               "Other verses use the same expanded study format; an exact doubled count against a separate earlier version is not claimed.", "",
               "Full checks and per-letter traces: results.json. Offline reader: index.html. Historical preaching counts remain source-reported because the files do not define machine-readable preaching boundaries.", ""]
+    # All rendering completes before any success artifacts are staged.
+    output.mkdir(parents=True, exist_ok=True)
+    (output / "results.json").write_text(json.dumps(results, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    (output / "index.html").write_text(rendered_index, encoding="utf-8")
     (output / "REPLAY_REPORT.md").write_text("\n".join(lines), encoding="utf-8")
     return results
 
+
+
+def replay(studies: Path, engine_path: Path, output: Path) -> dict:
+    """Publish a complete generation; failed attempts cannot retain old PASS here.
+
+    Directory renames are not a multi-path filesystem transaction. A crash can
+    leave no current directory, an INCOMPLETE record or an orphaned staging
+    directory. Those are deliberately not a successful current generation.
+    Previous generations are preserved in uniquely named superseded siblings.
+    """
+    output = Path(output).absolute()
+    studies, engine_path = Path(studies).resolve(), Path(engine_path).resolve()
+    if output.is_symlink() or (output.exists() and not output.is_dir()):
+        raise ReplayError("Output must be a real directory, not a symlink or file")
+    output = output.resolve()
+    if output == studies or output in studies.parents or studies in output.parents or output in engine_path.parents:
+        raise ReplayError("Output must not overlap study sources or contain the engine")
+    run_id = uuid.uuid4().hex
+    with output_lock(output):
+        prior = None
+        if output.exists():
+            prior = output.with_name("." + output.name + ".superseded-" + run_id)
+            output.rename(prior)
+        output.mkdir()
+        initial = _status(run_id, "INCOMPLETE", "INCOMPLETE", previous_generation=str(prior) if prior else None)
+        atomic_json(output / "run-status.json", initial)
+        atomic_json(output / "results.json", initial)
+        # A previous integration PASS cannot be inherited by a replay-only run.
+        atomic_json(output / "verification.json", {**initial, "state": "NOT_RUN", "status": "NOT_RUN"})
+        stage = Path(tempfile.mkdtemp(prefix="." + output.name + ".staging-", dir=output.parent))
+        try:
+            results = _build_replay(studies, engine_path, stage)
+            complete = _status(run_id, "COMPLETE", results["status"], artifacts=["results.json", "index.html", "REPLAY_REPORT.md"])
+            atomic_json(stage / "run-status.json", complete)
+            atomic_json(stage / "verification.json", {**complete, "state": "NOT_RUN", "status": "NOT_RUN"})
+            incomplete = output.with_name("." + output.name + ".incomplete-" + run_id)
+            output.rename(incomplete)
+            try:
+                stage.rename(output)
+            except Exception:
+                incomplete.rename(output)
+                raise
+            # Only our own temporary attempt records; never delete prior output.
+            try:
+                shutil.rmtree(incomplete)
+            except OSError:
+                pass  # An inert incomplete sibling may remain; publication already succeeded.
+            return results
+        except Exception as error:
+            failure = _status(run_id, "INCOMPLETE", "ERROR", error_type=type(error).__name__, error=str(error),
+                              previous_generation=str(prior) if prior else None,
+                              staging_directory=str(stage), success_artifacts_published=False)
+            try:
+                atomic_json(output / "run-status.json", failure)
+                atomic_json(output / "results.json", failure)
+                atomic_json(output / "verification.json", {**failure, "state": "NOT_RUN", "status": "NOT_RUN"})
+            except OSError as recording_error:
+                raise ReplayError(f"{error}; unable to finish failure record: {recording_error}. No current success is established.") from error
+            raise ReplayError(f"{type(error).__name__}: {error}") from error
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -358,7 +590,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         results = replay(args.studies, args.engine, args.output)
-    except (OSError, ValueError, KeyError, TypeError) as error:
+    except (OSError, ValueError, KeyError, TypeError, ImportError, SyntaxError) as error:
         print(f"Replay failed: {error}", file=sys.stderr)
         return 2
     count = sum(len(r["checks"]) for r in [results["baseline"], *results["studies"]])

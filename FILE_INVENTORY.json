@@ -1,6 +1,6 @@
 {
   "schema": "qel-file-inventory/1",
-  "purpose": "Unsigned staging file inventory; not a cryptographic identity or owner signature",
+  "purpose": "Exact correction-edition path and byte-size inventory; excludes itself and runtime locks, caches, superseded generations and verification-attempt marker. Not an owner signature.",
   "files": [
     {
       "path": ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -12,7 +12,7 @@
     },
     {
       "path": ".github/workflows/replay-checks.yml",
-      "bytes": 654
+      "bytes": 756
     },
     {
       "path": ".gitignore",
@@ -40,7 +40,7 @@
     },
     {
       "path": "MAINTENANCE.md",
-      "bytes": 4157
+      "bytes": 4564
     },
     {
       "path": "MAINTENANCE_LOG.md",
@@ -51,12 +51,16 @@
       "bytes": 51
     },
     {
+      "path": "PUBLICATION_REVIEW_POLICY.md",
+      "bytes": 3177
+    },
+    {
       "path": "PUBLICATION_STATUS.json",
-      "bytes": 4326
+      "bytes": 8821
     },
     {
       "path": "README.md",
-      "bytes": 6573
+      "bytes": 7979
     },
     {
       "path": "RECOVERY_INVENTORY.json",
@@ -64,7 +68,7 @@
     },
     {
       "path": "REPLAY.md",
-      "bytes": 6780
+      "bytes": 7773
     },
     {
       "path": "REPLAY_RECIPE.md",
@@ -184,19 +188,23 @@
     },
     {
       "path": "replay-output/index.html",
-      "bytes": 358201
+      "bytes": 358758
     },
     {
       "path": "replay-output/results.json",
       "bytes": 185150
     },
     {
+      "path": "replay-output/run-status.json",
+      "bytes": 389
+    },
+    {
       "path": "replay-output/verification.json",
-      "bytes": 786
+      "bytes": 1022
     },
     {
       "path": "replay.py",
-      "bytes": 25194
+      "bytes": 38536
     },
     {
       "path": "studies/Genesis_1_1_Expanded_Study.json",
@@ -248,15 +256,27 @@
     },
     {
       "path": "test_replay.py",
-      "bytes": 7023
+      "bytes": 20845
+    },
+    {
+      "path": "test_web.mjs",
+      "bytes": 8199
     },
     {
       "path": "verify.py",
-      "bytes": 3051
+      "bytes": 6240
+    },
+    {
+      "path": "web/CORRECTIONS.md",
+      "bytes": 2211
+    },
+    {
+      "path": "web/CORRECTION_VALIDATION.json",
+      "bytes": 906
     },
     {
       "path": "web/README.md",
-      "bytes": 3371
+      "bytes": 4094
     },
     {
       "path": "web/VALIDATION.json",
@@ -268,11 +288,11 @@
     },
     {
       "path": "web/index.html",
-      "bytes": 4019
+      "bytes": 4300
     },
     {
       "path": "web/scripts/app.js",
-      "bytes": 13442
+      "bytes": 15265
     },
     {
       "path": "web/scripts/q6_data.js",

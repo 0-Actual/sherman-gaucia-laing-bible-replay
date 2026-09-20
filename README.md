@@ -3,6 +3,8 @@
 **Sherman Gaucia Laing / Quantum.Earth.Laing**  
 Recovered Bible study services and clearly labeled new replay integration. Prepared September 17, 2026 with ChatGPT/GAUCIA and Codex assistance.
 
+**September 20 correction edition.** Sherman G. Laing directed publication of these verified corrections to the existing repository. The corrections address input validation, failure reporting, displayed counts, drag selection and source-defined verse emphasis. The original publication dates remain historical. This specific owner-directed correction proceeds before completion of the 72-hour review; that period is not recorded as completed. Actual-browser visual verification remains open. The [standing publication review policy](PUBLICATION_REVIEW_POLICY.md) continues to govern future work.
+
 This repository contains the complete expanded Genesis 1:1–1:5 studies, the earlier Genesis 1:1 baseline, recovered WORD_CORE reference code and tests, Bible governance and agent instructions, a recovered web-source subset, and an offline replay process. The public repository and actual publication verification time are recorded in [PUBLICATION_STATUS.json](PUBLICATION_STATUS.json).
 
 ## Read and explore
@@ -32,7 +34,9 @@ py -3 verify.py
 
 The verification command runs the study replay, the new adapter tests and 40 selected recovered WORD_CORE tests. It requires no package download, model account, API key or network request. The original sources and studies are not rewritten. Derived results go to `replay-output/`.
 
-The assembled preparation passed **113 replay comparisons**, **15 adapter tests** and **40 recovered WORD_CORE tests**. These are separate check sets, not a historical total. Inspect [the replay report](replay-output/REPLAY_REPORT.md) and [verification results](replay-output/verification.json). A later run's exit status determines that run's result; existing reports do not make a failed later run pass.
+The original September 17 preparation recorded **113 replay comparisons**, **15 adapter tests** and **40 recovered WORD_CORE tests**. These historical counts are preserved as the baseline, not a claim about the current correction candidate. They are separate check sets, not a historical total. Inspect [the replay report](replay-output/REPLAY_REPORT.md) and [verification results](replay-output/verification.json). A later run's exit status determines that run's result; existing reports do not make a failed later run pass.
+
+The correction validates incomplete inputs and reports failed runs consistently, including a required-baseline failure in the HTML reader. Overview quotations now preserve emphasis from an exactly matching saved verse quotation, including “Let there be light:” in Genesis 1:3, without changing Scripture wording. The Creation Week interface also corrects alphabetic counts, separates instrument families with recorded matches from configured families, and prevents a drag from selecting a different node. Its focused checks run separately with `node --test test_web.mjs`; see [the reader correction notes](web/CORRECTIONS.md).
 
 For command options and calculation conventions, read [REPLAY.md](REPLAY.md).
 
@@ -64,4 +68,4 @@ The selected Bible source and services are included under Sherman's current publ
 
 The wider private QEL development archive and raw private conversations remain outside this release. The companion `sherman-gaucia-laing-research-record` repository contains the 175-entry chronology, evidence account and Sherman's statement about conducting most of his research with “Improve for all” shared data enabled. Read the [public research record](https://github.com/0-Actual/sherman-gaucia-laing-research-record).
 
-Routine maintenance and responses are delegated within [MAINTENANCE.md](MAINTENANCE.md). Commercial permissions remain Sherman's decision. Repository publication is verified in [PUBLICATION_STATUS.json](PUBLICATION_STATUS.json). Daily maintenance and public responses are configured for 8:00 a.m. America/New_York with flexible scheduling; the first maintenance review was completed on September 18, 2026. See [the dated maintenance record](MAINTENANCE_LOG.md) for its scope and results. See [maintenance availability](MAINTENANCE.md#scheduling-and-actual-availability) for the operating scope and permission checks. Continuous monitoring is not active; no signed release is claimed.
+Private maintenance and response preparation follow [MAINTENANCE.md](MAINTENANCE.md). Commercial permissions remain Sherman's decision. [PUBLICATION_STATUS.json](PUBLICATION_STATUS.json) preserves the original release evidence and separately marks this correction candidate unpublished. The daily maintenance task is currently disabled; its old configured schedule does not establish active monitoring. The first September 18 review remains in [the dated maintenance record](MAINTENANCE_LOG.md). Every new public action must complete the [72-hour review policy](PUBLICATION_REVIEW_POLICY.md), resolve defects and receive Sherman's approval of the exact preview. No automatic posting, platform-wide enforcement or signed release is claimed.

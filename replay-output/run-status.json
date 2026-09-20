@@ -1,0 +1,14 @@
+{
+  "schema": "qel-bible-replay-run/1",
+  "attempt_id": "4011639fb9e44ac3b3e9ba48ec045e7f",
+  "attempt_id_note": "Random local correlation label; not a fingerprint or signature",
+  "state": "COMPLETE",
+  "status": "PASS",
+  "checked_at_utc": "2026-09-20T05:38:11.342592+00:00",
+  "owner_signature": null,
+  "artifacts": [
+    "results.json",
+    "index.html",
+    "REPLAY_REPORT.md"
+  ]
+}

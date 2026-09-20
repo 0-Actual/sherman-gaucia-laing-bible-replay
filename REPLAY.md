@@ -14,6 +14,10 @@ The command writes `replay-output/results.json`, `replay-output/REPLAY_REPORT.md
 
 The replay command returns 0 only if all source comparisons pass; 1 means a comparison failed; 2 means the replay could not complete. The command prints the comparison count. Inspect the current terminal result when rerunning; previously generated output is not proof that a later interrupted or failed run passed.
 
+The September 20 correction validates required input records before calculating. Each attempt records its state in `replay-output/run-status.json`. An incomplete attempt produces current ERROR/INCOMPLETE records instead of success-looking HTML. Complete output is staged before promotion, and a previous output generation is retained in a separately named superseded directory. A replay-only invocation records integrated verification as NOT_RUN; run `verify.py` to establish a new integrated result. The reader displays the overall result and required baseline result as well as the individual expanded studies.
+
+Cooperating runs use exclusive lock files. A crash can leave a lock or incomplete generation. If a run reports that output is locked, inspect the reported process and preserve the existing evidence before recovery; do not remove a lock belonging to an active run. Read-only output, abrupt power loss and noncooperating file changes cannot be treated as a newly verified result.
+
 To run the new adapter tests:
 
 ```sh

@@ -11,6 +11,8 @@ This is a clearly labeled adaptation of recovered source files from the existing
 
 ## Changes in this adaptation
 
+The owner-directed September 20 correction edition derives alphabetic counts from the saved calculation text, excludes the three apostrophes, labels historical count discrepancies, and adds corrected count metadata to exports. Diagram dragging no longer triggers node selection on release. Read [CORRECTIONS.md](CORRECTIONS.md). The original payload remains unchanged. Actual-browser visual verification remains open; the 72-hour review is not recorded as completed.
+
 - Audio creation and playback are disabled. The original audio implementation has not been approved for the current audio-envelope requirements, and its Stop behavior is not treated as reliable. Event data remains visible.
 - Unavailable illustrative image dependencies are replaced by a text note. No historical image is fabricated.
 - The node palette uses one blue color; pitch labels and numerical data are unchanged.
@@ -33,7 +35,6 @@ The repository's noncommercial terms apply to QEL-owned original code, annotatio
 
 ## Validation
 
-JavaScript syntax checks passed. A bounded Node VM test with DOM/canvas stubs checked the required element IDs, local dependencies, initial display, navigation, search, export and inert audio callbacks. See `VALIDATION.json`. This is not a browser visual inspection or a real playback test.
+The historical September 17 JavaScript syntax and bounded DOM/canvas checks are preserved in `VALIDATION.json`; that file does not certify this correction candidate. Current regression evidence is in `CORRECTION_VALIDATION.json`, with the executable suite at `../test_web.mjs`. The current suite checks all 34 displayed verse counts, corrected export metadata, original-data preservation, drag/click behavior, navigation, search and inert audio callbacks. These are Node VM functional checks, not browser visual inspection or real playback tests.
 
 No new cryptographic fingerprint or owner signature was generated.
-

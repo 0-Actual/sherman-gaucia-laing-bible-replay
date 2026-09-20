@@ -4,12 +4,19 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import io
+import os
+import shutil
+import subprocess
+import sys
+from unittest import mock
 from pathlib import Path
 import tempfile
 import unicodedata
 import unittest
 
 import replay
+import verify
 
 HERE = Path(__file__).resolve().parent
 ENGINE = HERE / "original" / "word_core" / "qel_word_core_reference_v2.py"
@@ -115,7 +122,12 @@ class ReplayTests(unittest.TestCase):
             replay.replay(STUDIES, ENGINE, second)
             self.assertEqual(result["status"], "PASS")
             self.assertEqual(len(result["studies"]), 5)
+            self.assertEqual(sum(len(row["checks"]) for row in [result["baseline"], *result["studies"]]), 113)
             self.assertTrue(all(check["passed"] for row in [result["baseline"], *result["studies"]] for check in row["checks"]))
+            reader = (first / "index.html").read_text(encoding="utf-8")
+            self.assertIn('Overall replay status: <strong>PASS</strong>', reader)
+            self.assertIn('Required Genesis 1:1 baseline status: <strong>PASS</strong>', reader)
+            self.assertIn('No failed source comparisons.', reader)
             for name in ("results.json", "index.html", "REPLAY_REPORT.md"):
                 self.assertEqual((first / name).read_bytes(), (second / name).read_bytes())
 
@@ -124,6 +136,246 @@ class ReplayTests(unittest.TestCase):
         self.assertNotIn("<script", rendered)
         self.assertIn("&lt;script", rendered)
         self.assertIn("<strong>Let there be light:</strong>", rendered)
+
+    def test_overview_reuses_only_exact_saved_verse_emphasis(self):
+        doc = self.documents[2]
+        verse = doc["text_and_calculations"]["kjv"]
+        rendered = replay.render_saved_verse(verse, doc["lesson_markdown"])
+        self.assertIn("<strong>Let there be light:</strong>", rendered)
+        self.assertEqual(rendered.replace("<strong>", "").replace("</strong>", ""), verse)
+        self.assertEqual(replay.render_saved_verse(verse, "**Let there be light:**"), verse)
+        self.assertEqual(replay.render_saved_verse(verse, "> **Different words**"), verse)
+        repeated = "> " + verse + "\n> " + verse
+        self.assertEqual(replay.render_saved_verse(verse, repeated), verse)
+
+
+class ReplayFailureTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+        self.studies = self.root / "studies"
+        shutil.copytree(STUDIES, self.studies)
+        self.output = self.root / "output"
+        self.study = self.studies / "Genesis_1_1_Expanded_Study.json"
+
+    def mutate(self, change):
+        document = json.loads(self.study.read_text(encoding="utf-8"))
+        change(document)
+        self.study.write_text(json.dumps(document, ensure_ascii=False), encoding="utf-8")
+
+    def run_replay(self):
+        return replay.replay(self.studies, ENGINE, self.output)
+
+    def assert_incomplete(self):
+        run = json.loads((self.output / "run-status.json").read_text(encoding="utf-8"))
+        results = json.loads((self.output / "results.json").read_text(encoding="utf-8"))
+        self.assertEqual((run["state"], run["status"]), ("INCOMPLETE", "ERROR"))
+        self.assertEqual(results["status"], "ERROR")
+        self.assertFalse((self.output / "index.html").exists())
+        self.assertFalse((self.output / "REPLAY_REPORT.md").exists())
+        self.assertNotEqual(json.loads((self.output / "verification.json").read_text())["state"], "PASS")
+
+    def test_missing_greek_cannot_publish_fresh_pass(self):
+        self.mutate(lambda d: d["text_and_calculations"].pop("selected_greek_witness"))
+        with self.assertRaisesRegex(replay.ReplayError, "selected_greek_witness"):
+            self.run_replay()
+        self.assert_incomplete()
+
+    def test_baseline_requires_greek_too(self):
+        self.study = self.studies / "QEL_Genesis_1_1_Study_20260910.json"
+        self.mutate(lambda d: d["word_core"].pop("selected_greek_witness"))
+        with self.assertRaises(replay.ReplayError):
+            self.run_replay()
+        self.assert_incomplete()
+
+    def test_baseline_comparison_failure_is_visible_in_reader(self):
+        self.study = self.studies / "QEL_Genesis_1_1_Study_20260910.json"
+        self.mutate(lambda d: d["word_core"].update(total=2702))
+        result = self.run_replay()
+        self.assertEqual(result["status"], "FAIL")
+        self.assertEqual(result["baseline"]["state"], "FAIL")
+        self.assertTrue(all(row["state"] == "PASS" for row in result["studies"]))
+        reader = (self.output / "index.html").read_text(encoding="utf-8")
+        self.assertIn('Overall replay status: <strong>FAIL</strong>', reader)
+        self.assertIn('Required Genesis 1:1 baseline status: <strong>FAIL</strong>', reader)
+        self.assertIn('Baseline · Genesis 1:1', reader)
+        self.assertIn('standard total: calculated 2701; saved expected 2702.', reader)
+        self.assertNotIn('No failed source comparisons.', reader)
+
+    def test_expanded_comparison_failure_is_visible_in_reader(self):
+        self.mutate(lambda d: d["text_and_calculations"].update(total=2702))
+        result = self.run_replay()
+        self.assertEqual(result["status"], "FAIL")
+        reader = (self.output / "index.html").read_text(encoding="utf-8")
+        self.assertIn('Overall replay status: <strong>FAIL</strong>', reader)
+        self.assertIn('Required Genesis 1:1 baseline status: <strong>PASS</strong>', reader)
+        self.assertIn('Expanded study · Genesis 1:1', reader)
+        self.assertIn('standard total: calculated 2701; saved expected 2702.', reader)
+
+    def test_top_level_and_nested_wrong_shapes_are_controlled(self):
+        original = self.study.read_bytes()
+        changes = [
+            ("root_array", lambda d: []),
+            ("validation_array", lambda d: {**d, "validation": []}),
+            ("exposition_null", lambda d: {**d, "exposition": None}),
+            ("calculation_array", lambda d: {**d, "text_and_calculations": []}),
+            ("words_row", lambda d: {**d, "text_and_calculations": {**d["text_and_calculations"], "words": [None]}}),
+            ("trace_row", lambda d: {**d, "text_and_calculations": {**d["text_and_calculations"],
+                "selected_greek_witness": {**d["text_and_calculations"]["selected_greek_witness"], "trace": [None]}}}),
+        ]
+        for label, change in changes:
+            with self.subTest(label=label):
+                self.study.write_text(json.dumps(change(json.loads(original))), encoding="utf-8")
+                with self.assertRaises(replay.ReplayError):
+                    self.run_replay()
+                self.assert_incomplete()
+
+    def test_bool_numeric_and_duplicate_json_fields_rejected(self):
+        self.mutate(lambda d: d["text_and_calculations"].update(total=True))
+        with self.assertRaisesRegex(replay.ReplayError, "expected int"):
+            self.run_replay()
+        self.study.write_text('{"lesson_markdown":"a","lesson_markdown":"b"}', encoding="utf-8")
+        with self.assertRaisesRegex(replay.ReplayError, "Duplicate JSON field"):
+            self.run_replay()
+        self.study.write_text('{"bad":NaN}', encoding="utf-8")
+        with self.assertRaisesRegex(replay.ReplayError, "invalid JSON numeric constant"):
+            self.run_replay()
+
+    def test_required_clause_evidence_cannot_silently_reduce_comparisons(self):
+        self.study = self.studies / "Genesis_1_3_Expanded_Study.json"
+        self.mutate(lambda d: d["text_and_calculations"].pop("clause_subtotals"))
+        with self.assertRaisesRegex(replay.ReplayError, "clause_subtotals"):
+            self.run_replay()
+        self.assert_incomplete()
+
+    def test_failed_rerun_preserves_old_generation_but_invalidates_current(self):
+        self.run_replay()
+        old = (self.output / "results.json").read_bytes()
+        replay.atomic_json(self.output / "verification.json", {"state": "PASS"})
+        self.study.write_text("[]", encoding="utf-8")
+        with self.assertRaises(replay.ReplayError):
+            self.run_replay()
+        self.assert_incomplete()
+        previous = list(self.root.glob(".output.superseded-*"))
+        self.assertEqual(len(previous), 1)
+        self.assertEqual((previous[0] / "results.json").read_bytes(), old)
+
+    def test_render_error_never_publishes_success_artifacts(self):
+        with mock.patch.object(replay, "render_index", side_effect=RuntimeError("render fixture")):
+            with self.assertRaisesRegex(replay.ReplayError, "render fixture"):
+                self.run_replay()
+        self.assert_incomplete()
+
+    def test_staging_write_error_does_not_publish_partial_pass(self):
+        real_write = Path.write_text
+        def write(path, *args, **kwargs):
+            if ".staging-" in str(path) and path.name == "index.html":
+                raise OSError("write fixture")
+            return real_write(path, *args, **kwargs)
+        with mock.patch.object(Path, "write_text", write):
+            with self.assertRaisesRegex(replay.ReplayError, "write fixture"):
+                self.run_replay()
+        self.assert_incomplete()
+
+    def test_promotion_failure_restores_incomplete_current_generation(self):
+        rename = Path.rename
+        def fail_stage(path, target):
+            if path.name.startswith(".output.staging-"):
+                raise OSError("promotion fixture")
+            return rename(path, target)
+        with mock.patch.object(Path, "rename", fail_stage):
+            with self.assertRaisesRegex(replay.ReplayError, "promotion fixture"):
+                self.run_replay()
+        self.assert_incomplete()
+
+    def test_replay_only_invalidates_previous_integration_pass(self):
+        self.run_replay()
+        replay.atomic_json(self.output / "verification.json", {"state": "PASS"})
+        self.run_replay()
+        self.assertEqual(json.loads((self.output / "verification.json").read_text())["state"], "NOT_RUN")
+
+    def test_output_must_not_overlap_source(self):
+        before = self.study.read_bytes()
+        for output in (self.studies, self.root, self.studies / "generated"):
+            with self.subTest(output=output), self.assertRaises(replay.ReplayError):
+                replay.replay(self.studies, ENGINE, output)
+        self.assertEqual(self.study.read_bytes(), before)
+
+    def test_lock_prevents_concurrent_writer_without_invalidating_active_output(self):
+        self.run_replay()
+        before = (self.output / "results.json").read_bytes()
+        with replay.output_lock(self.output), self.assertRaisesRegex(replay.ReplayError, "locked"):
+            self.run_replay()
+        self.assertEqual((self.output / "results.json").read_bytes(), before)
+
+    def test_cli_exit_codes_distinguish_comparison_failure_from_invalid_input(self):
+        command = [sys.executable, str(HERE / "replay.py"), "--studies", str(self.studies),
+                   "--engine", str(ENGINE), "--output", str(self.output)]
+        environment = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
+        self.mutate(lambda d: d["text_and_calculations"].update(total=2702))
+        failed = subprocess.run(command, capture_output=True, text=True, env=environment)
+        self.assertEqual(failed.returncode, 1, failed.stderr)
+        self.assertEqual(json.loads((self.output / "results.json").read_text())["status"], "FAIL")
+        self.study.write_text("[]", encoding="utf-8")
+        malformed = subprocess.run(command, capture_output=True, text=True, env=environment)
+        self.assertEqual(malformed.returncode, 2, malformed.stderr)
+        self.assertNotIn("Traceback", malformed.stderr)
+        self.assert_incomplete()
+
+
+class VerificationFailureTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+        (self.root / "replay-output").mkdir()
+        self.destination = self.root / "replay-output" / "verification.json"
+        replay.atomic_json(self.destination, {"state": "PASS", "stale": True})
+
+    def test_replay_failure_replaces_old_verification_pass(self):
+        with mock.patch.object(verify, "ROOT", self.root), mock.patch.object(verify.subprocess, "run", return_value=subprocess.CompletedProcess([], 2)):
+            code = verify.main()
+        current = json.loads(self.destination.read_text())
+        self.assertEqual((code, current["state"], current["failed_step"]), (1, "FAIL", "replay.py"))
+        self.assertNotIn("stale", current)
+
+    def test_adapter_failure_replaces_old_verification_pass(self):
+        def process(command, **kwargs):
+            if command[1].endswith("replay.py") and not command[1].endswith("test_replay.py"):
+                replay.atomic_json(self.root / "replay-output/run-status.json", {"state": "COMPLETE", "status": "PASS", "attempt_id": "fixture"})
+                replay.atomic_json(self.root / "replay-output/results.json", {"status": "PASS"})
+                return subprocess.CompletedProcess(command, 0)
+            return subprocess.CompletedProcess(command, 1)
+        with mock.patch.object(verify, "ROOT", self.root), mock.patch.object(verify.subprocess, "run", side_effect=process):
+            code = verify.main()
+        current = json.loads(self.destination.read_text())
+        self.assertEqual((code, current["state"], current["failed_step"]), (1, "FAIL", "test_replay.py"))
+        self.assertEqual(current["replay_attempt_id"], "fixture")
+
+    def test_skipped_recovered_test_is_not_counted_as_pass(self):
+        class Skipped(unittest.TestCase):
+            @unittest.skip("fixture")
+            def runTest(self):
+                pass
+        suite = unittest.TestSuite([unittest.FunctionTestCase(lambda: None) for _ in range(39)] + [Skipped()])
+        result = unittest.TextTestRunner(stream=io.StringIO()).run(suite)
+        self.assertTrue(result.wasSuccessful())
+        self.assertFalse(verify.complete_suite_passed(result, 40))
+
+    def test_concurrent_verifier_cannot_overwrite_active_record(self):
+        before = self.destination.read_bytes()
+        with mock.patch.object(verify, "ROOT", self.root), replay.output_lock(self.root / "verification"):
+            code = verify.main()
+        self.assertEqual(code, 2)
+        self.assertEqual(self.destination.read_bytes(), before)
+
+    def test_launch_error_records_error_not_old_pass(self):
+        with mock.patch.object(verify, "ROOT", self.root), mock.patch.object(verify.subprocess, "run", side_effect=OSError("launch fixture")):
+            code = verify.main()
+        current = json.loads(self.destination.read_text())
+        self.assertEqual((code, current["state"]), (2, "ERROR"))
+        self.assertIn("launch fixture", current["error"])
 
 
 if __name__ == "__main__":

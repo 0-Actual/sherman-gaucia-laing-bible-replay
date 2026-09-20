@@ -1,7 +1,9 @@
 {
   "integration_authored_date": "2026-09-17",
+  "repaired_date": "2026-09-20",
+  "verification_attempt_id": "db8483653bc648c4b4223b8bf531b211",
   "state": "PASS",
-  "scope": "New study replay and adapter tests, plus 40 recovered WORD_CORE tests",
+  "scope": "Study replay and adapter tests, plus 40 recovered WORD_CORE tests",
   "results": {
     "replay.py": {
       "exit_code": 0
@@ -14,6 +16,9 @@
       "passed": 40,
       "failures": 0,
       "errors": 0,
+      "skipped": 0,
+      "expected_failures": 0,
+      "unexpected_successes": 0,
       "excluded_archival_tests": [
         "test_034_surface_hash_matches_legacy_witness",
         "test_038_genesis_1_2_source_witness",
@@ -24,5 +29,6 @@
   },
   "legacy_forensic_verifier_executed": false,
   "owner_signature": null,
-  "new_fingerprints_generated": false
+  "new_fingerprints_generated": false,
+  "replay_attempt_id": "4011639fb9e44ac3b3e9ba48ec045e7f"
 }

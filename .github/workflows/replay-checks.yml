@@ -28,3 +28,5 @@ jobs:
           python-version: "3.12"
       - name: Replay studies and run existing verification
         run: python verify.py
+      - name: Check reader counts, exports and pointer behavior
+        run: node --test test_web.mjs
